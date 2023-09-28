@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-字体排印 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-字体排印 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-字体排印" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-字体排印/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-字体排印.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-字体排印
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-04，8 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <hr>
+<h1 id="前言">前言</h1>
+<h5 id="1连字符断行">1.连字符断行</h5>
+<p>我们经常会想实现两端对齐的效果，但结局往往不如人意，比如：</p>
+<pre><code class="language-css">p {
+    text-align: justify;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465038623.png" alt="" loading="lazy"><br>
+系统往往为了对齐两端，而在中间等分空间的时候留下许多空白，这在效果上面是不美观的，但好在CSS3中引入了一个新的属性<code>hyphens</code>,它接受三个值：<code>none</code>,<code>manual</code>以及<code>auto</code>，其中设置<code>auto</code>会自动设置连接符，具体效果如图：</p>
+<pre><code class="language-css">p {
+    hyphens: auto;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634465049233.png" alt="" loading="lazy"></figure>
+<p>唯一的缺点就是兼容性还不够好。</p>
+<h6 id="2插入换行">2.插入换行</h6>
+<p>假如有以下布局：</p>
+<pre><code class="language-html">&lt;dl&gt;
+    &lt;dt&gt;Name:&lt;/dt&gt;
+    &lt;dd&gt;Tom&lt;/dd&gt;
+    &lt;dd&gt;Tim&lt;/dd&gt;
+
+    &lt;dt&gt;Age:&lt;/dt&gt;
+    &lt;dd&gt;10&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<p>我们往往为了规范会写这样的代码，保证结构的语义化和规范化，但是这里显示的效果确实差强人意：<br>
+<img src="https://luoyelusheng.com/post-images/1634465060070.png" alt="" loading="lazy"><br>
+我们可能会通过调整css来让样式更加美观，但是这确实不好处理，因为我们要在每一个小的类别后面换行，达到这种效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634465067678.png" alt="" loading="lazy"><br>
+如果你打算手动输入换行符的话，那你可以跳过了。。。<br>
+我们这里采用的是伪元素来实现换行，具体代码如下：</p>
+<pre><code class="language-css">dt, dd{
+    display: inline;
+    margin: 0;
+}
+dd+dt::before{
+    content: '\A';
+    white-space: pre;
+}
+dd+dd::before{
+    content: ',';
+
+}
+</code></pre>
+<p>我们将每一个<code>dt</code>标签之前都加上换行符<code>\A</code>，Unicode字符的换行字符为<code>0x000A</code>，简写<code>\A</code>，因为浏览器会自动合并空白符，所以我们这里设置<code>pre</code>让其不要自动合并，保留空白符，最后在多个<code>dd</code>值的时候，在第二个的前面加上<code>,</code>，最终完美实现我们想要的效果。</p>
+<h5 id="3文本行的斑马条纹">3.文本行的斑马条纹</h5>
+<p>假如实现下面这种条纹效果，那要怎么实现，可能你会使用脚本来控制了，但是这个毕竟不友好，那我们通过CSS怎么实现呢，其实我们可以通过线性渐变实现它。</p>
+<pre style="padding:.5em;line-height:1.5;background-image:linear-gradient(rgba(0,0,0,0.2) 50%, transparent 0);background-size:auto 3em;background-origin: content-box;">
+while (true) {
+    var d = new Date();
+    if (d.getDate() == 1 && d.getMonth() == 3) {
+        console.log('hellow');
+    }
+}
+</pre>
+<p>别忘了，我们的渐变可以实现许多条纹效果的，具体代码为：</p>
+<pre><code class="language-css">pre { 
+    padding: .5em;
+    line-height: 1.5;
+    background: hsl(20, 50%, 95%);
+    background-image: linear-gradient(
+                        rgba(120,0,0,.1) 50%, transparent 0);
+    background-size: auto 3em;
+    background-origin: content-box;
+    font-family: Consolas, Monaco, monospace;
+}
+</code></pre>
+<p>在这里，我们设置一个条纹渐变，并且背景大小行高的两倍，应为我们要覆盖两行代码，最后通过<code>background-origin</code>调整解析<code>background-position</code>时以<code>content-box</code>为基准，就不会错位了。</p>
+<h5 id="4调整tab的宽度">4.调整tab的宽度</h5>
+<p>css3新增了一个设置<code>tab</code>宽度的属性<code>tab-size</code>，可以用来指定缩进所需的字符。<br>
+默认样式：</p>
+<pre>
+<code>while (true) {
+	var d = new Date();
+	if (d.getDate() == 1 && d.getMonth() == 3) {
+	console.log('hellow');
+	}
+}</code>
+</pre>
+<p>添加样式：</p>
+<pre><code class="language-css">pre{
+    tab-size: 2;
+}
+</code></pre>
+<p>应用样式后：</p>
+<pre style="tab-size: 2;">
+<code>while (true) {
+  var d = new Date();
+  if (d.getDate() == 1 && d.getMonth() == 3) {
+  console.log('hellow');
+  }
+}</code>
+</pre>
+<h5 id="5连字">5.连字</h5>
+<p>用于将多个字符连接起来达到美观的作用，属性为<code>font-variant-ligatures</code>,具体可点击<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures">这里</a></p>
+<h5 id="6华丽的-符号">6.华丽的 &amp; 符号</h5>
+<p>如果我们想对<code>&amp;</code>符号设置单独的字体样式，你会怎么做通用做法是用一个<code>span</code>标签包裹住这个符号，然后对这个符号进行样式设置，但是这显然是不够DRY的，我们能否只指定一种字体只针对这个符号呢，幸运的是在CSS中确实有这个选项，具体代码为：</p>
+<pre><code class="language-css">@font-face {
+  font-family: Ampersand;
+  src: local('Baskerville-Italic'), local('GoudyOldStypapapa-Italic'), local('Garamond-Italic'), local('Palatino-Italic');
+  unicode-range: U+26;
+}
+h1 {
+  font-family: Ampersand, Helvetica, sans-serif;
+}
+</code></pre>
+<p>通过<code>@font-face</code>引入规则，<code>src</code>指定路径，其中最关键的就是<code>unicode-range</code>属性，这个属性规定只针对<code>&amp;</code>设置样式，而且这个属性还支持通配符，这就意味着可以设置各种各样的指定符号应用字体的效果。</p>
+<h5 id="7自定义下划线">7.自定义下划线</h5>
+<p>由于默认的下划线往往不能做到精准控制，所以往往我们都会使用边框来模拟下划线，但是往往下划线会阻止文字换行的行为：<br>
+<img src="https://luoyelusheng.com/post-images/1634465084143.png" alt="" loading="lazy"><br>
+那有没有一种跟着文字走的最佳解决方案呢，当然有，这里核心是背景相关的知识，核心代码如下：</p>
+<pre><code class="language-css">a {
+  background: linear-gradient(gray, gray) no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 1.02em;
+  text-shadow: .05em 0 white, -.05em 0 white;
+}
+</code></pre>
+<p>通过背景大小生成<code>1px</code>的宽度，再通过定位控制位置，最后使用文阴影去除掉背景重叠在类似于<code>gy</code>这样的字母的下半部分。<br>
+<img src="https://luoyelusheng.com/post-images/1634465115221.png" alt="" loading="lazy"></p>
+<p>还可以生成虚线效果：</p>
+<pre><code class="language-css">a{
+    background: linear-gradient(gray, gray) no-repeat;
+}
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634465122531.png" alt="" loading="lazy"></figure>
+<p>波浪线：</p>
+<pre><code class="language-css">a {
+  background: linear-gradient(-45deg, transparent 40%, red 0, red 60%, transparent 0) 0 1em,
+              linear-gradient(45deg, transparent 40%, red 0, red 60%, transparent 0) .1em 1em;
+  background-repeat: repeat-x;
+  background-size: .2em .1em;
+  text-shadow: .05em 0 white, -.05em 0 white;
+}
+</code></pre>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1634465128976.png" alt="" loading="lazy"></figure>
+<h5 id="8文字效果">8.文字效果</h5>
+<p>凸版印刷效果，代码如下:</p>
+<pre><code class="language-css">p {
+    padding: .8em 1em;
+    background: hsl(210, 13%, 60%);
+    color: hsl(210, 13%, 30%);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.8);
+}
+
+p + p {
+    background: hsl(210, 13%, 30%);
+    color: hsl(210, 13%, 60%);
+    text-shadow: 0 -1px 1px black;
+}
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1634465137066.png" alt="" loading="lazy"></figure>
+<p>空心字效果，核心思想是使用<code>text-shadow</code>模拟四边的边框：</p>
+<pre><code class="language-css">h1{ text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black; }
+</code></pre>
+<p>文字发光效果：</p>
+<pre><code class="language-css">a {
+    color: #ffc;
+    text-decoration: none;
+    transition: 1s;
+}
+a:hover { text-shadow: 0 0 .1em, 0 0 .3em; }
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465145501.png" alt="" loading="lazy"><br>
+<img src="https://luoyelusheng.com/post-images/1634465151230.png" alt="" loading="lazy"></p>
+<p>文字凸起效果，原理还是<code>text-shadow</code>属性：</p>
+<pre><code class="language-css">div{
+    background: #58a;
+    color: white;
+    text-shadow: 0 1px hsl(0,0%,85%),
+                    0 2px hsl(0,100%,80%),
+                    0 3px hsl(0,0%,75%),
+                    0 4px hsl(0,0%,70%),
+                    0 5px hsl(0,0%,65%),
+                    0 5px 10px black;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465158252.png" alt="" loading="lazy"><br>
+<img src="https://luoyelusheng.com/post-images/1634465164512.png" alt="" loading="lazy"></p>
+<h5 id="9环形文字">9.环形文字</h5>
+<p>如果实现下面这种效果，那怎么实现，CSS是几乎不可能的，所以我们只能借助于svg图像了：<br>
+<img src="https://luoyelusheng.com/post-images/1634465171413.png" alt="" loading="lazy"></p>
+<p>代码如下:</p>
+<pre><code class="language-html">&lt;div class=&quot;circular&quot;&gt;
+    circular reasoning works because
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">/**
+ * Text on a circle
+ */
+
+body {
+    font: bold 120% Helvetica, sans-serif;
+}
+
+.circular {
+    width: 20em;
+    height: 20em;
+    margin: 4em auto 0;
+}
+
+.circular svg {
+    display: block;
+    overflow: visible;
+    transition: 10s linear transform;
+}
+
+.circular svg:hover { transform: rotate(-2turn); }
+
+.circular text { fill: currentColor }
+.circular path { fill: none; }
+</code></pre>
+<pre><code class="language-js">function $$(selector, context) {
+    context = context || document;
+    var elements = context.querySelectorAll(selector);
+    return Array.prototype.slice.call(elements);
+}
+
+$$('.circular').forEach(function(el) {
+    var NS = &quot;http://www.w3.org/2000/svg&quot;;
+
+    var svg = document.createElementNS(NS, &quot;svg&quot;);
+    svg.setAttribute(&quot;viewBox&quot;, &quot;0 0 100 100&quot;);
+
+    var circle = document.createElementNS(NS, &quot;path&quot;);
+    circle.setAttribute(&quot;d&quot;, &quot;M0,50 a50,50 0 1,1 0,1z&quot;);
+    circle.setAttribute(&quot;id&quot;, &quot;circle&quot;);
+
+    var text = document.createElementNS(NS, &quot;text&quot;);
+    var textPath = document.createElementNS(NS, &quot;textPath&quot;);
+    textPath.setAttributeNS(&quot;http://www.w3.org/1999/xlink&quot;, 'xlink:href', '#circle');
+    textPath.textContent = el.textContent;
+    text.appendChild(textPath);
+
+    svg.appendChild(circle);
+    svg.appendChild(text);
+
+    el.textContent = '';
+    el.appendChild(svg);
+});
+</code></pre>
+<p>详情私戳这个<a href="http://dabblet.com/gist/bda1bf6b0c4adbcea63d">demo</a>。</p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-字体排印
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/内联元素与流/">
+                      <span class="post-title">
+                        内联元素与流&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

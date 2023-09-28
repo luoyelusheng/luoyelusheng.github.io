@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  盒尺寸四大家族 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="盒尺寸四大家族 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="盒尺寸四大家族" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/盒尺寸四大家族/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/盒尺寸四大家族.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/k7RscZHCa/" class="tag">
+                  CSS世界
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+            </span>
+            <h1>
+              盒尺寸四大家族
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-10-03，21 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 id="前言">前言</h2>
+<p>盒尺寸中四个盒子content-box、padding-box、border-box和margin-box分别对应css世界中的content、padding、border和margin属性，这四个属性简称为“盒尺寸四大家族”。</p>
+<h2 id="一-content与替换元素">一、content与替换元素</h2>
+<p>替换元素几大特性：</p>
+<p>内容的外观不受页面上的css的影响。即除非浏览器暴露一些样式接口。如::-ms-check{}可以更改高版本IE浏览器下单复选框的内边距、背景色等样式，但是直接通过input[type='checkbox']却无法更改内边距。</p>
+<p>有自己的尺寸。比如、等默认大小是300px*150px（不包括边框）。</p>
+<p>在很多css属性上面有自己的一套表现规则。比如vertical-align的默认值为baseline，但是替换元素则是下边缘对齐。</p>
+<p>常见替换元素的display值:<br>
+<img src="https://luoyelusheng.com/post-images/1634466494958.png" alt="" loading="lazy"><br>
+基于伪元素的图片内容生成技术</p>
+<p>在用户体验方面，当页面图片过多的时候，往往会实现一种按需加载，图片采取先用一张图片较小的显示或者纯色显示，到图片请求完成后再显示图片，在这里就有一个问题，如果一个页面80%的内容都是图片，那岂不是整个页面都是白茫茫的一片，用户体验不好，能否实现一种用户鼠标移入时候显示图片的信息，增强用户体验，核心代码如下：</p>
+<pre><code>img::after {
+    /* 黑色alt信息条 */
+    content: attr(alt);
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    font-size: 14px;
+    transform: translateY(100%);
+    /* 来点过渡动画效果 */
+    transition: transform .2s;
+    visibility: visible;
+}
+img:hover::after {
+    transform: translateY(0);
+}
+</code></pre>
+<p>具体效果可查看<a href="http://demo.cssworld.cn/4/1-2.php">demo</a>。</p>
+<p>主要原理是img标签缺失src属性变为普通的内联标签，不再是替换元素，通过::before和::after伪元素进行内容生成以及样式构建，当然浏览器支持程度还是有限的，IE则不支持，并且还需要一些特定条件其他浏览器才能支持：</p>
+<p>不能有src属性(关键)</p>
+<p>不能使用content属性生成图片（针对chrome）</p>
+<p>需要有alt属性且不为空针对（chrome）</p>
+<p>火狐下::before伪元素的content值会被无视，::after无此问题。</p>
+<p>因此替换元素和非替换元素之间的关系紧密相连，是可以相互转化的。</p>
+<h2 id="二-content与替换元素关系解刨">二、content与替换元素关系解刨</h2>
+<p>在css世界中，我们将content属性生成的对象称为“匿名替换对象”，因此content属性生成的内容都是替换元素，并且其生成的内容和普通元素的内容有诸多不同，譬如；</p>
+<p>content生成的文本是无法选中、无法复制的，好像设置了user-select:none声明一般。</p>
+<p>不能左右:empty伪类。即是一个空标签，当使用content为其添加内容时，尽管视觉上这个<br>
+不为空，但是应用:empty设置这个<br>
+依旧失效。</p>
+<p>content动态生成值无法获取。即常见的文章内容前面的编号通过伪类实现1,2,3,4的效果。</p>
+<p>content计数器</p>
+<p>两个属性一个方法:counter-reset，counter-increment以及counter()/counters()。</p>
+<p>counter-reset：顾名思义“计数器-重置”，默认0开始，可以指定起始数字，可以是小数，IE和火狐对此不识别，当做默认0处理，chrome则向下取整，语法：</p>
+<pre><code>.xxx{ counter-reset;num1 2}
+//取消重置
+.xxx{ counter-reset;none}
+//继承重置
+.xxx{ counter-reset;inherit}
+//多个空格隔开
+.xxx{ counter-reset;num1 2 num1 2}
+counter-increment：顾名思义“计数器增加”，类似于c/c++中自增运算符，语法；
+.xxx{
+    conunter-reset:num 1;
+    counter-increment:num;
+}
+//多个计数器
+.xxx{
+    conunter-reset:num1 1 num2 1;
+    counter-increment:num1 num2;
+}
+</code></pre>
+<p>counter(name,style)/counters(name,string,style)：显示计数器当前的数值,style支持的关键字就是list-style-type支持的值，即可以是英文字母或者罗马文等，string参数为子序号的连接符，譬如1.1的string就是'.'，1-1就是'-'。<br>
+下面是一个简单的例子：</p>
+<pre><code>HTML：
+&lt;div class=&quot;reset&quot;&gt;
+    &lt;div class=&quot;counter&quot;&gt;我是王小二&lt;/div&gt;
+    &lt;div class=&quot;reset&quot;&gt;
+        &lt;div class=&quot;counter&quot;&gt;我是王小二的大儿子&lt;/div&gt;
+        &lt;div class=&quot;counter&quot;&gt;我是王小二的二儿子&lt;/div&gt;
+        &lt;div class=&quot;reset&quot;&gt;
+            &lt;div class=&quot;counter&quot;&gt;我是王小二的二儿子的大孙子&lt;/div&gt;
+            &lt;div class=&quot;counter&quot;&gt;我是王小二的二儿子的二孙子&lt;/div&gt;
+            &lt;div class=&quot;counter&quot;&gt;我是王小二的二儿子的小孙子&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;counter&quot;&gt;我是王小二的三儿子&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;counter&quot;&gt;我是王小三&lt;/div&gt;
+    &lt;div class=&quot;counter&quot;&gt;我是王小四&lt;/div&gt;
+    &lt;div class=&quot;reset&quot;&gt;
+        &lt;div class=&quot;counter&quot;&gt;我是王小四的大儿子&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+CSS：
+.reset { 
+padding-left: 20px; 
+counter-reset: wangxiaoer;
+}
+.counter:before { 
+content: counters(wangxiaoer, '-') '. '; 
+counter-increment: wangxiaoer;
+}
+
+.reset ~ .counter { 
+    color: #cd0000; 
+}
+</code></pre>
+<p>效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634466528978.png" alt="" loading="lazy"></p>
+<h2 id="三-温和padding属性">三、温和padding属性</h2>
+<p>padding默认会增加元素的尺寸，这是由于默认box-sizing值为content-box,但是当padding足够大的时候，width属性将会失效，我们来看这样一段代码：</p>
+<pre><code>.box{
+    width:80px;
+    padding:20px 60px;
+    box-sizing:border-box;
+}
+</code></pre>
+<p>此时的最终宽度为120像素（60px*2），宽度在这里失效，当然这里是针对块状元素而言的，对于内联元素(不包括图片等替换元素)则表现得有限不同，比如，许多人认为padding针对内联元素垂直方向上不会影响,考虑下面一行代码：</p>
+<pre><code>HTML：
+    &lt;p&gt;这是内容顶部&lt;/p&gt;
+    &lt;span&gt;这是内容中部&lt;/span&gt;
+    &lt;p&gt;这是内容底部&lt;/p&gt;
+    span{
+    padding:50px 0;
+}
+</code></pre>
+<p>span大家都知道是一个内联元素，这里给他设置了一个100px的padding值，如果padding影响内联元素尺寸，呐么span标签将会把p标签上下撑出一大片空白，但实际的效果是这样的：</p>
+<p>这是内容顶部</p>
+<span style="padding:50px 0;">这是内容中部</span>
+<p>这是内容底部</p>
+<p>并没有撑开很大的空白，通过F12快捷键，取消掉span样式padding设置，页面效果也丝毫未动，难不成果真在垂直方面内联元素的padding值设置无效，如果我们更span增加一点背景颜色看看怎么样：</p>
+<pre><code> span{
+    padding:50px 0;
+    background: orange;
+    }
+</code></pre>
+<p>效果：</p>
+<p>这是内容顶部</p>
+<span style="padding:50px 0;background: orange;">这是内容中部</span>
+<p>这是内容底部</p>
+<p>背景有颜色，那为何没有撑开上下得p标签，通过查阅文档发现，css中有很多属性或场景会出现不影响其他元素布局而是出现层叠效果的展现，就好像置于顶层一样，不影响同级的元素布局，针对这种现象，还可以将其分为两类：一类是纯视觉层叠，不影响外部尺寸；另一类则是会影响外部尺寸。比如box-shadow以及outline则属于第一类，像这里的span元素padding层叠则属于第二类。</p>
+<p>那这个有什么应用吗？首先我们可以增加按钮或链接的点击区域，这在移动端比较常用，移动端由于用户屏幕小，所以点击区域就比较小，我们同增加垂直区域的padding值，使其点击区域变大，既增加了用户体验，又不占据页面的空间，可谓不可多得的小技能。</p>
+<h2 id="padding的百分比值">padding的百分比值</h2>
+<p>首先，padding属性不支持负值，并且支持百分比值，但是padding的百分比值无论是水平方向还是垂直方向均是相对于宽度计算的。具体原因可能是跟默认水平文档流有关。具体运用比如网页开发经常需要用的屏幕头图,一般做法是定高，但是这样有个缺点，如果屏幕够小，那么这里的定高可能会占据屏幕三分之一的空间，以至于一屏的内容出现滚动条，用户体验不好，如果通过padding百分比来设置，则能很好的解决这个问题，详情查看这个<a href="http://demo.cssworld.cn/4/2-3.php">demo</a> 。</p>
+<p>当然以上是针对块状元素，如果是内联元素，则会有以下规则：</p>
+<p>同样相对于宽度计算；</p>
+<p>默认的宽度和高度细节有差异；</p>
+<p>padding会断行。</p>
+<p>考虑一下代码：</p>
+<pre><code>HTML:
+    &lt;span&gt;这是内容&lt;/span&gt;
+CSS:
+div{
+    border:2px dashed #cd0000;
+    width: 9%;
+}
+span{
+    padding:50%;
+    background-color: gray;
+}
+</code></pre>
+<p>效果：</p>
+<div style="border:2px dashed #cd0000;width: 9%;">
+<span style="padding:50%;background-color: gray;">这是内容</span>
+</div>
+<p>咦？这是什么情况，为何少了两个字，而且还是个缺一个角的矩形，这里就是我们讲的padding会断行，由于padding区域是跟着内联盒模型中的行框盒子走的，上面的例子的文字比较多，一行显示不了，于是“容”一字换到了下一行，根据后来居上的叠加原则，此时的“容”字覆盖掉了原先的“这”字，于是少了一个字；同时，规则的矩形因为换行，也变成了五条边，如果还不理解建议自己亲自动手实验一下。<br>
+倘若我们对span设置padding:50%的样式，我们会发现，这丫居然是个矩形，不应该是个正方形吗，原因其实很简单：内联元素的垂直padding会让“幽灵空白节点”显现，也就是专业术语“strut”出现了，解决这个很简单，由于内联元素的高度完全受font-szie控制，所以只要设置font-size:0，此时“幽灵空白节点”的高度变成了0，宽高也就相等了。</p>
+<p>在这里要提一下，许多标签元素都内置padding大小，比如input，button等，这里着重谈一下button的padding设置为0，几乎需要兼容多个浏览器，具体表现为：</p>
+<pre><code>//chrome
+button{ padding:0; }
+//Firefox
+button{ padding:0; }
+buttong::-moz-focus-inner{ padding:0; }
+//IE7
+button{ padding:0; }
+button{ overflow:visible; }
+</code></pre>
+<p>鉴于每个浏览器表现不一，所以在项目中很多人都会使用标签模拟按钮，但在表单中，有的按钮是自带交互行为的，这是标签无法模拟的，因此这里推荐一种两全其美的小技巧：</p>
+<pre><code>HTML:
+&lt;button id=&quot;btn&quot;&gt;&lt;/button&gt;
+&lt;label for=&quot;btn&quot;&gt;按钮&lt;/label&gt;
+CSS:
+button{
+    position:absolute;
+    clip:rect(0 0 0 0);
+}
+label{
+    display:inline-block;
+    line-height:20px;
+    padding:10px;
+}
+</code></pre>
+<p>通过lebel标签实现按钮，并且兼容性好。</p>
+<h3 id="padding与图像绘制">padding与图像绘制</h3>
+<p>例1：不适用伪元素，仅用一层标签实现大队长的“三道杠”分类图标效果。</p>
+<pre><code>HTML:
+&lt;span&gt;&lt;/span&gt;
+CSS:
+span{
+    display: inline-block;
+    width: 140px;
+    height: 10px;
+    padding:35px 0;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    background-color: currentColor;
+    background-clip: content-box;
+}
+</code></pre>
+<p>效果：</p>
+<span style="box-sizing:content-box;display: inline-block;width: 140px;height: 10px;padding:35px 0;border-top: 10px solid;border-bottom: 10px solid;background-color:currentColor;background-clip: content-box;"></span>
+<p>例2：不适用伪元素，实现一个双层圆点效果。</p>
+<pre><code>HTML:
+&lt;span&gt;&lt;/span&gt;
+CSS:
+span{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding:10px;
+    border: 10px solid;
+    border-radius: 50%;
+    background-color: currentColor;
+    background-clip: content-box;
+}
+</code></pre>
+<p><span style="display: inline-block;width: 100px;height: 100px;padding:10px;border: 10px solid;border-radius: 50%;background-color: currentColor;background-clip: content-box;"></span></p>
+<h2 id="四-激进的margin属性">四、激进的margin属性</h2>
+<p>元素尺寸的相关概念</p>
+<p>元素尺寸：对应于jQuery中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>)</mo><mi mathvariant="normal">.</mi><mi>w</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>(</mo><mo>)</mo><mi mathvariant="normal">和</mi></mrow><annotation encoding="application/x-tex">().width()和</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mclose">)</span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mclose">)</span><span class="mord cjk_fallback">和</span></span></span></span>().height()方法，包括padding和border，也就是元素的border box的尺寸。在原生DOM API中写作offsetwidth和offsetheight，简称“元素偏移尺寸”。</p>
+<p>元素内部尺寸：对应于jQuery中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>)</mo><mi mathvariant="normal">.</mi><mi>i</mi><mi>n</mi><mi>n</mi><mi>e</mi><mi>r</mi><mi>W</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>(</mo><mo>)</mo><mi mathvariant="normal">和</mi></mrow><annotation encoding="application/x-tex">().innerWidth()和</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mclose">)</span><span class="mord">.</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mclose">)</span><span class="mord cjk_fallback">和</span></span></span></span>().innerHeight()方法,包括padding但不包括border，也就是元素中的padding-box尺寸。在原生DOM API中写作clientwidth和clientheight，简称“元素可视尺寸”。</p>
+<p>元素内部尺寸：对应于jQuery中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>)</mo><mi mathvariant="normal">.</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>W</mi><mi>i</mi><mi>d</mi><mi>t</mi><mi>h</mi><mo>(</mo><mi>t</mi><mi>r</mi><mi>u</mi><mi>e</mi><mo>)</mo><mi mathvariant="normal">和</mi></mrow><annotation encoding="application/x-tex">().outerWidth(true)和</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mclose">)</span><span class="mord">.</span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">u</span><span class="mord mathdefault">e</span><span class="mclose">)</span><span class="mord cjk_fallback">和</span></span></span></span>().outerHeight(true)方法，包括padding和border以及margin，也就是元素的margin box的尺寸。没有响应的DOM API。</p>
+<p>css世界默认的流方向是水平方向，因此，对于普通流体元素，margin只能改变元素的水平方向尺寸。因此margin可以很方便的实现流体布局效果，比如一侧定宽的两栏自适应布局效果，详细可查看这个demo。</p>
+<p>大家都知道，margin默认在垂直方向有合并的特性，其合并的规则可以总结为“正正取大值”，“正负值相加”，“负负最负值”，来看下面一段代码：</p>
+<pre><code>HTML:
+&lt;div class=&quot;a&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;b&quot;&gt;&lt;/div&gt;
+CSS:
+.a{
+    margin-bottom:50px;
+}
+.b{
+    margin-top:20px;
+}
+</code></pre>
+<p>此时.a和.b之间的间距是50px，取最大的那个值。</p>
+<p>那怎么阻断这种合并呢，可以在.a和.b之间放置一个空div元素，但是需要一些特定的情况才能触发：</p>
+<ul>
+<li>
+<p>设置垂直方向的border</p>
+</li>
+<li>
+<p>设置垂直方向的padding</p>
+</li>
+<li>
+<p>里面添加内联元素</p>
+</li>
+<li>
+<p>设置height或者min-height<br>
+深入理解margin:auto</p>
+</li>
+</ul>
+<h3 id="marginauto的填充规则如下">margin:auto的填充规则如下。</h3>
+<p>（1）如果一侧定值，一侧auto，则auto为剩余空间大小。</p>
+<p>（2）若两侧均是auto，则平分剩余空间。</p>
+<p>上面第二条可能大多数人都知道，但是第一条可能就很少了，我们来看一下第一个能实现一些什么效果，比如我需要块状元素右对齐，最常规可能就float:right，有的人可能还想到绝对定位，但是margin-left:auto才是最佳的实践。</p>
+<p>margin:0 auto很多人都用在水平居中上面，但是却发现似乎margin不能够垂直居中，这是因为文档默认为水平流，可以通过writing-mode:vertical-lr;改变流的方向，但是这样一来水平方向又不能居中，那有没有什么一劳永逸的方法呢，当然有，这里要讲的就是绝对定位元素的垂直水平居中，具体代码为：</p>
+<pre><code>HTML：
+&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+CSS：
+.father {
+    width: 300px; height: 150px;
+    background-color: #f0f3f9;
+    position:relative;
+}
+.son { 
+    position: absolute; 
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 200px; height: 100px;
+    background-color: #cd0000;
+    margin: auto;
+}
+</code></pre>
+<p>效果：</p>
+<div style="width: 300px; height: 150px;background-color: #f0f3f9;position:relative;">
+<div style=" position: absolute; top: 0; right: 0; bottom: 0; left: 0;width: 200px; height: 100px;background-color: #cd0000;margin: auto;"></div>
+</div>
+此时.son元素的尺寸表现为“格式化宽度和格式化高度”，和div的“正常流宽度”一样，同属于外部宽度，也就是尺寸自动填充父级元素的可用尺寸，若此时我们给.son设置尺寸，那么宽高就被限制，原本应该填充的空间就被多余出来，这多余的空间就是margin:auto计算的空间，因此从而实现从水平方向和垂直方向等分空间，实现水平垂直居中。当然这个在IE7下失效。
+margin无效情景解析
+<p>display计算值inline的非替换元素的垂直margin是无效的。虽然规范提到有渲染，但是浏览器却未寻得一点踪迹。对于内联替换元素，垂直margin有效，并且没有合并问题。</p>
+<p>表格中的tr和td元素或者设置display计算值是table-cell或table-row的元素margin都是无效的。但是通过计算值是table-caption、table或者inline-table则没有此问题。</p>
+<p>margin合并的时候，更改margin值可能是没有效果的。比如父级margin-top:50px但是子级margin-top:30px，此时子级若不大于父级的50px，则子级的设置就无效。</p>
+<p>绝对定位元素的非定位方位的margin值“无效”。什么意思呢？很多时候我们对绝对元素定位的时候只会设置一两个相邻方位，例如：</p>
+<pre><code>img{
+        top:10%;left:30%;
+    }
+</code></pre>
+<p>此时的right和bottom值属于auto状态，也就是右侧和底部没有进行定位，此时，这两个方向设置margin值我们在页面上是看不到定位效果的。例如：</p>
+<pre><code> img{
+        top:10%;left:30%;
+        margin-right:30px;
+    }
+</code></pre>
+<p>此时的margin-right:30px几乎就是摆设。是margin没起作用吗？实际上不是的，主要原因是因为绝对定位元素的渲染是独立的，普通元素的渲染是心连心，你动我也动，但是绝对定位元素的由于独立渲染无法和兄弟元素插科打诨，因此，margin无法影响兄弟元素定位，所以看上去就“无效”。</p>
+<p>定高容器的子元素的margin-bottom或者宽度定死的子元素的margin-right的定位“失效”。一个普通元素，在默认流下，其定位方向是左上，此时只有margin-left和margin-top可以影响元素的定位。可以通过改变默认文档流的方法是右下margin发挥作用。</p>
+<p>鞭长莫及导致margin无效。我们直接看例子。</p>
+<pre><code>HTML:
+&lt;div class=&quot;box&quot;&gt;
+    &lt;img src=&quot;a.png&quot; alt=&quot;&quot;&gt;
+    &lt;p&gt;内容&lt;/p&gt;
+&lt;/div&gt;
+CSS:
+.box &gt; img{
+    float:left;
+    width:256px;
+}
+
+.box &gt; p{
+    overflow:hidden
+    margin-left:200px;
+}
+</code></pre>
+<p>其中margin-left:200px是无效的，准确的讲，此时的</p>
+<p>的margin-left从负无穷到256px都是没有效果的。具体原因后面再讲。</p>
+<p>内联特性导致margin无效。看以下代码：</p>
+<pre><code>HTML:
+&lt;div class=&quot;box&quot;&gt;
+    &lt;img src=&quot;a.png&quot; alt=&quot;&quot;&gt;
+    &lt;p&gt;内容&lt;/p&gt;
+&lt;/div&gt;
+CSS:
+.box &gt; img{
+    height:96px;
+    margin-top:-200px;
+}
+</code></pre>
+<p>当这里的margin-top负值一致增加，请问图片会一直偏移吗，答案肯定是不会的，当到达某一个值得时候，便不会再偏移，就好像失效一般，具体原因后面再讲。</p>
+<h2 id="五-功勋卓越的border属性">五、功勋卓越的border属性</h2>
+<p>boder顾名思义就是边框的意思，但是它不支持百分比单位，border在图像制作方面有着许多不可多得的小技巧，比如小圆点：</p>
+<pre><code>HTML:
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;dotted&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+CSS:
+
+.box{
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+}
+
+.dotted{
+    width:150px;
+    height: 150px;
+    border:150px dotted #cd0000;
+}
+</code></pre>
+<p>效果：</p>
+<div style="height: 150px;width: 150px;overflow: hidden;">
+    <div style="width:150px;height: 150px;border:150px dotted #cd0000;"></div>
+</div>
+<p>原理很简单，通过border的dotted值，产生小圆点，然后设置一个容器将除了第一个的小圆点显示外，其余都隐藏掉，就实现小圆点了。</p>
+<p>实现“三道杠”图标效果，直接上代码：</p>
+<pre><code>HTML:
+&lt;div class=&quot;icon-menu&quot;&gt;
+&lt;/div&gt;
+.icon-menu{
+    width:120px;
+    height:20px;
+    border-top:60px double;
+    border-bottom:20px solid;
+}
+</code></pre>
+<p>效果</p>
+<div style="box-sizing:content-box;width:120px;height:20px;border-top:60px double;border-bottom:20px solid;"></div>
+<p>咦？为什么border-top:60px double生成的线段会和border-bottom的20px的线段相等，不应该生成30px线宽吗，从而生成的线段不应该相等，在这里就得讲一讲双线框的表现规则了，具体如下：<br>
+<img src="https://luoyelusheng.com/post-images/1634466555891.png" alt="" loading="lazy"><br>
+我们可以看到，如果值是40px的话，则生成的边框大小皆为10px，实践一下即可：</p>
+<pre><code>.icon-menu{
+    width:120px;
+    height:20px;
+    border-top:40px double;
+    border-bottom:20px solid;
+}
+</code></pre>
+<p>效果</p>
+<div style="box-sizing:content-box;width:120px;height:20px;border-top:40px double;border-bottom:20px solid;"></div>
+<p>可以看到这里明显不相等，所以在以后处理的时候记得注意这个点。</p>
+<p>最后来讲一下border-color默认缺省情况是会使用文字的颜色作为背景色，可以利用这个特性，实现图片上传鼠标移入上传区域从而改变文字颜色，以达到改变border颜色的效果，具体可查看这个<a href="http://demo.cssworld.cn/4/4-1.php">demo</a>。</p>
+<h3 id="border与透明边框技巧">border与透明边框技巧</h3>
+<p>color:transparent在IE9以上版本浏览器才支持，但是border-color:transparent在IE7浏览器就开始支持了，于是我们可以许多小技巧可以通过这个实现，并且兼容性良好。</p>
+<p>优雅的增加点击区域。相比padding增加点击区域，border方法更胜一筹，比如：</p>
+<pre><code>.icon-clear{
+        width:16px;
+        height:16px;
+        border:11px solid transparent;
+    }
+</code></pre>
+<p>三角形绘制:</p>
+<pre><code>HTML:
+&lt;div&gt;&lt;/div&gt;
+CSS:
+div{
+    width:0;
+    border:10px solid;
+    border-color:#f30 transparent transparent;
+}
+</code></pre>
+<p>效果：</p>
+<div  style="width:0;border:10px solid;border-color:#f30 transparent transparent;"></div>
+border等高布局技术
+<p>核心代码：</p>
+<pre><code>HTML：
+&lt;div class=&quot;box&quot;&gt;
+&lt;nav&gt;
+    &lt;h3 class=&quot;nav&quot;&gt;导航1&lt;/h3&gt;
+&lt;/nav&gt;
+&lt;section&gt;
+    &lt;div class=&quot;module&quot;&gt;模块1&lt;/div&gt;
+&lt;/section&gt;
+&lt;/div&gt;
+CSS：
+/* 导航背景区border创建 */
+.box { 
+border-left: 150px solid #333;
+background-color: #f0f3f9;
+}
+/* 清除浮动影响，不能使用overflow:hidden */
+.box:after {
+content: &quot;&quot;;
+display: block;
+clear: both;
+}
+/* 布局主结构 */
+.box &gt; nav {
+width: 150px;
+margin-left: -150px;
+float: left;
+}
+.box &gt; section {
+    overflow: hidden;
+}
+/* 导航列表和模块列表 */
+.nav {
+    line-height: 40px;
+    color: #fff;
+}
+.module {
+    line-height: 40px;
+}
+</code></pre>
+<p>效果可查看这个<a href="http://demo.cssworld.cn/4/4-4.php">demo</a>。</p>
+<p>原理则是左侧深色背景区域是由border-left生成的，元素的边框高度总是和元素的自身高度保持一致，从而实现等高效果。</p>
+<p>此方法需要注意一点，父级不能使用overflow:hidden属性，不然会将生成的border-left隐藏掉。</p>
+<p>参考自<a href="http://www.cssworld.cn/">《css世界》</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/盒尺寸四大家族
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-让你更加得心应手的CSS/">
+                      <span class="post-title">
+                        CSS使用技巧-让你更加得心应手的CSS&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-用户体验 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-用户体验 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-用户体验" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-用户体验/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-用户体验.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-用户体验
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-16，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<h5 id="1扩大可点击区域">1.扩大可点击区域</h5>
+<p>在移动端的时候，我们往往需要增加可点击区域，比如下面这个，本身比较小，那我们如何让其可点击区域变大呢？<br>
+<img src="https://luoyelusheng.com/post-images/1634482782961.png" alt="" loading="lazy"></p>
+<p>常用做法是增加透明边框，但如果我们吧边框用了，我们还想增加边框样式怎么办，我们就可以借用<code>box-shadow</code>来模边框效果，代码如下：</p>
+<pre><code class="language-css">button {
+    padding: .3em .5em;
+    border: 100px solid transparent;
+    border-radius: 50%;
+    background: #58a;
+    background-clip: padding-box;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.3) inset;
+    color: white;
+    font: bold 150%/1 sans-serif;
+    cursor: pointer;
+}
+</code></pre>
+<p>其中，默认背景会蔓延到边框的下层，所以我们需要使用<code>background-clip</code>控制背景裁剪区域，当然我们还可以使用伪元素来实现增加可点击区域：</p>
+<pre><code class="language-css">button:before {
+    content: '';
+    position: absolute;
+    top: -10px; right: -10px;
+    bottom: -10px; left: -10px;chichichifansfsdf
+}
+</code></pre>
+<h5 id="2自定义复选框">2.自定义复选框</h5>
+<p>我们都知道，默认的复选框很难使用样式修改，所以我们只能使用默认样式，但是默认样式不美观，所以我们不得不寻找一些新的点子解决这个问题，其中的一个思路就是使用<code>label</code>标签模拟复选框行为，然后将真正的复选框隐藏掉，代码实现如下：</p>
+<pre><code class="language-css">input[type=&quot;checkbox&quot;] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
+
+input[type=&quot;checkbox&quot;] + label::before {
+    content: '\a0';
+    display: inline-block;
+    vertical-align: .2em;
+    width: .8em;
+    height: .8em;
+    margin-right: .2em;
+    border-radius: .2em;
+    background: silver;
+    text-indent: .15em;
+    line-height: .65;
+}
+
+input[type=&quot;checkbox&quot;]:checked + label::before {
+    content: '\2713';
+    background: yellowgreen;
+}
+</code></pre>
+<p>详情查看这个<a href="http://dabblet.com/gist/e269f10328615254e29e">demo</a></p>
+<h5 id="3遮罩层">3.遮罩层</h5>
+<p>平时我们实现遮罩层往往都是使用一个<code>div</code>实现的，但是我们能不能不用页面元素实现呢，于是我们又想到了伪元素，但是伪元素不能相应用户点击事件，比如用户点击遮罩层消失的效果，其实我们还可以通过<code>box-shadow</code>方案实现这一效果，代码如下：</p>
+<pre><code class="language-css">.lightbox {
+    position: fixed;
+    box-shadow: 0 0 0 50vmax rgba(0,0,0,.8);
+}
+</code></pre>
+<p>这里的<code>vmax</code>指的是<code>1vw</code>和<code>1vh</code>中的较大者，而<code>100vw</code>则是指整个屏幕的可视宽度，所以我们的设置的值为<code>50vmax</code>,也就是此时阴影大小是<code>50vw + 50vw +</code>元素自身宽度。但是这个遮罩层不会阻止默认鼠标交互，也就是鼠标可以继续滚动页面，当页面可滚动时。<br>
+当然还有一个浏览器自带的模态框元素<code>dialog</code>但是目前似乎只有谷歌支持。</p>
+<h5 id="4滚动条提示">4.滚动条提示</h5>
+<p>在滚动的时候，当底部有内容时，则显示一个阴影部分，从而提示底部还有内容，代码如下：</p>
+<pre><code class="language-css">ul {
+    overflow: auto;
+    background: linear-gradient(white 15px, hsla(0,0%,100%,0)) 0 0 / 100% 50px,
+                radial-gradient(at top, rgba(0,0,0,.2), transparent 70%) 0 0 / 100% 15px,
+                linear-gradient(to top, white 15px, hsla(0,0%,100%,0)) bottom / 100% 50px,
+                radial-gradient(at bottom, rgba(0,0,0,.2), transparent 70%) bottom / 100% 15px;
+    background-repeat: no-repeat;
+    background-attachment: local, scroll, local, scroll;
+    margin-top: 30px;
+}
+</code></pre>
+<p>详情可点这个<a href="http://dabblet.com/gist/20205b5fcdd834461e80">demo</a>。</p>
+<h5 id="交互式图片对比控件">交互式图片对比控件</h5>
+<p>假如我们要对比两张图片前后的异同，那会怎么实现呢，直接放上两张图片，这样似乎只能看到较大的区别的，一些细微的地方可能就很难捕捉到了，所以我们现在有以下的设计稿:<br>
+<img src="https://luoyelusheng.com/post-images/1634482801579.png" alt="" loading="lazy"><br>
+通过拖拽下三角可以显示之前与之后的图片对比。</p>
+<p>这里我们借助于一个<code>resize</code>属性，这个属性不只是可以作用于<code>textare</code>,其他元素也是可以的，只要求它的<code>overflow</code>的属性值不是<code>visible</code>就可以，我们有以下HTML布局：</p>
+<pre><code class="language-html">&lt;div class=&quot;image-slider&quot;&gt;
+&lt;div&gt;&lt;img src=&quot;../../../../img/2018-4-16/adamcatlace-before.jpg&quot; alt=&quot;Before&quot; /&gt;&lt;/div&gt;
+&lt;img src=&quot;../../../../img/2018-4-16/adamcatlace.jpg&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<p>css样式：</p>
+<pre><code class="language-css">.image-slider {
+    position:relative;
+    display: inline-block;
+}
+
+.image-slider &gt; div {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    resize: horizontal;
+}
+.image-slider img {
+    display: block;
+    user-select: none;
+}
+</code></pre>
+<p>效果如下：<br>
+<img src="https://luoyelusheng.com/post-images/1634482808347.png" alt="" loading="lazy"></p>
+<p>我们是可以拖拽了，但是没有按钮提示用户拖拽的按钮提示，于是我们通过伪元素实现这种效果，css代码如下：</p>
+<pre><code class="language-css">.image-slider &gt; div:before {
+    content: '';
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 12px; height: 12px;
+    padding: 5px;
+    background: linear-gradient(-45deg, white 50%, transparent 0);
+    background-clip: content-box;
+    cursor: ew-resize;
+    -webkit-filter: drop-shadow(0 0 2px black);
+    filter: drop-shadow(0 0 2px black);
+}
+</code></pre>
+<p>最终实现了这种效果，详情可点这个<a href="http://dabblet.com/gist/b7e7fef7dcf9a7161a51">demo</a>。</p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-用户体验
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-视觉效果/">
+                      <span class="post-title">
+                        CSS使用技巧-视觉效果&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

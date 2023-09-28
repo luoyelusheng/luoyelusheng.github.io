@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  Gridea同步github失败最终解决方案 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Gridea同步github失败最终解决方案 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="Gridea同步github失败最终解决方案" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/Gridea同步github失败最终解决方案/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/Gridea同步github失败最终解决方案.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/GLI-z7Q_i/" class="tag">
+                  疑难杂症
+                </a>
+                
+            </span>
+            <h1>
+              Gridea同步github失败最终解决方案
+            </h1>
+            <span class="meta">
+              Posted on
+              2021-10-18，2 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 id="前言">前言</h2>
+<p>废话不多说，解决这个问题的核心思路就是跑<code>代理</code>，如果你没有科学上网工具的话，那下面的也就用不着看了，建议你用<code>coding</code>吧。</p>
+<h2 id="开始">开始</h2>
+<p>众所周知，在天朝一直存在墙这玩意儿，再加上运营商老是没事儿屏蔽一些网站，自然而然有的人的<code>github</code>也被屏蔽了，虽然现在很多科学上网工具都提供了全局代理选项，但是我们都知道这玩意儿就扯淡的，所以接下来的我们需要让自己的电脑可以全局代理某一个APP，刚好<code>proxifier</code>符合，但是这软件要付费，但是在天朝你懂的。</p>
+<p>Mac版本地址：https://www.macwk.com/soft/proxifier<br>
+Window版本地址：https://www.hanzify.org/software/13717.html</p>
+<p>因为本人是Mac，所以下面截图都是基于Mac版本，不过软件的功能都大同小异了。</p>
+<p>根据破解教程安装完成后，打开软件开始配置，首先打开<code>Proxies</code>菜单，配置如下：</p>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634562555724.png" alt="" loading="lazy"></figure>
+<p>在<code>Rules</code>菜单中默认有两个模式，我们点击<code>Add</code>选择新增一条，添加后的结果如下：</p>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634562720051.png" alt="" loading="lazy"></figure>
+<p>着这里我修改了默认的规则的代理模式为直连模式，毕竟我们只是用这个软件代理<code>Gridea</code>APP，科学上网的功能还是交给我们的科学上网工具来做。</p>
+<p><code>DNS</code>和<code>Advanced</code>这一栏采用默认配置，结果如下：</p>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1634563004134.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1634563010377.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://luoyelusheng.com/post-images/1634563015686.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="https://luoyelusheng.com/post-images/1634563021171.png" alt="" loading="lazy"></figure>
+<p>最后打开我们的<code>Gridea</code>软件，点击同步，我们可以在<code>proxifier</code>上面看到请求过程：</p>
+<figure data-type="image" tabindex="7"><img src="https://luoyelusheng.com/post-images/1634563186898.png" alt="" loading="lazy"></figure>
+<p>最后的最后当然就是同步成功啦五个字啦！</p>
+<figure data-type="image" tabindex="8"><img src="https://luoyelusheng.com/post-images/1634563616662.png" alt="" loading="lazy"></figure>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/Gridea同步github失败最终解决方案
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/全面解析IFC、FFC 和 GFC原理/">
+                      <span class="post-title">
+                        全面解析IFC、FFC 和 GFC原理&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

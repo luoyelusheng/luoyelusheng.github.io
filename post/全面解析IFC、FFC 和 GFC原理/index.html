@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  全面解析IFC、FFC 和 GFC原理 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="全面解析IFC、FFC 和 GFC原理 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="全面解析IFC、FFC 和 GFC原理" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/全面解析IFC、FFC 和 GFC原理/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/全面解析IFC、FFC 和 GFC原理.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+            </span>
+            <h1>
+              全面解析IFC、FFC 和 GFC原理
+            </h1>
+            <span class="meta">
+              Posted on
+              2020-05-18，15 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 id="ifc前置知识">IFC前置知识</h2>
+<p>在讲IFC之前，我们首先要理清楚一些概念，我们才能用专业术语来描述IFC的特性，下面我们一一来讲解：</p>
+<h3 id="行高四线">行高四线</h3>
+<p>我们经常听见很多术语，比如文字对齐的<code>基线</code>、<code>中线</code>等，但是似乎我们一直都没怎么关注它们具体的位置在哪，只是大概知道<code>基线</code>在文字的下面，<code>中线</code>在文字的中间，现在我们就来真正的弄懂这些线在哪，<code>行高四线</code>即<code>顶线</code>、<code>中线</code>、<code>基线</code>和<code>底线</code>，它们的具体位置如下：</p>
+<ul>
+<li>顶线：父元素 font-size 大小所组成的一个内容区域的顶部</li>
+<li>中线：小写英文字母<code>x</code>的交叉线的中间</li>
+<li>基线：小写英文字母<code>x</code>的下端沿</li>
+<li>底线：父元素 font-size 大小所组成的一个内容区域的底部</li>
+</ul>
+<p><code>中线</code>和<code>基线</code>我们都有明确的位置指向，分别是小写字母<code>x</code>中间相交那个点，而基线就是小写字母<code>x</code>底端沿的那条线，下面我们来用一张图作解释说明：</p>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634473542538.png" alt="" loading="lazy"></figure>
+<p>我们可以看到基线就是小写字母<code>x</code>底端沿，那么顶线和底线的具体位置在那呢，我们来看一个例子：</p>
+<iframe style="width:100%" src="/bfc-effect.html" align="center" frameborder="0"></iframe>
+<p>我们针对文字设置不同的字体大小，我们可以看到背景的深色的大小就会不一样，这个深色的区域的顶部和底部就是我们所说的<code>顶线</code>和<code>底线</code>了，用一张图来说明如下：</p>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634474239687.png" alt="" loading="lazy"></figure>
+<h3 id="行距-行高-半行间距-内容区-行内框和行框">行距、行高、半行间距、内容区、行内框和行框</h3>
+<p>在我们理解行高四线的基础上，我们再来谈谈接下来的6个概念，他们定义分别如下：</p>
+<ul>
+<li>行距：相邻两行<code>底线</code>与<code>顶线</code>的垂直距离</li>
+<li>行高：文本行的<code>基线</code>间的距离</li>
+<li>内容区：底线和顶线包裹的区域，由<code>font-size</code>决定</li>
+<li>半行间距：(<code>line-height</code>值 – <code>font-size</code>值) / 2</li>
+<li>行内框：内容区 + 行间距 即为行内框的大小</li>
+<li>行框（line box）：虚拟的矩形框，其高度等于本行内所有元素中<code>行内框</code>最大的值</li>
+</ul>
+<p><code>行距</code>，正如其定义的概念一样，是<strong>相邻</strong>两行之间，上一行的<code>底线</code>和下一行的<code>顶线</code>的垂直距离；而<code>行高</code>则是文本行之间的<code>基线</code>间的距离，可能第一次听到这种说法很诧异，但是在《CSS权威指南》中的却有着明确的记载：</p>
+<blockquote>
+<p>line-height属性是指文本行基线间的距离，而不是字体的大小，它确定了将各个元素框的高度增加或减少多少。</p>
+</blockquote>
+<p>下面来用一张图解释说明，方便更好的理解：</p>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1634474266048.png" alt="" loading="lazy"></figure>
+<p><code>行间距</code>，即<code>内容区</code>和<code>行框</code>之间总距离，我们可以通过(<code>line-height</code>值 – <code>font-size</code>值) 算出<code>行间距</code>，举个例子：</p>
+<p><code>&lt;p style=&quot;font-size:18px;line-height:24px&quot;&gt;demo&lt;/p&gt;</code></p>
+<p>通过公式我们可以计算出<code>行间距</code> <code>24 - 18 = 6</code> 为6，这里有一点需要注意，行间距不一定肯定是正数，当<code>行高</code>比文字大小还小的时候，我们就会得到一个负的行间距。</p>
+<p><code>半行间距</code>顾名思义就是<code>行间距</code>除以一半，所以半行间距的计算公式就是：</p>
+<p><code>(line-height值 - font-size值)  / 2</code></p>
+<p>下面我们来看一下具体的<code>半行间距</code>的位置，如下图所示：</p>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1634474312309.png" alt="" loading="lazy"></figure>
+<p>我们可以看到<code>半行间距</code>就是斜线阴影区域，分别均匀的分布在<code>内容区</code>的上下两部分，从而组成了一个<code>行内框</code>，在这之中最高的<code>行内框</code>则会形成一个<code>行框</code>，具体概念下面会讲。</p>
+<p><code>行内框</code>，一个抽象的概念，文本行中每一个元素都会生成一个<code>内容区</code>，而每一个<code>内容区</code>都会生成一个<code>行内框</code>，如果排除其它因素的话，这个<code>行内框</code>可以完全等于该元素的<code>内容区</code>，但实际情况几乎都会有其它因素；<code>行内框</code>的大小几乎等同于<code>内容区</code> + <code>行间距</code>。</p>
+<p><code>行框</code>即一个虚拟的矩形框，它的高度恰好足以包含最高<code>行内框</code>的顶端和最低行内框的底端，换句话说，就是<code>行内框</code>中最高那个即是<code>行框</code>。</p>
+<figure data-type="image" tabindex="5"><img src="https://luoyelusheng.com/post-images/1634474432876.png" alt="" loading="lazy"></figure>
+<p>从上图中我们可以看出简单的文字中间放置了一个图片，文字生成了一个匿名的<code>行内框</code>，而图片默认则是内联元素，也会生成一个<code>行内框</code>，在这里面有三个<code>行内框</code>，其中最高的就是图片所生成的<code>行内框</code>，因此这个<code>行内框</code>则形成了<code>行框</code>，至此，我们大致理清了<code>行框</code>和<code>行内框</code>的一些区别。</p>
+<h3 id="置换元素">置换元素</h3>
+<p>置换元素简而言之就是可替换的元素，它的渲染与<code>css</code>无关，这一类元素比如<code>&lt;img&gt;</code>,<code>&lt;video&gt;</code>等标签，具体说明可查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element">这里</a>。</p>
+<p>因为置换元素渲染规则不同于非置换元素，所以这里特别说明一下，具体表现如下：</p>
+<ul>
+<li>内容区：<code>height</code>+<code>padding</code>+<code>margin</code>+<code>border</code>的总和</li>
+<li>行内框：高度和内容区相等</li>
+</ul>
+<p>内容区和行内框的高度非常好理解，就是自身的高度、内边距、外边距以及边框的总和，但是**<em>置换元素没有行间距，自然也没有半行间距</em><strong>，这是需要强调的一个点，另一个点是</strong><em>非置换行内元素</em>**的内边距、外边距和边框对行内框以及元素所在的行框的高度没有影响。</p>
+<h2 id="ifc到底是什么">IFC到底是什么</h2>
+<p>标准是这么定义的：</p>
+<blockquote>
+<p>An inline formatting context is established by a block container box that contains no block-level boxes.<br>
+一个IFC由不包含<strong>块级盒子</strong>的<strong>块容器盒子</strong>建立。</p>
+</blockquote>
+<p>这里面的出现了两个名词<strong>块级盒子</strong>和<strong>块容器盒子</strong>，由于涉及的知识点太多，这里就不再论述了，想了解可点击<a href="/post/%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%88Block%20Formatting%20Context%EF%BC%8CBFC%EF%BC%89%20%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">这里</a>。</p>
+<p>定义似乎很简单，但是其渲染的规则却是比BFC可复杂多了，下面我们来一一讲解：</p>
+<h3 id="特性一垂直方向由-vertical-align-控制">特性一：垂直方向由 vertical-align 控制</h3>
+<blockquote>
+<p>每一个盒子自左向右水平排列，盒子相互之间的<code>padding</code>，<code>border</code>以及<code>margin</code>都会占据对应的空间。在同一水平的垂直方向上，这些盒子可以以不同的方式垂直对齐(vertical-align属性影响)。</p>
+</blockquote>
+<p>这里的每一个盒子都会生成一个<code>行内框</code>，<code>行内框</code>的宽高都会不尽相同，最终这一行将会以最大的<code>行内框</code>的大小生成一个<code>行框</code>，从而造成较小的<code>行内框</code>与这个<code>行框</code>在垂直方向产生多余空间，而这个多余空间的具体表现行为则由<code>vertical-align</code>属性控制，下面我们来看一个例子：</p>
+<iframe style="width:100%" src="/ifc-vertical-align.html" height="150" frameborder="0"></iframe>
+<p>这里共有3个<code>行内框</code>，第一个“几个”是<code>匿名行内框</code>，第二个是<code>em</code>所包含的<code>行内框</code>，第三个则是“文本”所在的<code>匿名行内框</code>，这里三个行内框将会以最大的一个作为整个<code>行框</code>大小。</p>
+<p>通过设置不同<code>vertical-align</code>属性值我们可以看到<code>em</code>标签所包含“测试”文字会向上或向下偏移，这便是IFC的第一个特性。下面我们总结一下<code>vertical-align</code>属性值具体的位置：</p>
+<pre><code>    vertical-align: baseline; //默认效果，强制元素基线与父元素基线对齐
+    vertical-align: sub; // 下沉效果，规范未明确，用户代理自行处理
+    vertical-align: super; // 上标效果，规范未明确，用户代理自行处理
+    vertical-align: text-top; //元素所在`行内框`的顶边与默认文本框顶边对齐
+    vertical-align: text-bottom; //元素所在`行内框`的底边与默认文本底顶边对齐
+    vertical-align: middle; // //中线对齐，即`x`的交叉线处
+    vertical-align: top; // 元素所在`行内框`的顶边和`行框`顶边对齐
+    vertical-align: bottom; // 元素所在`行内框`的底边和`行框`底边对齐
+</code></pre>
+<h3 id="特性二水平方向由text-align控制">特性二：水平方向由text-align控制</h3>
+<blockquote>
+<p>当一行中所有的盒子的宽度不足以大于所在行的行框宽度时，则这一行框中的盒子的水平排版由<code>text-align</code>属性决定；一旦这一行中所有的盒子都不足以容纳本行的行框中时，则会发生换行，此时所有的盒子将分布在多个的垂直堆叠的行框之间。</p>
+</blockquote>
+<p>在某些特定语言或属性影响下是无法换行的，比如受<code>white-space:nowrap</code>影响 便会发生行框溢出的效果。在发生拆分的位置其<code>padding</code>，<code>border</code>以及<code>margin</code>都没有任何视觉效果，没怎么理解？下面来看一个例子：</p>
+<iframe style="width:100%" src="/ifc-split.html" height="200" frameborder="0"></iframe>
+<p>当我们点击触发换行操作时，<code>em</code>标签周围的虚线红点边框被拆分成了两段，我们仔细看“几个测试”文字的右边缘没有闭合的红色虚线小点，而第三行的开始也没有闭合的红色虚线小点，从这里我们可以得出在发生拆分的位置，其<code>padding</code>，<code>border</code>以及<code>margin</code>都是没有任何视觉效果的。</p>
+<h3 id="特性三内外边距以及边框对垂直方向上不构成影响">特性三：内外边距以及边框对垂直方向上不构成影响</h3>
+<p>初学CSS时候，可能我们会经常使用<code>padding</code>调整段落文本间的距离，有时候好像很有用，但是有时候好像不怎么成功，下面我们来看一个例子：</p>
+<iframe style="width:100%" height="200" src="/ifc-vertical.html" frameborder="0"></iframe>
+<p>我们在输入框中随意修改数值，可以发现红色字体所在的元素似乎对上一行的元素的间隔没有任何影响，当我点击按钮设置其背景色时，我们再去动态修改其上内边距，我们可以发现其背景色会变高变窄，且会覆盖上一行文字，这是为什么呢？因为在默认常规流中，文字都是从上到下，从左到右排列，所以下面的层级便会比上一级的层级要高，所以便会出现下面的背景会遮住上面的文字的视觉效果。同样，无论我们设置红色字体的<code>margin</code>亦或是<code>border</code>都不会撑开垂直方向的高度，虽然在默认情况下我们感觉没有任何变化，但是一旦设置了背景等属性，其垂直方向的还是有一定的影响的。</p>
+<p>其它特性我们大多数初学css时便能直观的感受到，包括<code>行内框</code>会在水平方向一个接着一个排列，不足时便会换行；每一行都会生成一个行框，行框中包括这一行的所有的行内框；行框的高度由这一行中最大的行内框计算得出等。</p>
+<p>前面的我们讲的都是IFC，如果IFC中混入了一个块级元素，那么结果将会如何？根据前面的论述，我们知道块级元素肯定会生成BFC，那么块级元素两边的行内元素便会生成两个IFC，即使其两边的都是文本，那也会生成两个匿名行内框。</p>
+<h2 id="ffc到底是什么">FFC到底是什么</h2>
+<p>一个设有<code>display:flex</code>或<code>display:inline-flex</code>的元素是一个伸缩容器，会为其子元素生成弹性格式化上下文。</p>
+<p>定义看起来相当的简洁明了，但是<code>flex</code>布局却是为了css的布局注入新的血液，下面我们来看看FFC有哪些特性，这里暂且跳过与<code>flex</code>相关的属性介绍。</p>
+<h3 id="特性一浮动不会闯入伸缩容器且不会发生margin合并">特性一：浮动不会闯入伸缩容器，且不会发生margin合并</h3>
+<p>在FFC中，对伸缩项目（即所在的父级元素设置了<code>display:flex</code>或<code>display:inline-flex</code>）设置浮动是没有任何作用的。（但是特殊情况下还是会有影响的，尽管这是在执行渲染FFC之前就已经确定了，比如值为<code>display:inline</code>的元素在设置浮动后会被强制渲染为<code>display:block</code>），下面来看一个例子：</p>
+<iframe style="width:100%" src="/ffc-margin.html" frameborder="0" height="350"></iframe>
+<p>在红线所在的标签设置了样式<code>display: flex</code>，从而生成了FFC，其中的两个item成为了伸缩项目，每个item我们都设置了<code>margin: 10px</code>，我们可以看到两个item中间间距似乎是item左边的间距的两倍，如果我们<strong>点击取消设置display:flex</strong>，我们会清晰的发现下面的item会上移一部分，这一部分就是被合并的边距；下面我们继续点击按钮，将<code>**设置display:flex**</code>还原回来，我们<strong>点击设置float:right</strong>，发现第一个item的第二个普通item往右下角移动了一小截，是否没怎么明白为什么，我们看一下这一段的HTML：</p>
+<pre><code>  &lt;div class=&quot;flex&quot;&gt;
+      &lt;div class=&quot;item&quot;&gt;
+          伸缩项目item
+          &lt;div class=&quot;child&quot;&gt;普通child&lt;/div&gt;
+          &lt;div class=&quot;child right&quot;&gt;普通child&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;item right&quot;&gt;伸缩项目item&lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<p><strong>class</strong>里面带有<strong>right</strong>类名将会设置右浮动，而<strong>child</strong>所在的元素由于不处于FFC中，所以受到浮动的影响右移了一小截，在类名为<strong>item</strong>的伸缩项目由于是在FFC中，所以浮动对它没有任何影响。最后再说一小点，浮动都不适用了，那么清除浮动的clear当然也不适用了。</p>
+<h3 id="特性二vertical-align在ffc中不适用">特性二：vertical-align在FFC中不适用</h3>
+<p>以前控制垂直对齐的时候我们都会使用<code>vertical-align</code>属性，但是在FFC中由于是一个全新的分配空间的规则，因此此属性也就不适用，而控制垂直方向上则交给了FFC里面的<code>align-items</code>等属性控制了。</p>
+<h3 id="补充说明">补充说明</h3>
+<blockquote>
+<p>补充说明是为了论述FFC原理的完整性，您可以选择跳过本小结。</p>
+</blockquote>
+<p>如果在FFC中设置绝对定位会怎么样，根据<a href="https://www.w3.org/html/ig/zh/wiki/Css3-flexbox/zh-hans">规范</a>里的论述，伸缩容器里的绝对定位子元素不参与FFC，但是在一些特殊情景之下还是会受影响，具体可查看规范里面的论述；堆叠上下文（即<code>z-index</code>属性）在FFC中与在常规BFC表现并无差异，不了解堆叠上下文可查看张鑫旭的<a href="https://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/">博文</a>，讲的非常清晰；多栏(column)模块也不适用与FFC，尽管多栏模块兼容性还不怎么好。</p>
+<h2 id="gfc到底是什么">GFC到底是什么</h2>
+<p>一个设有<code>display:</code>grid或<code>display:inline-grid</code>的元素是一个栅格容器，会为其子元素生成栅格格式化上下文。</p>
+<p>定义似乎和<code>FFC</code>十分类似，并且很多特性都几乎和<code>FFC</code>有着异曲同工之妙，下面我们来揭开其神秘的面纱：</p>
+<h3 id="特性一浮动不会闯入栅格容器且不会发生margin合并">特性一：浮动不会闯入栅格容器，且不会发生margin合并</h3>
+<p>这在前面的<code>FFC</code>中特性我们也举例论述过，其渲染效果大同小异，这里就不再详细叙述了。</p>
+<h3 id="特性二vertical-align在gfc中不适用">特性二：vertical-align在GFC中不适用</h3>
+<p>渲染效果与<code>FFC</code>的第二个特性如出一辙，这里不再讨论。</p>
+<h3 id="补充说明-2">补充说明</h3>
+<ul>
+<li>column-*（column-count、columns等）多栏模块在<code>GFC</code>将被忽略</li>
+<li>::first-line和::first-letter伪元素将被忽略</li>
+</ul>
+<h2 id="结语">结语</h2>
+<p>本文章旨在探讨常用<code>*FC</code>的一些触发生成的原理，以及其渲染的常见的一些特性，目的是为了后续开发过程中能够知晓为何有些属性或渲染似乎和自己理解的有出入，从而加深对<code>css</code>这一块的理解。</p>
+<p>本文的概念也是结合笔者自身理解以及查阅了一些文档总结而成，如文中有论述错误的地方，还望批评指正。</p>
+<p>参考<br>
+[1]<a href="https://www.w3.org/TR/CSS22/visuren.html#img-inline-layout">img-inline-layout</a><br>
+[2]<a href="https://www.w3.org/TR/CSS22/visudet.html#inline-non-replaced">inline-non-replaced</a><br>
+[3]<a href="https://www.w3.org/html/ig/zh/wiki/Css3-flexbox/zh-hans">Css3-flexbox</a><br>
+[4]<a href="http://gdut_yy.gitee.io/doc-csstdg4/ch13.html#_13-3-placing-grid-lines">css权威指南</a><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model">(第四版-第13章栅格布局)</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/全面解析IFC、FFC 和 GFC原理
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/块格式化上下文（Block Formatting Context，BFC） 前世今生/">
+                      <span class="post-title">
+                        块格式化上下文（Block Formatting Context，BFC） 前世今生&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

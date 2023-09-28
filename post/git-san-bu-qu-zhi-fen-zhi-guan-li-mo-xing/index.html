@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  Git 三部曲之分支管理模型 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Git 三部曲之分支管理模型 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="Git 三部曲之分支管理模型" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/git-san-bu-qu-zhi-fen-zhi-guan-li-mo-xing/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/git-san-bu-qu-zhi-fen-zhi-guan-li-mo-xing.svg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/HsMkuIyHw/" class="tag">
+                  Git
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/dZG6SfXfX/" class="tag">
+                  流程规范
+                </a>
+                
+            </span>
+            <h1>
+              Git 三部曲之分支管理模型
+            </h1>
+            <span class="meta">
+              Posted on
+              2021-12-30，5 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <blockquote>
+<p>理论是灰色的，生命之树常青。</p>
+</blockquote>
+<h2 id="引言">引言</h2>
+<p>任何一家公司乃至于一个小组织，只要有写代码的地方，就有代码版本管理的主场，初入职场，总会遇到第一个拦路虎 <code>git</code> 管理流程，但是每一个企业似乎都有自己的 <code>git</code> 管理流程，倘若我们能掌握常用的 <code>git</code> 分支管理模型，那么无论碰到什么样的 <code>git</code> 管理流程，只不过都是这些管理模型的衍生与简化而已。</p>
+<h2 id="背景">背景</h2>
+<p>目前笔者所在的前端部门，技术栈是 <code>React &amp; RN</code> 为主，<code>Vue</code> 为辅，也就是说 <code>React</code> 和 <code>Vue</code> 双栈共存，可以说是研发环境比较复杂了，运维部门也制定了相应的 <code>git</code> 管理模型，不过也是比较通用的，那么如何制定一个符合前端部门的 <code>git</code> 管理模型尤为重要，且不可与运维部门的管理模型相冲突，由此便诞生了此篇文章。</p>
+<h2 id="git-flow">Git Flow</h2>
+<p>由著名大佬 Vincent Driessen 在<a href="https://nvie.com/posts/a-successful-git-branching-model/">《A successful Git branching model》</a>一文中，提出影响深远的 <code>git</code> 代码管理模型，在现如今依然许多中大型企业在沿用，下面是他提出的流程图：</p>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1639406720913.jpg" alt="" loading="lazy"></figure>
+<p>优点：分支管理严格，代码合并清晰，适合于中大型团队应用。<br>
+缺点：分支流程过多反而也是一种缺点</p>
+<h2 id="github-flow">GitHub Flow</h2>
+<p><code>GitHub</code> 于 2011 年创建，遵循以下 6 条原则：</p>
+<ol>
+<li><code>master</code> 分支永远是随时可部署发布的</li>
+<li>需求新增基于 <code>master</code> 分支，并创建一个语义化分支</li>
+<li>定期推送本地分支到远端</li>
+<li>合并到 <code>master</code> 需要提 <code>PR</code></li>
+<li><code>PR</code> 一旦经过 <code>code review</code> 无误后即可合并到 <code>master</code></li>
+<li><code>master</code> 一旦接收到合并请求，即可立即部署发布</li>
+</ol>
+<p>其大概的流程图如下：<br>
+<img src="https://luoyelusheng.com/post-images/1639490067999.png" alt="" loading="lazy"></p>
+<center><small>图源 <a target="_blanck" href="https://gaboesquivel.com/blog/2018/recommendations-to-enhance-your-github-flow/">gaboesquivel.com</a> </small></center>
+<p>优点：分支足够简单，且符合人类思维逻辑，适用于持续发布场景<br>
+缺点：针对多版本产品线则不适用</p>
+<h2 id="gitlab-flow">GitLab Flow</h2>
+<p><code>GitLab</code> 在 2014 年提出 <code>11</code> 条最佳实践，更多请点击<a href="https://about.gitlab.com/topics/version-control/what-are-gitlab-flow-best-practices/">这里</a>，其相对 <code>GitHub</code> 增加了环境分支，且代码必须由<code>上游</code>（<code>master</code>）向<code>下游</code>（<code>staging</code>）发展，并且针对持续发布和版本发布都提出了相应的准则，下面是其大致流程图：</p>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1640269708733.png" alt="" loading="lazy"></figure>
+<p>优点：<code>git</code> 提交历史更加清晰、简洁与易读<br>
+缺点：对开发人员的能力提出了更高的要求，当存在多产品线时，和 <code>Git Flow</code> 相比平分秋色</p>
+<h2 id="trunkbased">TrunkBased</h2>
+<p>研发团队只在 <code>master</code> 分支进行功能开发，当达到发布的条件时，直接迁出一个只读分支发布，只读分支顾名思义就是不接收任何新代码合并，以及在只读分支上进行修改；当研发人员相对较多时则可以使用<code>可扩展版本</code>，增加了功能分支，但是功能分支不超过两三天则必须要合并到 <code>master</code> 分支，其大致的流程图如下：</p>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1640781745051.svg" alt="" loading="lazy"></figure>
+<p>优点：简单清晰，单兵作战最佳选择，适合维护后期超稳定的项目<br>
+缺点：不适用多版本共存的项目</p>
+<h2 id="oneflow">OneFlow</h2>
+<p><code>Adam Ruka</code> 于2017年提出，可以简单的理解为 <code>Git Flow</code> 的简化版本，除了 <code>develop</code> 开发分支和最新发布 <code>master</code> 分支，其余皆是临时分支，一旦开发完成即可删除临时分支，其中具体细则可查看<a href="https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow">这里</a>，下面是其大致流程图：</p>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1640787521874.svg" alt="" loading="lazy"></figure>
+<p>优点：单一版本首选，<code>git</code> 提交历史简介清晰易读<br>
+缺点：不适合持续交付或持续部署的项目，也不适用多版本共存的项目</p>
+<h2 id="aoneflow">AoneFlow</h2>
+<p>由阿里巴巴技术专家林帆基于 <code>TrunkBased</code> 和 <code>GitFlow</code> 提出的一种新改进，其主要分为三种分支类型：主干分支、特性分支以及发布分支，并且提出了三个基本准则：</p>
+<ol>
+<li>主干创建特性分支，且不允许合并回主干分支</li>
+<li>合并特性分支，形成发布分支</li>
+<li>发布到线上正式环境后，合并相应的发布分支到主干，在主干添加标签，同时删除该发布分支关联的特性分支</li>
+</ol>
+<p>下面是其大致的流程图：</p>
+<figure data-type="image" tabindex="5"><img src="https://luoyelusheng.com/post-images/1640794450380.svg" alt="" loading="lazy"></figure>
+<p>优点：灵活易用，通过组合生成分支往往可以实现多种高级玩法<br>
+缺点：复杂度稍高，如果没有配套的工具规范往往会出现“无效分支”的出现</p>
+<h2 id="总结">总结</h2>
+<p>介绍了众多的分支管理模型，那么我们该如何挑选适合自己团队的方案呢？在这里制作了一个思维导航图，详情如下：</p>
+<figure data-type="image" tabindex="6"><img src="https://luoyelusheng.com/post-images/1640879054374.svg" alt="" loading="lazy"></figure>
+<p>参考：<br>
+[1]  <a href="https://nvie.com/posts/a-successful-git-branching-model/">a-successful-git-branching-model</a><br>
+[2]  <a href="https://githubflow.github.io/">githubflow</a><br>
+[3]  <a href="https://about.gitlab.com/topics/version-control/what-are-gitlab-flow-best-practices/">what-are-gitlab-flow-best-practices</a><br>
+[4] <a href="https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow">oneflow-a-git-branching-model-and-workflow</a><br>
+[5] <a href="https://developer.aliyun.com/article/573549">在阿里，我们如何管理代码分支？<br>
+</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/git-san-bu-qu-zhi-fen-zhi-guan-li-mo-xing
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/sui-yue-bu-ru-chu-or-2021-nian-zhong-zong-jie/">
+                      <span class="post-title">
+                        岁月不如初 | 2021 年终总结&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-视觉效果 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-视觉效果 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-视觉效果" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-视觉效果/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-视觉效果.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-视觉效果
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-12，6 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>#前言</p>
+<h5 id="1单侧投影">1.单侧投影</h5>
+<p>我们都知道<code>box-shadow</code>可以设置元素的投影，但有时候我们只想设置一侧为投影效果，类似与这样：<br>
+<img src="https://luoyelusheng.com/post-images/1634465414574.png" alt="" loading="lazy"></p>
+<p>具体代码实现：</p>
+<pre><code class="language-css">div {
+    width: 1.6in;
+    height: 1in;
+    background: #fb3;
+    box-shadow: 0 5px 4px -4px black;
+}
+</code></pre>
+<p>主要技术是通过指定<code>box-shadow</code>的第四个长度参数扩张半径来扩大或缩小投影的尺寸，而这个值和模糊半径相等，为什么呢，因为我们的模糊半径最终会通过高斯模糊算法或者类似算法将半径进行模糊处理，最终会处理成两倍，在这里也就是<code>8px</code>（近似理解成阴影边缘发生阴影色和纯透明色之间的颜色过度长度，但我们实际看到似乎大概只有<code>4px</code>偏移，个人理解是由于过度效果导致剩余一部分看不见），所以我们如果用扩张半径缩小这个<code>4px</code>,那么我们投影的尺寸将会和我们投影所属的尺寸完全一致，除非我们使用前两个参数来移动它，否则你讲看不到任何阴影效果。<br>
+<img src="https://luoyelusheng.com/post-images/1634465442322.png" alt="" loading="lazy"></p>
+<p>所以如果通过设置水平或垂直方向的偏移量来改变阴影位置，那么我们将得到完美的单侧投影效果。</p>
+<p>如果我们希望设置邻边投影，那怎么做呢？首先投影不能缩得太小，因此扩张半径设置为模糊半径的一半则好，另外需要设置水平和垂直偏移量，它的值应该大于或等于模糊半径的一半，举例来说：</p>
+<pre><code class="language-css">div {
+    width: 1.6in;
+    height: 1in;
+    background: #fb3;
+    box-shadow: 3px 3px 6px -3px black;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634465450657.png" alt="" loading="lazy"></figure>
+<p>双侧投影，如果我们要在左边和右边都设置投影，那该怎么实现？一块投影是解决不了问题，所以我们要用两块投影，代码如下：</p>
+<pre><code class="language-css">div {
+    width: 1.6in;
+    height: 1in;
+    background: #fb3;
+    box-shadow: 3px 0 6px -3px black,
+               -3px 0 6px -3px black;
+}
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634465459868.png" alt="" loading="lazy"></figure>
+<h5 id="2不规则投影">2.不规则投影</h5>
+<p>请看下面一张效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634465466843.png" alt="" loading="lazy"><br>
+它们都是不规则的图形，如果我们给它们应用<code>box-shadow</code>,那么得到的效果将是这种：<br>
+<img src="https://luoyelusheng.com/post-images/1634465473332.png" alt="" loading="lazy"></p>
+<p>他并没有给我们用伪元素生成的右三角生成阴影，这是因为默认<code>box-shadow</code>会忽略掉透明部分，好在我们可以通过<code>filter</code>这个属性解决它，但可能浏览器支持程度不够好，具体代码为：</p>
+<pre><code class="language-css">div {
+    -webkit-filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+    filter: drop-shadow(.1em .1em .1em rgba(0,0,0,.5));
+}
+</code></pre>
+<p>这里的<code>drop-shadow</code>和<code>box-shadow</code>效果类似，只不过没有扩张半径以及<code>inset</code>关键字，类似的函数还有<code>blur</code>和<code>grayscale</code></p>
+<h5 id="3染色效果">3.染色效果</h5>
+<p>染色效果我们需要用到滤镜效果<code>filter</code>,这是一个工作草案，目前还没有完全支持，它支持多个函数传入从而改变图像的染色效果，包括<code>blur</code>,<code>invert</code>等函数，具体点击<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function">这里</a>,加入我们下面一张原始图片，我们想对他进行模糊处理：<br>
+<img src="https://luoyelusheng.com/post-images/1634465481985.png" alt="" loading="lazy"><br>
+代码为：</p>
+<pre><code class="language-css">img {
+    -webkit-filter: blur(1);
+    filter: blur(1px);
+}
+</code></pre>
+<p>效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634465488365.png" alt="" loading="lazy"><br>
+除了<code>filter</code>，我们还可以使用混合，类似于ps软件中的一样，将多种颜色混合在一起，从而达到我们适合的颜色效果，要对一个元素设置混合选项，有两个元素可以用上：<code>mix-blend-mode</code>以及<code>background-blend-mode</code>可以设置值为<code>luminosity</code>达到混合效果，其中<code>mix-blend-mode</code>需要一个父级元素，类似这样：</p>
+<pre><code class="language-html">&lt;a href=''&gt;
+    &lt;img src=''&gt;
+&lt;/a&gt;
+</code></pre>
+<pre><code class="language-css">a{
+    background: red;
+}
+img{
+    mix-blend-mode: luminosity;
+}
+</code></pre>
+<p>而第二个则不需要父级元素包裹住，直接作用于目标元素。</p>
+<h6 id="5折半效果">5.折半效果</h6>
+<p>如果我们要实现下面这种效果，那怎么实现？<br>
+<img src="https://luoyelusheng.com/post-images/1634465495769.png" alt="" loading="lazy"></p>
+<p>我们可以通过CSS的渐变以及偏移实现，具体代码如下：</p>
+<pre><code class="language-css">div{
+    background:
+        linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em,
+        linear-gradient(-135deg, transparent 2em, #58a 0);
+}
+</code></pre>
+<p>上面的第一个渐变会产生一个下三角的背景图：<br>
+<img src="https://luoyelusheng.com/post-images/1634465507496.png" alt="" loading="lazy"><br>
+第二个渐变会产生折页的效果，类似下面：<br>
+<img src="https://luoyelusheng.com/post-images/1634465513896.png" alt="" loading="lazy"><br>
+最终的效果是这样的：<br>
+<img src="https://luoyelusheng.com/post-images/1634465521527.png" alt="" loading="lazy"><br>
+突然发现这里没有对齐，为什么？在第一个渐变上面我们设置宽高都是<code>2em</code>，由于进行了旋转，所以最终的宽度其实是斜边上的高，也就是<code>2em/ √2</code>，初中几何问题，等腰直角三角形斜边上的高等于任意一边的1/√2：<br>
+<img src="https://luoyelusheng.com/post-images/1634465529509.png" alt="" loading="lazy"><br>
+在第二个渐变里面我们进行了旋转，所以我们设置的长度是多少就是斜边上的长度：<br>
+<img src="https://luoyelusheng.com/post-images/1634465529509.png" alt="" loading="lazy"><br>
+当没有进行旋转的时候，透明部分的高度是第一个图里面的阴影部分，也就是<code>2em</code>,当进行旋转的时候，我们的四边形的高度就变成了<code>DI</code>直线的长度。<br>
+因此我们的这两个的高度度是不相等的，导致对不齐，所以我们只需要：<br>
+减少第二个线性渐变的高度让它和第一个的高度的相等，也就是除以√2，即<code>2/√2=1.414</code>, 取整为<code>1.5</code>。<br>
+另一种就是让第一个线性渐变的高度等于<code>2em</code>,也就是对其宽高都乘以√2倍，以此使得斜边上的高为<code>2em</code>，刚好对其。<br>
+在这里我们采用第一种方案，代码如下：</p>
+<pre><code class="language-css">div{
+    background:
+        linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) 100% 0 no-repeat,
+        linear-gradient(-135deg, transparent 1.5em, #58a 0);
+    background-size: 2em 2em, auto;
+}
+</code></pre>
+<p>知道了这个原理后，就可以通过正弦余弦函数求得任意角度的折角效果，这里不在赘述。<br>
+但是这看起来似乎很僵硬，我们换一种实现的方法，通过伪元素实现：</p>
+<pre><code class="language-css">div::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 1.73em; height: 3em;
+    background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+    transform: translateY(-1.3em) rotate(-30deg);
+    transform-origin: bottom right;
+    border-bottom-left-radius: .5em;
+    box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15)
+}
+</code></pre>
+<p>效果看起来似乎更加合理一点：<br>
+<img src="https://luoyelusheng.com/post-images/1634465597462.png" alt="" loading="lazy"><br>
+详情可查看这个<a href="http://dabblet.com/gist/bc32dc20adea2261c731">demo</a>。</p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-视觉效果
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-形状/">
+                      <span class="post-title">
+                        CSS使用技巧-形状&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

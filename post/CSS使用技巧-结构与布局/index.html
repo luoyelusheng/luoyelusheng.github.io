@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-结构与布局 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-结构与布局 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-结构与布局" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-结构与布局/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-结构与布局.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-结构与布局
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-17，10 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<h5 id="1自适应内部元素">1.自适应内部元素</h5>
+<p>假如实现以下布局，要求图片下面的文字的自适应图片的最大宽度，并且图片是可变的，可能你会想要设置一个固定的<code>max-width</code>宽度值应用于包含图片的父容器，但是这就不是自适应了，在CSS3中我们有了一个新的单位<code>min-content</code>,它特指容器内最小的元素的宽度值，在这里是图片宽度。<br>
+<img src="https://luoyelusheng.com/post-images/1634464310667.png" alt="" loading="lazy"><br>
+css代码如下：</p>
+<pre><code class="language-css">figure {
+    max-width: 300px;/*浏览器回退*/
+    max-width: min-content;
+    margin: 0 auto;
+}
+
+figure &gt; img { max-width: inherit }
+</code></pre>
+<p>但是支持的程度还不够，IE全蹦。<br>
+<img src="https://luoyelusheng.com/post-images/1634464326562.png" alt="" loading="lazy"></p>
+<h5 id="2精确控制表格列宽">2.精确控制表格列宽</h5>
+<p>表格布局在以前很流行，但是由于其不可控逐渐被淘汰，但在CSS2.1中有一个属性，叫做<code>table-layout</code>，其默认值是<code>auto</code>,其行为模式被称作自动表格布局算法，并且它还支持另一个关键字<code>fixed</code>,他把gen更多的行为h控制交给了网页开发者，所以溢出行为等等都是有效的。</p>
+<pre><code class="language-css">table{
+    table-layout: fixed;
+    width: 100%;
+}
+table td+td{
+    width: 30%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+</code></pre>
+<pre><code class="language-html">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td&gt;内容内容内容[...]&lt;/td&gt;
+        &lt;td&gt;内容内容内容内容[...]&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634464336631.png" alt="" loading="lazy"></figure>
+<h5 id="3根据兄弟元素的数量设置样式">3.根据兄弟元素的数量设置样式</h5>
+<p>有时候我们需要根据列表的多少设置一些特定的样式，比如当列表只有四个元素的时候我们将设置一种新样式，当列表只有一个元素，我们设置这个样式占满整个列表，那要怎么实现这种CSS选择器呢，有以下代码：</p>
+<pre><code class="language-css">li:only-child{
+    /*...*/
+}
+</code></pre>
+<p>这段代码显示当且仅当只有一个子元素的时候应用样式，其实这不过是<code>first-child:last-child</code>的语法糖，道理很简单，既是第一个又是最后一个，那肯定只有一个元素了，我们依照这样的原理，我们有以下代码：</p>
+<pre><code class="language-css">li:first-child:nth-last-child(4){
+    /*...*/
+}
+</code></pre>
+<p>这段代码最终将解释为：选择第一个子元素并且是倒数第四个元素。这似乎接近我们的效果了，我们的效果是满足四个元素子元素将全部应用一种样式，这里我们选择是第一个子元素并且满足四个元素的前提，下面我们只需要将剩余的3个元素选中即可，代码如下：</p>
+<pre><code class="language-css">li:first-child:nth-last-child(4),
+li:first-child:nth-last-child(4) ~ li{
+    /*...*/
+}
+</code></pre>
+<p>最终我们达到我们的效果了。</p>
+<p>如果我们想要选中满足大于4个子元素并设置所有样式那该怎么做：</p>
+<pre><code class="language-css">li:first-child:nth-last-child(n+4),
+li:first-child:nth-last-child(n+4) ~ li{
+    /*...*/
+}
+</code></pre>
+<p>这里面的<code>n</code>将会从<code>0</code>开始迭代，所以将会匹配满足<code>4</code>,<code>5</code>,<code>6</code>等子元素的情况。</p>
+<p><code>-n+b</code>还可以匹配满足开头<code>b</code>这样的元素：</p>
+<pre><code class="language-css">li:first-child:nth-last-child(-n+4),
+li:first-child:nth-last-child(-n+4) ~ li{
+    /*...*/
+}
+</code></pre>
+<p>如果将上述两种结合起来，我们还可以匹配到满足包含2~6个元素的列表项：</p>
+<pre><code class="language-css">li:first-child:nth-last-child(n+2):nth-last-child(n+6),
+li:first-child:nth-last-child(n+2):nth-last-child(n+6) ~ li{
+    /*...*/
+}
+</code></pre>
+<h5 id="3垂直居中">3.垂直居中</h5>
+<p>可能初学CSS你第一百度的问题就是如何垂直居中，因此将在这里一一探讨各种方法。</p>
+<ul>
+<li><strong>基于绝对定位的解决方法</strong></li>
+<li><strong>兼容 IE6+</strong></li>
+<li><strong>优点 兼容性极好</strong></li>
+<li><strong>缺点 代码耦合，需要定宽高</strong></li>
+</ul>
+<p>代码如下：</p>
+<pre><code class="language-css">div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3em;
+    margin-left: -9em;
+    width: 18em;
+    height: 6em;
+}
+</code></pre>
+<p>这段代码通过绝对定位，将元素偏移到左上50%的地方，此时将是垂直居中的状态，继续设置其宽高，此时将以左上角垂直居中的点为扩展向右下扩张，所以需要通过<code>margin</code>将其左上方向再次偏移宽高的一半，从而达到垂直居中的效果。</p>
+<ul>
+<li><strong>基于绝对定位的解决方法(升级版)</strong></li>
+<li><strong>兼容 IE9+</strong></li>
+<li><strong>优点 代码简洁</strong></li>
+<li><strong>缺点 代码耦合，需要定宽高</strong></li>
+</ul>
+<p>代码如下：</p>
+<pre><code class="language-css">div{
+    position: absolute;
+    top: calc(50% - 3em);
+    left: calc(50% - 9em);
+    width: 18em;
+    height: 6em;
+}
+</code></pre>
+<p>通过使用<code>calc</code>属性，省去不必要的代码。</p>
+<ul>
+<li><strong>基于绝对定位的解决方法(最终版)</strong></li>
+<li><strong>兼容 IE9+</strong></li>
+<li><strong>优点 代码简洁,不用定宽高</strong></li>
+<li><strong>缺点 无法兼容IE8</strong></li>
+</ul>
+<p>代码如下：</p>
+<pre><code class="language-css">div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+</code></pre>
+<ul>
+<li><strong>基于绝对定位的解决方法(PC兼容版最佳实践)</strong></li>
+<li><strong>兼容 IE6+</strong></li>
+<li><strong>优点 代码简洁,不用定宽高</strong></li>
+<li><strong>缺点 需要绝对定位</strong></li>
+</ul>
+<p>代码如下：</p>
+<pre><code class="language-css">div{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+</code></pre>
+<p>通过使用绝对定位元素上下左右偏移设置为0，使其在水平和垂直方向都具有流动性，最后<code>margin</code>将从水平和垂直方向平分剩余空间。</p>
+<ul>
+<li><strong>基于视口单位的解决方法</strong></li>
+<li><strong>兼容 IE9+</strong></li>
+<li><strong>优点 代码简洁,不用定宽高，不用绝对定位</strong></li>
+<li><strong>缺点 无法兼容IE8</strong></li>
+</ul>
+<p>在css3中，定义了一些新的单位，<code>vh,vw,vmin,vmax</code>,<code>1vh</code>等于视口高度的<code>1%</code>,也就是<code>100vh</code>等于视口的<code>100%</code>，<code>vmin，vmax</code>分别去视口单较小值和较大值，于是我们有以下代码：</p>
+<pre><code class="language-css">div{
+    width: 18em;
+    margin: 50vh auto 0;
+    transform: translate(-50%);
+}
+</code></pre>
+<ul>
+<li><strong>基于Flexbox的解决方案(移动端最佳解决方案)</strong></li>
+<li><strong>兼容 IE9+</strong></li>
+<li><strong>优点 代码简洁,不用定宽高，不用绝对定位</strong></li>
+<li><strong>缺点 无法兼容IE8</strong></li>
+</ul>
+<p>Flexbox就是正对这个需求而被设计出来的，所以其便捷与简单性简直是开辟一个新天地，代码如下：</p>
+<pre><code class="language-css">body{
+    display: flex;
+}
+div{
+    margin: auto;
+}
+</code></pre>
+<p>看，就是这么简单，只需要一个容器设置<code>flex</code>布局，然后设置<code>margin</code>,它就会自动垂直居中，当然我们也可以不用容器，代码如下：</p>
+<pre><code class="language-css">div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18em;
+    height: 10em;
+    margin: auto;
+}
+</code></pre>
+<p>通过<code>align-items</code>设置垂直居中，使用<code>justify-content</code>水平居中，最后使用<code>margin</code>均分剩余空间达到垂直居中效果，实在是美滋滋。</p>
+<p>其它居中方法，可自行百度，这里不推荐：</p>
+<ol>
+<li>行内文本垂直居中（近似垂直居中）</li>
+<li>表格布局法（兼容性还可以）</li>
+</ol>
+<h6 id="4紧贴底部的页脚">4.紧贴底部的页脚</h6>
+<p>当我们的页面内容比较少的时候，我们可能想让页脚一致在底部固定显示，而不是跑上去，像这样:<br>
+<img src="https://luoyelusheng.com/post-images/1634464355541.png" alt="" loading="lazy"><br>
+我们期望这样，当内容少的时候，页脚显示在底部，内容多的时候，页脚跟在主体内容后面：<br>
+<img src="https://luoyelusheng.com/post-images/1634464361597.png" alt="" loading="lazy"></p>
+<p>解决方案一</p>
+<p>利用<code>margin-bottom</code>负偏移值进行偏移，类似于从主体内容切割一部分出来作为页脚使用，然后再通过伪元素设置相同高度从而撑开页脚高度，具体代码如下：</p>
+<pre><code class="language-html">&lt;div class=&quot;page-wrap&quot;&gt;
+  Content!
+&lt;/div&gt;
+&lt;footer class=&quot;site-footer&quot;&gt;
+  I'm the Sticky Footer.
+&lt;/footer&gt;
+</code></pre>
+<pre><code class="language-css">html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -142px; 
+}
+.page-wrap:after {
+  content: &quot;&quot;;
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 142px;
+}
+.site-footer {
+  background: orange;
+}
+</code></pre>
+<p>缺点太多，代码太多，<code>margin</code>和高度耦合，还要百分比设置。</p>
+<p>解决方案二</p>
+<p>table布局，通过table布局自动充满剩余容器空间方法，代码如下：</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot; &gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.container {
+    display: table;
+    width: 100%;
+    min-height: 100%;
+    background:red;
+}
+.content {
+    display: table-row;
+    height: 100%;
+    background:orange;
+}
+</code></pre>
+<p>似乎比第一种方案简单了许多，但是通常<code>margin</code>、<code>padding</code>、<code>border</code> 等属性不会符合预期表现，解决方法就是样式别写在<code>table</code>上。</p>
+<p>解决方案三</p>
+<p>绝对定位，这个一看就懂，直接看代码：</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot; &gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">html, body {
+    height: 100%;
+}
+.container {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+}
+</code></pre>
+<p>缺点很明显，高度和<code>padding-bottom</code>耦合，还需要设置<code>html, body</code>的高度100%显示。</p>
+<p>解决方案四</p>
+<p><code>calc</code>解决:</p>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;content&quot; &gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+        &lt;p&gt;我是内容&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;footer class=&quot;footer&quot;&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+        &lt;p&gt;我是底部&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.content {
+    min-height: calc(100vh - 50px);
+}
+.footer {
+    height: 50px;
+}
+</code></pre>
+<p>代码简单，兼容IE9以上，在不考虑兼容性的时候可以考虑，但是高度依然耦合。</p>
+<p>解决方案五</p>
+<p>Flexbox解决，代码如下：</p>
+<pre><code class="language-html">&lt;div class=&quot;content&quot; &gt;
+    &lt;p&gt;我是内容&lt;/p&gt;
+    &lt;p&gt;我是内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;footer class=&quot;footer&quot;&gt;
+    &lt;p&gt;我是底部&lt;/p&gt;
+    &lt;p&gt;我是底部&lt;/p&gt;
+    &lt;p&gt;我是底部&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+<pre><code class="language-css">body{
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+.content {
+   flex: 1;
+}
+</code></pre>
+<p>这个是移动端最佳实践，PC端需要IE11以上。</p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-结构与布局
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-用户体验/">
+                      <span class="post-title">
+                        CSS使用技巧-用户体验&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

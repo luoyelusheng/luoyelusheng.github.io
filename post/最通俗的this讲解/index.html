@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  最通俗的this讲解 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="最通俗的this讲解 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="最通俗的this讲解" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/最通俗的this讲解/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/最通俗的this讲解.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/1WK8-6HmM/" class="tag">
+                  JavaScript
+                </a>
+                
+            </span>
+            <h1>
+              最通俗的this讲解
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-21，14 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<p><code>this</code>关键字可以说是贯穿<code>JavaScript</code>这门语言的一个精髓，若是不能好好理解<code>this</code>关键字，那在实际的开发中也是会遇到各种各样莫名其妙的问题，让人百思不得其解，所以若能好好的理解其工作原理，那对于提升自身的编程能力是百利而无一害的。</p>
+<h2 id="初识this">初识<code>this</code></h2>
+<pre><code class="language-js">function foo(){
+    console.log(this)
+    return this.name.toUpperCase();
+}
+var obj = {
+    name: 'Tom'
+}
+foo.call(obj)//TOM
+</code></pre>
+<p>这段代码最终输出了<code>TOM</code>字符串，可能你还没缓过神来，好奇为何在<code>foo</code>函数中没有<code>name</code>属性，却能打印出<code>obj</code>中的<code>name</code>属性，这里的主要原因是引用改变了作用域，初始作用域是函数里面，是没有任何变量的，包括<code>name</code>属性，在调用函数后调用<code>call</code>函数从而改变了<code>foo</code>作用域，最终访问到了<code>name</code>属性，我们可以打印<code>foo</code>函数的<code>this</code>。</p>
+<pre><code class="language-js">/*未改变作用域前*/
+foo()//Window
+
+/*改变作用域之后*/
+foo.call(obj)//obj
+</code></pre>
+<p>如果不使用<code>this</code>,代码如下：</p>
+<pre><code class="language-js">function foo(ctx){
+    return ctx.name.toUpperCase();
+}
+</code></pre>
+<p>但你发现了，相比起<code>this</code>，这样写似乎不够优雅。</p>
+<p>再来看一段代码：</p>
+<pre><code class="language-js">function foo(){
+    this.count++;
+}
+foo.count=0;
+foo()
+foo()
+foo.count//0
+</code></pre>
+<p>这段代码最终会输出<code>0</code>,可能你会好奇，我明明调用了两次，按理来说应该是<code>1</code>，但却什么都没有增加，但是你别忘了，在上面我们已经指出了在函数里面打印<code>this</code>的时候显示<code>window</code>，也就是此时指向的是全局对象，记住，这里我们并没有改变作用域，所以这里表达式<code>this.count++</code>会转变为<code>window.count++</code>，由于全局并没有定义这个变量，所以其值是<code>undefined</code>，对<code>undefined</code>执行自增运算，最终会变成<code>NaN</code>，我们可以打印一下从而验证：</p>
+<pre><code class="language-js">window.count//NaN
+</code></pre>
+<p>在了解上面的知识后，我们回到第一个问题，考虑下面这段代码：</p>
+<pre><code class="language-js">function foo(){
+    this.count++;
+}
+foo.count=0;
+foo.call(foo)
+foo.call(foo)
+foo.count//2
+</code></pre>
+<p>这里的预期似乎和我们一样，这一段代码和上一段代码的不同之处在于我们改变了词法作用域，让函数内部的<code>this</code>指向<code>foo</code>函数，所以<code>count</code>值能符合预期增加，如果没有改变词法作用域，那么函数的<code>this</code>则指向全局<code>window</code>。</p>
+<p>下面来小结一下：<code>this</code>是在运行时进行绑定的，并不是在编写时绑定，它的上下文取决于函数调用时的各种条件。<code>this</code>的绑定和函数声明的位置没有任何关系，只取决于函数的调用方式。</p>
+<h2 id="调用位置">调用位置</h2>
+<p>上一小节讲了<code>this</code>的绑定取决于函数的调用方式，调用方式又是相对调用位置来讲的，下面我们来看一看调用栈和调用位置，具体代码如下：</p>
+<pre><code class="language-js">function baz() {
+    // 当前调用栈是：baz
+    // 因此，当前调用位置是全局作用域
+    console.log( &quot;baz&quot; );
+    bar(); // &lt;-- bar 的调用位置
+}
+function bar() {
+    // 当前调用栈是 baz -&gt; bar
+    // 因此，当前调用位置在 baz 中
+    console.log( &quot;bar&quot; );
+    foo(); // &lt;-- foo 的调用位置
+}
+function foo() {
+    // 当前调用栈是 baz -&gt; bar -&gt; foo
+    // 因此，当前调用位置在 bar 中
+    console.log( &quot;foo&quot; );
+}
+    baz(); // &lt;-- baz 的调用位置
+</code></pre>
+<p>我们可以通过浏览器的调试工具来验证我们的猜想，设置断点如下：<br>
+<img src="https://luoyelusheng.com/post-images/1634463215399.png" alt="" loading="lazy"><br>
+可以新建一个文件<code>copy</code>上面的代码，然后在浏览器中运行，然后打开控制台单步调试，首先我们来看第一个执行的断点：<br>
+<img src="https://luoyelusheng.com/post-images/1634463243649.png" alt="" loading="lazy"><br>
+第一个执行函数是<code>baz</code>，我们可以看到它的调用栈是<code>baz</code>，调用位置是调用栈第二个元素，也就是<code>anonymous</code>,它指向的是全局作用域，在下图中我们可以看到它作用域是<code>global</code>，也就是全局作用域。<br>
+<img src="https://luoyelusheng.com/post-images/1634463259682.png" alt="" loading="lazy"><br>
+我们执行下一个断点：<br>
+<img src="https://luoyelusheng.com/post-images/1634463277318.png" alt="" loading="lazy"><br>
+我们可以看到当前的调用栈是<code>bar</code>，调用位置为调用栈中的第二个元素，我们可以看到是<code>baz</code>。<br>
+继续执行下一个断点：<br>
+<img src="https://luoyelusheng.com/post-images/1634463285452.png" alt="" loading="lazy"><br>
+同理我们可以看到当前的调用栈是<code>foo</code>,调用位置为调用栈中的第二个元素，也就是<code>bar</code>中，至此我们继续执行下一个断点，函数执行完毕。</p>
+<h2 id="绑定规则">绑定规则</h2>
+<p>调用规则总体总结为四条规则，你必须找到调用位置，然后判断应用下面四条规则中的那一条。</p>
+<h3 id="默认规则">默认规则</h3>
+<p>默认绑定是我经常会使用的调用函数的情况，调用位置是在全局的，因此<code>this</code>绑定在全局作用域中，考虑下面这段代码：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var a = 10;
+foo();//10
+</code></pre>
+<p>我们都知道这里的<code>a</code>是一个全局变量，因为定义在了全局作用域中，我们的<code>foo</code>函数由于调用位置是全局作用域，因此可以打印出全局的<code>a</code>变量，这里就是应用了默认绑定规则，那我们怎么判断应用了默认绑定规则呢？在代码中<code>foo()</code>是直接不带任何修饰的函数引用进行调用的，因此只能使用默认绑定，无法应用其他规则。</p>
+<p>当然在严格模式下我们则无法使用默认绑定规则，因此会返回<code>undefined</code>：</p>
+<pre><code class="language-js">function foo() {
+    &quot;use strict&quot;;
+    return this.a;
+}
+var a = 10;
+foo();//undefined
+</code></pre>
+<h3 id="隐式绑定">隐式绑定</h3>
+<p>如果一个函数的调用位置拥有了上下文对象，也可以说是函数被包含在某个对象中，考虑下面这一行代码：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj = {
+    a: 10,
+    foo: foo
+}
+obj.foo();//10
+</code></pre>
+<p>我们可以看到我们定义了一个函数，然后将其添加为对象的引用属性，最终函数的<code>this</code>将会绑定到<code>obj</code>作用域。<br>
+对象属性引用链中只有最顶层或者说是最后一层才会影响调用位置，举例来说：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj1 = {
+    a: 10,
+    foo: foo
+}
+var obj2 = {
+    a: 100,
+    obj1: obj1
+}
+obj2.obj1.foo();//10
+</code></pre>
+<p>我们可以简单的理解为，无论嵌套多少层对象，只不过都是一个引用属性，最终调用函数<code>foo</code>的都是最后一个调用它对象，而最后一个对象的作用域就会绑定到函数<code>this</code>上面，我们将上面的代码改写一下：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj1 = {
+    a: 10,
+    foo: foo
+}
+var obj2 = {
+    a: 100,
+    obj1: obj1
+}
+var obj3 = {
+    a: 1000,
+    obj2: obj2
+}
+obj3.obj2.obj1.foo();//10
+//等价于
+var last = obj3.obj2.obj1;
+last===obj1//true
+last.foo();//10
+</code></pre>
+<p>在这里尽管我用到了三个对象来引用一个函数的调用，但是最终都只是一个引用，因此最终调用的函数的对象都是<code>obj1</code>,我们可以使用<code>last===obj1</code>验证，最终显示结果为<code>true</code>。</p>
+<p>再来看另一种情况：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj = {
+    a: 10,
+    foo: foo
+}
+var a = &quot;global&quot;;
+
+var b = obj.foo;
+b();//&quot;global&quot;
+</code></pre>
+<p>如果理解了刚刚讲的多个对象引用同一个函数，最终的作用域绑定将会是最后一个调用函数的对象问题后，这个也很好理解，因为对象里面的<code>foo</code>属性只是一个引用传递，所以<code>var b = obj.foo</code>这段代码将整个函数又指向了<code>b</code>变量，我们可以打印<code>b</code>变量验证一下：<br>
+<img src="https://luoyelusheng.com/post-images/1634463318889.png" alt="" loading="lazy"><br>
+我们可以看到此时的<code>b</code>变量指向的就是一个函数，跟原来的<code>obj</code>对象没有半毛钱关系，既然没了<code>obj</code>对象的关系，也没用使用任何带修饰的引用调用，那么此时的函数调用就符合第一条作用规则<code>默认绑定</code>，因此函数里面<code>this</code>绑定到了全局作用域，所以打印出了<code>global</code>,再举一个例子：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj = {
+    a: 10,
+    foo: foo
+}
+var a = &quot;global&quot;;
+
+setTimeout( obj.foo, 100)//&quot;global&quot;
+</code></pre>
+<p>可能就会有人好奇，我传的不是<code>obj.foo</code>吗，为何还是<code>this</code>还是应用的<code>默认绑定</code>规则，我们来看一下<code>setTimeout()</code>函数的大概实现的伪代码:</p>
+<pre><code class="language-js">function setTimeOut(fn,delay){
+    //等待delay毫秒
+    fn();//&lt;-- 调用位置
+}
+</code></pre>
+<p>虽然我们貌似没有用一个变量指向这个函数，并将这个函数传递进去调用，但是这里的<code>obj.foo</code>却被函数的形参<code>fn</code>给接住了，间接的创建了一个局部变量，并将这个变量指向了函数<code>foo</code>，最终的调用效果和<code>obj</code>依旧没有半毛钱关系，因此应用<code>默认绑定</code>行为。</p>
+<h3 id="显式绑定">显式绑定</h3>
+<p>我们在隐式绑定中知道，我们必须在一个对象内部包含一个指向函数的属性，并通过这个属性间接引用函数，从而把<code>this</code>间接（隐式）绑定到这个对象上，那有没一种方法直接让我们强制绑定<code>this</code>作用域呢？</p>
+<p>JavaScript中为绝大多数函数以及你自己创建的函数都提供了<code>call</code>和<code>apply</code>方法，这两个的区别主要是传递的参数形式不一样，<code>call</code>可以接受参数列表，比如<code>call(null,arg1,arg2)</code>,而<code>apply</code>则是接受单个参数数组，比如<code>apply(null,[1,2,3])</code>,在了解上面的知识后，我们来看一个例子：</p>
+<pre><code class="language-js">function foo() {
+    return this.a;
+}
+var obj = {
+    a: 10
+}
+
+foo.call( obj )//10
+</code></pre>
+<p>在这里，我们通过<code>call</code>函数显式的指定<code>this</code>绑定的作用域为<code>obj</code>，因此可以访问到<code>obj.a</code>，当然你可以传入一个原始值（字符串，布尔或者数字类型），最终这些原始值都会转换为原始对象形式，类似于(new String(),new Boolean()或者new Number())。</p>
+<h4 id="硬绑定">硬绑定</h4>
+<p>考虑下面这段代码：</p>
+<pre><code class="language-js">function foo() {
+    console.log( this.a );
+}
+function bar(){
+    foo.call( obj )
+}
+var obj = {
+    a: 10
+}
+bar()//10
+bar.call( window )//10
+</code></pre>
+<p>在<code>bar</code>函数我将<code>foo</code>函数绑定到了<code>obj</code>上面，在调用<code>bar</code>的时候我们试图重新绑定<code>this</code>作用域，但是由于在调用的时候我们又重新绑定到了<code>obj</code>上面，所以导致最终输出<code>10</code>，这种绑定的策略我们称之为强制绑定，因此我们称为硬绑定。</p>
+<p>由于硬绑定是一种常用的模式，所以<code>es5</code>中内置了方法<code>Function.prototype.bind</code>，用法如下：</p>
+<pre><code class="language-js">function foo() {
+    console.log( this.a );
+}
+var obj = {
+    a: 10
+}
+foo.bind(obj)()//10
+</code></pre>
+<p>这段代码首先绑定了<code>obj</code>对象到函数上面，紧接着又执行了这个函数。</p>
+<h3 id="new绑定"><code>new</code>绑定</h3>
+<p>初学<code>js</code>语言使用<code>new</code>关键字的时候，如果之前有过<code>oop</code>的编程经验，那可能会认为这个<code>new</code>和他们以前自己接触的<code>oop</code>中<code>new</code>一样，然而实际却是没有半毛钱的关系，使用<code>new</code>来调用函数，或者说发生构造函数调用时，会自动执行下面的操作：</p>
+<ol>
+<li>创建（或者说构造）一个全新的对象。</li>
+<li>这个新对象会被执行 [[ 原型 ]] 连接。</li>
+<li>这个新对象会绑定到函数调用的 <code>this</code>。</li>
+<li>如果函数没有返回其他对象，那么 new 表达式中的函数调用会自动返回这个新对象。</li>
+</ol>
+<p>考虑下面的代码：</p>
+<pre><code class="language-js">function Foo(a) {
+   this.a = a;
+}
+var foo = new Foo(10);
+foo.a//10
+</code></pre>
+<p>如果按照之前规则解释，这里执行的<code>foo.a</code>将会输出<code>undefined</code>,因为函数里面的<code>this</code>指向全局作用域，也就是<code>this.a</code>将会解释成<code>window.a</code>从而创建一个全局变量<code>a</code>，<strong>但是</strong>这里我们使用了<code>new</code>关键字，我们遵从上面使用<code>new</code>调用函数的四个操作，其中的<strong>第三步操作</strong>中指明了：<code>这个新对象会绑定到函数调用的 this</code>，简单来说就是我们这里的<code>this</code>绑定到了<code>foo</code>变量上面，而<code>foo</code>本身就是一个新创建的函数，因此<code>var foo = new Foo(10)</code>这一行代码将<code>this</code>绑定到<code>foo</code>的作用域上，也就是说<code>this.a = a;</code>将会解释成<code>foo.a = a;</code>，因此我们打印<code>foo.a</code>才会显示<code>10</code>。</p>
+<h3 id="优先级">优先级</h3>
+<p>绑定有四种，<code>js</code>中不可能都是单一规则，通常都是几种规则混合在一起，因此这四种规则得有个优先级，具体优先级为：</p>
+<p><code>new</code>绑定 &gt; 显式绑定 &gt; 隐式绑定 &gt; 默认绑定</p>
+<p>我们看一个一例子：</p>
+<pre><code class="language-js">function Foo(name){
+    this.name = name;
+}
+var obj = {};
+var bar = Foo.call(obj);
+bar(10);
+obj.name//10
+var baz = new bar(100);
+obj.name//10
+baz.name//100
+</code></pre>
+<p>这段代码首先使用了<strong>显示绑定</strong>，因此<code>obj.name</code>输出<code>10</code>;紧接着又使用了**<code>new</code>绑定**;由于**<code>new</code>绑定<strong>优先级高于</strong>显示绑定**,此时的<code>this</code>绑定到了<code>baz</code>函数上，从而在<code>baz.name</code>输出<code>100</code>，而没有改变<code>obj.name</code>的值。</p>
+<h3 id="判断js">判断<code>js</code></h3>
+<blockquote>
+<ol>
+<li>函数是否在 new 中调用（new 绑定）？如果是的话 this 绑定的是新创建的对象。<br>
+var bar = new foo()</li>
+<li>函数是否通过 call、apply（显式绑定）或者硬绑定调用？如果是的话，this 绑定的是<br>
+指定的对象。<br>
+var bar = foo.call(obj2)</li>
+<li>函数是否在某个上下文对象中调用（隐式绑定）？如果是的话，this 绑定的是那个上<br>
+下文对象。<br>
+var bar = obj1.foo()</li>
+<li>如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到 undefined，否则绑定到<br>
+全局对象。<br>
+var bar = foo()</li>
+</ol>
+</blockquote>
+<h3 id="特殊情况">特殊情况</h3>
+<p>1.如果我们把<code>null</code>或者<code>undefined</code>作为<code>this</code>的绑定对象传入<code>call</code>、<code>apply</code>或者<code>bind</code>中，那么应用的是<strong>默认规则</strong>，举个栗子：</p>
+<pre><code class="language-js">function foo() {
+console.log( this.a );
+}
+var a = 2;
+foo.call( null ); // 2
+</code></pre>
+<p>这里应用的是默认规则。</p>
+<p>2.间接引用</p>
+<p>在有些情况下，我们可能还不知道我们间接引用了，考虑下面一段代码：</p>
+<pre><code class="language-js">function foo() {
+    console.log( this.a );
+}
+var a = 2;
+var o = { a: 3, foo: foo };
+var p = { a: 4 };
+o.foo(); // 3
+(p.foo = o.foo)(); // 2 重点是这里
+</code></pre>
+<p>在最后一段代码中我们可能没有发现其实我们已经间接引用了，<code>(p.foo = o.foo)</code>这一段代码将会返回<code>foo</code>函数体，最终就是使用<code>foo</code>函数调用，也就是<code>默认绑定</code>，我们可以打印一下这段表达式看看返回什么：<br>
+<img src="https://luoyelusheng.com/post-images/1634463304741.png" alt="" loading="lazy"><br>
+返回的就是<code>foo</code>的函数体，所以当下次发现<code>this</code>的绑定不符合预期的时候，去控制台打印一下看看是不是发生了间接引用了。</p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/最通俗的this讲解
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-过渡与动画/">
+                      <span class="post-title">
+                        CSS使用技巧-过渡与动画&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

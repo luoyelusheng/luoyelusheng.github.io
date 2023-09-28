@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-让你更加得心应手的CSS | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-让你更加得心应手的CSS | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-让你更加得心应手的CSS" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-让你更加得心应手的CSS/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-让你更加得心应手的CSS.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-让你更加得心应手的CSS
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-05-09，10 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<p>CSS是一门简单的语言，但是在如今CSS3的出现以及普及，似乎更多人开始觉得吃力，于是很多人都不愿意学习新的语法，但其实这些新的特性的出现都是有原因，其目的只会是解放生产力，让我们更加轻松解决某一类问题，在这里只做记录，记录一些实用的技巧，暂不讨论其背后的原理。</p>
+<h5 id="1半透明边框">1.半透明边框</h5>
+<p>在浏览器早期的时候，如果我们要使用透明效果，可能需要加载shim脚本，甚至在IE中需要用到滤镜效果，如果要实现背景透明，可能我们会准备一张单像素的半透明图片，利用xy轴重复达到透明效果，但是到了2009年之后，我们就可以使用透明颜色了，比如常见<code>rgba()</code>和<code>hsla()</code>,前一个可能大家都知道，毕竟经常在用，第二个我在这里暂时解释一下吧：</p>
+<blockquote>
+<p>H：Hue(色调)。0(或360)表示红色，120表示绿色，240表示蓝色，取值为：0 - 360</p>
+<p>S：Saturation(饱和度)。取值为：0.0% - 100.0%</p>
+<p>L：Lightness(亮度)。取值为：0.0% - 100.0%</p>
+<p>A：Alpha透明度。取值0~1之间。</p>
+</blockquote>
+<p>有了以上的知识之后，现在有一个需求，我们现在需要对某一个段文字设置一层淡红色背景和一道半透明红色边框，效果图类似于下面这种:<br>
+<img src="https://luoyelusheng.com/post-images/1634466143873.png" alt="" loading="lazy"><br>
+于是我们理所当然写出下面的这种代码：</p>
+<pre><code>div{
+  border: 10px solid hsla(0,0%,100%,.5);
+  background: white;
+}
+</code></pre>
+<p>但是效果却是这样：<br>
+<img src="https://luoyelusheng.com/post-images/1634466153317.png" alt="" loading="lazy"></p>
+<p>原因很简单，背景颜色和边框颜色重叠了，导致尽管边框颜色是透明色，但是背景色却不是，那怎么解决，只需要改变默认背景颜色作用的区域就好。</p>
+<pre><code>div{
+  border: 10px solid hsla(0,0%,100%,.5);
+  background: white;
+  background-clip: padding-box;
+}
+</code></pre>
+<p>这里提醒一点，默认<code>background-clip</code>的值是<code>border-box</code>,只要修改就好，还没理解请私戳这个<a href="http://dabblet.com/gist/012289cc14106a1bd7a5">demo</a>。</p>
+<h5 id="2多重边框">2.多重边框</h5>
+<p>想一想，如果我们想实现一个类似于以下的多重边框效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634466167113.png" alt="" loading="lazy"><br>
+可能你会使用多个div模拟这种行为，但这种是不友好的，我们这里可以使用<code>box-shadow</code>方案，可能许多人都用过，这不就是投影吗，但是我们换一种想法，如果我们设置xy轴偏移为0，模糊值设置为0，那就可以模拟边框效果，当然这不是重点，重点是它支持多个值的设置，下面我们看一下我们的具体实现：</p>
+<pre><code>div {
+  box-shadow: 0 0 0 10px #655,
+            0 0 0 15px deeppink,
+            0 2px 5px 15px rgba(0,0,0,.6);
+}
+</code></pre>
+<p>这样我们就完美解决多边框的问题，但是有一个问题，投影的边框不会影响布局，并且也不会响应鼠标悬停或点击的事件，当然这个可以通过第六个参数指定<code>inser</code>关键字解决，如果没理解可私戳这个<a href="http://dabblet.com/gist/525eb8e9cdade71723c1">demo</a></p>
+<p>在某些时候，我们可能只需要两层边框，不需要这么多，那么我们可以使用<code>outline</code>属性解决这个问题，这个的好处是可以产生虚线边框的效果，<code>box-shadow</code>则只能产生实线边框，并且你可以通过<code>outline-offset</code>指定描边的偏移值。<br>
+<img src="https://luoyelusheng.com/post-images/1634466175666.png" alt="" loading="lazy"></p>
+<h5 id="3灵活的背景定位">3.灵活的背景定位</h5>
+<p>如果我们想要实现背景图片右下角偏移，并且留下一点空隙，在CSS2.1中是很难实现的，可能我们会设置某个百分比值近似的达到想要的效果，下图为我们想要实线的效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634466183545.png" alt="" loading="lazy"></p>
+<p>但是CSS3中我们便可以更加精确控制背景图片偏移量了，比如：</p>
+<pre><code>div {
+  background: url(1.svg) o-repeat #58a;
+  background-position: right 20px bottom 10px;
+}
+</code></pre>
+<p>当然我们还要设置一个回退方案，在不支持这样写法的浏览器中，图片默认位置则是左上角，所以我们还要在<code>background</code>设置右下角定位。</p>
+<pre><code>div {
+    background: url(1.svg) o-repeat bottom right #58a;
+    background-position: right 20px bottom 10px;
+}
+</code></pre>
+<p>除了这种解决方案，我们还可以使用<code>background-origin</code>方案</p>
+<p>有一种需求可能我们会遇到，就是偏移量和容器的内边距一致，如果采用以上的做法，我们的代码可能是这样的：</p>
+<pre><code>padding: 10px;
+background: url(1.svg) o-repeat bottom right #58a;
+background-position: right 10px bottom 10px;
+</code></pre>
+<p>但是这样的代码不够DRY，也就是当你修改<code>padding</code>的值之后你还得修改<code>background-position</code>的值，当然你可以通过CSS预处理器解决，但是我们可以使用一种更加合理简单的方法解决，我们都知道，<code>background-position:top left</code>的<code>top left</code>值默认是以CSS盒子模型中的<code>padding-box</code>为基准，原因也很简单，如果以<code>border-box</code>为准，那么边框将会遮住背景图片，所以我们就能想到<code>background-origin</code>的默认值肯定是<code>padding-box</code>，如果我们将这个值修改为<code>content-box</code>，那就可以完美保持偏移量和容器的内边距一致了，具体代码为：</p>
+<pre><code>padding： 10px;
+background: url(1.svg) o-repeat bottom right #58a;
+background-origin: content-box;
+</code></pre>
+<p>这样就可以直接设置内边距而不用管背景定位的偏移值了。</p>
+<p>另一种思路</p>
+<p>我们可以使用较前沿的<code>calc()</code>属性，我们的最终目的不过是希望在右下角希望有一个偏移值，所以我们可以这么设置，具体看代码：</p>
+<pre><code>background: url(1.svg) o-repeat bottom right #58a;
+background-position: calc(100% - 20px ) calc(100% - 10px);
+</code></pre>
+<h5 id="4边框内圆角">4.边框内圆角</h5>
+<p>想在我们想要实现这样一个效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634466193657.png" alt="" loading="lazy"></p>
+<p>可能我们首先想到就是一个父<code>div</code>设置背景颜色，子<code>div</code>设置圆角效果，这个解决方案没什么问题，但是需要两个<code>div</code>元素，我们能不能用一个<code>div</code>元素解决呢？</p>
+<p>我们先看一下实现代码：<br>
+div {<br>
+border-radius: .8em;<br>
+box-shadow: 0 0 0 .4em #655;<br>
+outline: .6em solid #655;<br>
+}</p>
+<p>我们来解读这一段代码，首先我们设置圆角属性，所以整个元素都有了圆角效果，紧接着我们设置了投影，这里投影会跟着圆角走，效果如下：<br>
+<img src="https://luoyelusheng.com/post-images/1634466200395.png" alt="" loading="lazy"><br>
+最后我们设置描边，而我们的描边是不会跟着圆角走的，所以它的四个角都是直角，所以就实现了我们想要的效果。<br>
+<img src="https://luoyelusheng.com/post-images/1634466207590.png" alt="" loading="lazy"><br>
+若还没理解，可以自己动手实现一遍。</p>
+<h5 id="5条纹背景">5.条纹背景</h5>
+<p>在CSS2.1中我们想要实现渐变功能或者条纹功能，通常都是使用几像素的背景图片<code>repeat-x</code>轴实现，又或许使用svg来实现，但总是不够方便，总是需要做很多无谓的工作量，那么在CSS3中我们就可以通过CSS来精准控制，这不得不说是一大好事，举一个例子：</p>
+<pre><code>background： linear-gradient(#fb3 #58a)
+</code></pre>
+<p>效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634466215756.png" alt="" loading="lazy"><br>
+颜色后面可以跟数值，比如：</p>
+<pre><code>background:linear-gradient(#fb3 20%,#58a 80%);
+</code></pre>
+<p>这里的意思是：</p>
+<blockquote>
+<p>在容器的顶部20%的区域被填充为#fb3实色</p>
+<p>在容器的底部20%的区域被填充为#58a实色</p>
+<p>在容器20%~80%的区域将会从#fb3渐变为#58a实色</p>
+</blockquote>
+<p>可能有点拗口，但是只要自己亲手动手试试，就能理解。<br>
+下面我们制作一个等宽的条纹背景，代码如下：</p>
+<pre><code>background:linear-gradient(red 50%,blue 50%);
+</code></pre>
+<p>这段代码可以解释为在顶部50%的区域渲染为红色，在底部50%的区域渲染为绿色，因此可以产生等宽条纹。<br>
+<img src="https://luoyelusheng.com/post-images/1634466222705.png" alt="" loading="lazy"><br>
+但是这里不够DRY，因为我们每次修改都要修改其中的两个数字，有没有什么简便的方法，在规范中有提到一段话：</p>
+<blockquote>
+<p>如果每个色标的位置值比整个列表中在它之前的色标值都要小，则该色标值为它前面所有色标值的最大的哪一个。<br>
+举个例子：</p>
+</blockquote>
+<pre><code>background:linear-gradient(red 50%,blue 0);
+</code></pre>
+<p>在这段代码中，第二个色标值为0，也就是小于前面的色标值，那么解析的时候就会去前面的最大的那个，也就是50%这个数值，至于原由，很简单，这里就不在解释了。</p>
+<p><code>linear-gradient</code>第一个还支持传入一个方向，使我们可以控制渐变的方向，比如，渲染一个垂直条纹：</p>
+<pre><code>background:linear-gradient(to right, red 50%,blue 0);
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634466232102.png" alt="" loading="lazy"><br>
+如果设置一个角度，能否得到一个斜向条纹：</p>
+<pre><code>background:linear-gradient(45deg, red 50%,blue 0);
+background-size: 10% 30px;
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634466238821.png" alt="" loading="lazy"><br>
+似乎不可以，原由很简单，因为我们只是把单个贴片给旋转了，单个贴片类似下图：<br>
+<img src="https://luoyelusheng.com/post-images/1634466245388.png" alt="" loading="lazy"><br>
+而实际上斜向的单个贴片应该是这样的：<br>
+<img src="https://luoyelusheng.com/post-images/1634466251681.png" alt="" loading="lazy"><br>
+所以我们改写代码如下：</p>
+<pre><code>background:linear-gradient(45deg,red 25%,blue 0,blue 50%,red 0,red 75%,blue 0);
+background-size: 30px 30px;
+</code></pre>
+<p>效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634466258414.png" alt="" loading="lazy"></p>
+<p>当然，这里有一个问题，如果我们不是倾斜45度，而是60度，那么当我们设置的时候，会发现一团糟糕，但我们有一个更好的方法解决这个问题，一个鲜为人知的真相是<code>linear-gradient()</code>和 <code>radial-gradient</code>还各有一个循环式的增强版本：<code>repeating-linear-gradient()</code>和 <code>repeating-radial-gradient</code>,举个例子：</p>
+<pre><code>background: repeating-linear-gradient(45deg, red ,red 15px,blue 0, blue 30px)
+</code></pre>
+<p>背景图案我们经常都是使用颜色差不多的色调形成间隔条纹，那有没有简单一点的方法，这里我们可以把背景色设置为主色调，同时将半透明白色背景色应用在背景色之上，我们就可以得到一个相似的背景条纹：</p>
+<pre><code>background: #58a;
+background-image: repeating-linear-gradient(30deg, 
+          hsla(0,0%,100%,.1), hsla(0,0%,100%,.1) 15px,
+          transparent 0, transparent 30px);
+height: 100vh;
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634466266196.png" alt="" loading="lazy"></figure>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-让你更加得心应手的CSS
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/最通俗的this讲解/">
+                      <span class="post-title">
+                        最通俗的this讲解&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

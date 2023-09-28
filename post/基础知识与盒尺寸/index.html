@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  基础知识与盒尺寸 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="基础知识与盒尺寸 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="基础知识与盒尺寸" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/基础知识与盒尺寸/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/基础知识与盒尺寸.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/k7RscZHCa/" class="tag">
+                  CSS世界
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+            </span>
+            <h1>
+              基础知识与盒尺寸
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-02-09，13 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 id="css概念">CSS概念</h2>
+<p>首先，应该明白CSS是什么，CSS全称Cascading Style Sheets,中文简称就是“层叠样式表”,所谓层叠就是样式可以层层叠加，比如页面元素都继承了12像素的大小，某标题又设置14像素的大小，那么后者即14像素大小的会覆盖掉继承的12像素大小，正是由于这种策略使得CSS编写起来得心顺手，而CSS世界的诞生主要是为图文信息展示服务的。</p>
+<h3 id="为何displaylist-item会出现项目符号">为何display:list-item会出现项目符号</h3>
+<p>在日常使用中，如果我们对一个元素应用以下CSS规则，则会出现项目符号：</p>
+<pre><code>HTML:
+&lt;p&gt;这是内容&lt;/p&gt;
+
+CSS:
+.foo{
+    display:list-item;
+}
+</code></pre>
+<p>效果：</p>
+<p style="display: list-item;">这是内容</p>
+<p>在css的世界中，这似乎看似“理所当然”的现象的背后，实际上可能有一整套的体系支撑，创造CSS的造物主原本的想法很简单：我要创造一个世界，就像现实世界中男女一样，块级盒子（block）和内联盒子（inline）。块级盒子负责结构，内联盒子负责内容。然而事实并非如此，正如显示生活中不止有男女，还有特殊性别，于是乎，造物主便重新命名一个新的盒子，叫做“附加盒子”，这样一来，所有的块级元素都有一个“主块级盒子”，list-item除此之外还有一个“附加盒子”。“附加盒子”学名也称作“标记盒子”，专门用来存放圆点、数字这些项目符号的，IE浏览器下伪元素不支持list-item或许就是无法创造这个“标记盒子”导致的。同理可得，值为inline-block的元素实际上由外在的“内联盒子”和内在的“块级容器盒子”组成，这样一来，对于以前理解display值为inline-block的元素为何能和图文在一行显示，又能设置宽高了吧，因为有两个盒子，一个是inline级别，一个是block级别。</p>
+<h3 id="深藏不露的widthauto">深藏不露的“width:auto”</h3>
+<p>我们应该知道，width的默认值是auto，但是可别小看这一auto属性，它可至少包含了4种不同的宽度表现。</p>
+<p><strong>充分利用可用空间：</strong> 比方说这些元素默认宽度都是100%于父容器的，这种充分利用可用空间的行为还有个专有名字，叫做fill-available，这个只做了解。</p>
+<p><strong>收缩与包裹：</strong> 典型代表就是浮动、绝对定位，只做了解。</p>
+<p><strong>收缩到最小：</strong>直接看效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634481338708.png" alt="" loading="lazy"><br>
+当一列的空间不够时候，文字能断就断，但中文是随便断的，英文却是有讲究的。于是，第一列被无情的每个字砍掉，形成一柱擎天。<br>
+<strong>超出容器限制：</strong>直接看代码：</p>
+<pre><code>HTML：
+    &lt;p&gt;&lt;span&gt;恰如一江春水向东流，流到断崖也不回头&lt;/span&gt;&lt;/p&gt;
+
+CSS：
+.father {
+    width: 150px;
+    padding: 10px;
+    background-color: #cd0000;
+    white-space: nowrap;
+}
+
+.child {
+    display: inline-block;
+    padding: 5px;
+    background-color: #f0f3f9;
+}
+</code></pre>
+<p>效果：</p>
+ <p style="width: 150px;padding: 10px;background-color: #cd0000;white-space: nowrap;">
+        <span style="display: inline-block;padding: 5px;background-color: #f0f3f9;">恰如一江春水向东流，流到断崖也不回头</span>
+</p>
+<h3 id="包裹性">包裹性</h3>
+<p>包裹性简答来讲就是一个元素具有一个容器，这个容器将内容包含在内，不让其溢出，另一个方面也包括了自适应性，比如，对于一个元素，如果它的display值是inline-block，那么即使里面的内容再多，也不会超出这个容器。那么包裹性有什么用处呢?就拿按钮元素button来讲，有以下代码：</p>
+<pre><code>HTML：
+    &lt;div class=&quot;box&quot;&gt;
+      &lt;button&gt;按钮&lt;/button&gt;
+    &lt;/div&gt;
+CSS：
+    .box {
+        width: 240px;
+        margin: 20px auto;
+    }
+</code></pre>
+<p>文字再多一点</p>
+<p>按钮文字越多宽度越宽（包裹，内部尺寸特性），但不会超过容器宽度（自适应性）</p>
+<p>效果：</p>
+<p><button style="width: 240px;">文字再多一点</button></p>
+<p><button style="width: 240px;">按钮文字越多宽度越宽（包裹，内部尺寸特性），但不会超过容器宽度（自适应性）</button></p>
+<p>嗯？按钮咋还换行了呢，之所以你没印象，是因为你在项目中按钮的文字个数比较有限，没机会换行，当然这是针对button元素，对于input标签，依旧是不会换行的。</p>
+<p>在了解这个只是后，现在有个需求：</p>
+<p>页面中某个模块的文字内容是动态的，可能几个文字，可能是一句话，然后希望文字少的时候居中，文字多的时候居左显示，该如何显示？核心代码：</p>
+<pre><code>HTML：
+&lt;div class=&quot;box&quot;&gt;
+    &lt;p  class=&quot;content&quot;&gt;文字内容&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;box&quot;&gt;
+    &lt;p  class=&quot;content&quot;&gt;更多文字更多文字更多文字更多文字更多文字&lt;/p&gt;
+&lt;/div&gt;
+CSS：
+.box {
+  padding: 10px;
+  background-color: #cd0000;
+  text-align: center;
+  width:150px;
+  margin-bottom:10px;
+}
+.content {
+  display: inline-block;
+  text-align: left;
+}
+</code></pre>
+<p>效果：</p>
+<div style="margin-bottom:10px;width:150px;padding: 10px;background-color: #cd0000;text-align: center;">
+    <p  style="display: inline-block;text-align: left;">文字内容</p>
+</div>
+<div style="width:150px;padding: 10px;background-color: #cd0000;text-align: center;">
+    <p  style="display: inline-block;text-align: left;">更多文字更多文字更多文字更多文字更多文字</p>
+</div>
+<p><em>如果不明白原因自己copy代码自己尝试一下就懂了。</em></p>
+<h3 id="首选最小宽度">首选最小宽度</h3>
+<p>假设外部容器的宽度为0，内部inline-block元素的宽度是多少，是0吗？当然不是，css的设计者可不会犯这种错误，这时候便会采用一种最小宽度的策略。</p>
+<p>具体表现在：</p>
+<p>东亚文字（如中文）最小宽度为每个汉字的宽度，即14px。</p>
+<p>西方文字则以连续的英文字符单元决定，即终止于空格、短横线、问号以及其他非英文字符。</p>
+<p>类似于图片这样的替换元素最小宽度就是该元素的本身的宽度。</p>
+<p>了解这个特性后，我们看看有什么实际用处：</p>
+<p>需求方需要我们实现一个凹和凸的效果，注意兼容IE8。</p>
+<pre><code>HTML：
+&lt;span class=&quot;ao&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tu&quot;&gt;&lt;/span&gt;
+CSS：
+.ao,
+.tu {
+  display: inline-block;
+  width: 0;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 35px;
+  color: red;
+}
+.ao:before,
+.tu:before {
+  outline: 2px solid #cd0000;
+  font-family: Consolas, Monaco, monospace;
+}
+.ao:before {
+  content: &quot;love你love&quot;;
+}
+.tu {
+  direction: rtl;
+}
+.tu:before {
+  content: &quot;我love你&quot;;
+}
+</code></pre>
+<p>效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634481386369.png" alt="" loading="lazy"></p>
+<h3 id="最大宽度">最大宽度</h3>
+<p>最大宽度就是元素可以有的最大宽度，即如果内部没有块级元素或者块级元素没有设定宽度值，则“最大宽度”实际上就是最大的连续内联盒子的宽度（即display:inline的多个元素宽度之和）。</p>
+<pre><code>&lt;div&gt;
+    &quot;我是文本&quot;
+    &lt;span&gt;我是内联标签&lt;/span&gt;
+    &lt;p&gt;我是段落&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>效果：<br>
+<img src="https://luoyelusheng.com/post-images/1634481394007.png" alt="" loading="lazy"><br>
+最大宽度为文本＋span标签的宽度之和，p标签的最大宽度也是这个值。</p>
+<p>这个在轮播图中可以运用，以前轮播图实现一般都是两个div，外层div为容器，一般为显示一张图片的大小，内层div则为所有图片的宽度之和，这样但内部图片增加的时候，往往需要通过js显式再次设置内部容器宽度，从而防止图片换行，导致页面结构变形，现在只需要设置外部容器宽度，内部不需要显示设置，这样就只用css解决了，免去了js的解析执行，具体例子可查这里的<a href="http://demo.cssworld.cn/3/2-7.php">demo</a>。</p>
+<h2 id="css流体布局下的宽度分离原则">CSS流体布局下的宽度分离原则</h2>
+<p>以前写代码的时候，比如我们设置某一个div的宽度边框大小，要求宽度为100px：</p>
+<pre><code>div{
+    width:98px;
+    border;1px solid #000;
+}
+</code></pre>
+<p>此时项目需求说我希望这个div宽度大小变成120px，边框不变，于似乎你就开始用你的小学知识开始算，120宽，边框为2，那么width为118，这一切似乎都没什问题，但是这里存在一个问题，每次修改宽度的时候，都要通过计算得出宽度，如果我宽度要求是1200，边框为71，内边距为17，那么是不是该掏出手机开始计算了，怎么解决这个问题呢？那就是接下来要讲的宽度分离原则了。即css中的width属性不与影响宽度的padding/border共存，也就是不能出现以下的组合：</p>
+<pre><code>div{
+    width:100px;
+    border:1px solid red;
+}
+</code></pre>
+<p>不这么写，那该怎么写，很简单，分离，width独立占用一层标签，而padding、border、margin利用流动性在内部自适应呈现（即width:auto可使元素自适应）。</p>
+<pre><code>.father{
+    width:100px;
+}
+
+.son{
+    maring:0 auto;
+    padding:1px 2px;
+    border:1px solid #fff;
+}
+</code></pre>
+<p>此时，若设计师要求这个元素为115宽，那直接修改father宽度为115即可，不用再计算边框边距，简单好用，何乐而不为，可能会有有人说这增加了一个标签，但是我想说的是在这个电脑发展如此迅速的今天，你觉得这个会成为你项目的瓶颈问题吗？</p>
+<p>当然除此之外，我们还可以利用box-sizing,这个是css3的属性，但是IE8也支持，只不过要加上浏览器私有属性。box-sizing顾名思义就是盒尺寸，如图：</p>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634481424816.jpg" alt="" loading="lazy"></figure>
+<p>默认值就是里面最小的矩形，值为content-box，各浏览器支持情况：</p>
+<pre><code>.box{
+    box-sizing;content-box;/* 默认值 */
+}
+
+.box{
+    box-sizing;padding-box;/* 火狐曾经支持过 */
+}
+
+.box{
+    box-sizing;border-box;/* 全线支持 */
+}
+
+.box{
+    box-sizing;margin-box;/* 从未支持过 */
+}
+</code></pre>
+<p>所以我们能用的就是有border-box值和默认值两个，当设置border-box属性值时，content-box就从宽度值中解放，即当设置width属性的时候，不再是作用于content-box，即下面的最小的那个矩形区域，而是作用于border区域，例如：<br>
+<img src="https://luoyelusheng.com/post-images/1634481424816.jpg" alt="" loading="lazy"></p>
+<pre><code>.box{
+    width:100px;
+    border:1px solid red;
+    padding:2px;
+    box-sizing:border-box;
+}
+</code></pre>
+<p>此时box所在的元素宽度就是100px,而不是以前我们理解100+2+4=106px，这样一来也解决上面那个问题。</p>
+<h3 id="height100失效的原因">height:100%失效的原因</h3>
+<p>在日常编程中，比如一个登陆界面，我们希望能够背景图片能全屏显示，于是我们自然而然想到以下的实现方式：</p>
+<pre><code>img{ width:100%; height:100%; }
+</code></pre>
+<p>自以为完美解决这个问题，却发现，图片水平是百分百显示了，但是垂直方向似乎没有100%显示，于是很自让按F12，吧height:100%，注释掉，却惊讶发现这货似乎没用，加了和没加似乎没什么区别，于是你认为是浏览器bug，就换一个浏览器，发现也是一样，这时候你开始不解，难不成没用？那增加这个属性干啥。其实要想设置成功，需要以下设置：</p>
+<pre><code>html,body{
+    height:100%;
+}
+</code></pre>
+<p>其中html和body必须同时设置，缺一不可。</p>
+<p>不设置为何不行，我们来看一个简单的问题，不显式设置宽高，默认为auto，即：<br>
+<code>'auto' * 100% = NaN</code><br>
+那为何宽度可以，简单来讲宽度也应该是失效的，但是在规范中却将这种行为表示成未定义行为，即没有明确表示应该怎么样，浏览器厂商根据自己的理解去发挥，好在各个浏览器的效果都是一致的。</p>
+<p>当然，支持高度百分百显示，还有另一种方法就是设置绝对定位，即：</p>
+<pre><code>div{
+    hegiht:100%;
+    position:absolute;
+}
+</code></pre>
+<p>这里说一下，绝对定位的元素计算值的大小包括padding值，即content-box+padding-box=height,而非绝对定位元素计算值只包括content-box,具体可查看这个<a href="http://demo.cssworld.cn/3/2-11.php">demo</a>。</p>
+<p>内联盒模型</p>
+<p>下面是一段简单的html：</p>
+<p>这是一行普通的文字，这里有个em标签。</p>
+<p>看似普通，却包含了许多术语和概念。<br>
+<strong>1.内容区域(content area)。</strong>内容区域指的是围绕内容看不见的区域，其大小受字符本身特性控制。我们可以把文本被选中的区域称为内容区域:<br>
+<img src="https://luoyelusheng.com/post-images/1634481501139.jpg" alt="" loading="lazy"><br>
+<strong>2.内联盒子(inlien box)。</strong>“内联盒子”不会让内容成块显示，而是排成一行，这里的“内联盒子”实际指的就是元素的“外在盒子”，用来决定元素是块级还是内联，具体看图：<br>
+<img src="https://luoyelusheng.com/post-images/1634481508746.jpg" alt="" loading="lazy"><br>
+其中，实线部分称为“内联盒子”，虚线部分称为“匿名内联盒子”。<br>
+<strong>3.行框盒子（line box）。</strong>每一行就是一个“行框盒子”，每个“行框盒子”又是由一个一个“内联盒子”组成的。<br>
+<img src="https://luoyelusheng.com/post-images/1634481515269.jpg" alt="" loading="lazy"><br>
+实体标注部分即为“行框盒子”。<br>
+<strong>4.包含盒子（containing box）。</strong><br>
+<img src="https://luoyelusheng.com/post-images/1634481524495.jpg" alt="" loading="lazy"><br>
+实体包含部分即为“包含盒子”，此盒子由一个个“行框盒子”组成。</p>
+<h2 id="幽灵空白节点">幽灵空白节点</h2>
+<p>在文档申明为HTML5中，内联元素的所有渲染和解析表现就如同每个行框盒子的前面有一个“空白节点”一样。这个空白节点永远透明，不占据宽度，无法通过脚本获取，就好像幽灵一般，但是有确确实实存在，因此我们称之为“幽灵空白节点”。</p>
+<p>参考自<a href="http://www.cssworld.cn/">《css世界》</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/基础知识与盒尺寸
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/z-index的层叠规则/">
+                      <span class="post-title">
+                        z-index的层叠规则&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

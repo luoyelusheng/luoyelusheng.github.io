@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .wrapper{
+        background: #519aba;
+        color:#fff;
+      }
+      h2{
+       background: #96c4e6;
+        margin: 20px 0;
+      }
+      h3{
+        background: #96c4e6;
+        margin: 40px 0;
+      }
+      .bfc{
+        overflow:hidden;
+      }
+    </style>
+  </head>
+  <body>
+  <div class='wrapper'>
+    <h2>上下margin为20px</h2>
+    <div>
+     <h3>上下margin为40px，由于margin collapse最终h2和h3标签之间的margin为40px</h3>
+    </div>
+  </div>
+   <hr></hr>
+  <div class='wrapper'>
+    <h2>上下margin为20px</h2>
+    <div class='bfc'>
+     <h3 >上下margin为40p，由于不在同一个BFC,最终h2和h3标签之间的margin为60px</h3>
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      overflow: auto;
+      margin-bottom: 10px;
+    }
+
+    .wrapper {
+      background: #519aba;
+      color: #fff;
+    }
+
+    .left {
+      float: left;
+    }
+
+    p {
+      padding: 10px;
+      margin-top: 1rem;
+      background: #96c4e6;
+      color: #fff;
+    }
+
+    .operating {
+      text-align: center;
+    }
+
+    h1 {
+      margin-left: 10px;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .demo-containing .wrapper {
+      width: 400px;
+      background: #fff;
+    }
+
+    .demo-containing .wrapper p {
+      padding-left: 10px;
+      resize: horizontal;
+      max-width: 340px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="demo-float">
+    <div class="container">
+      <h1>作用一 防止浮动高度坍塌 (特性五)</h1>
+      <div class="wrapper bfc">
+        <p class="left">防止浮动的造成的高度坍塌</p>
+      </div>
+    </div>
+    <div class="operating">
+      <button type="button" class="btn btn-info">设置BFC</button>
+    </div>
+  </div>
+  <div class="demo-margin">
+    <div class="container">
+      <h1>作用二 阻止margin collapse (特性二)</h1>
+      <p>普通p标签，上下margin为1rem</p>
+      <div class="wrapper bfc">
+        <p>普通p标签（发生margin合并，最终渲染为1rem）</p>
+      </div>
+    </div>
+    <div class="operating">
+      <button type="button" class="btn btn-info">设置BFC</button>
+    </div>
+  </div>
+  <div class="demo-containing">
+    <div class="container">
+      <h1>作用三 一栏定宽一栏自适应布局 (特性三)</h1>
+      <div class="wrapper">
+        <img width="60" class="left" src="/post-images/1634478761419.jpg" />
+        <p class="bfc">
+          默认这里的p标签的包含块为当前所包含div元素，依据特性三我们可以得出p标签的左外边缘相邻div的左边缘
+          通过给p标签内容触发一个BFC，从而使得p标签的内容不再相邻div左边缘,最终实现两栏布局的效果。
+        </p>
+      </div>
+    </div>
+    <div class="operating">
+      <button type="button" class="btn btn-info">设置BFC</button>
+    </div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+  $(function () {
+    let isFloatBfc = false;
+    let isMarginBfc = false;
+    let isContainingBfc = false;
+
+    $(".demo-float .btn").click(function () {
+      if (isFloatBfc) {
+        $(".demo-float .bfc").css("overflow", "visible");
+        $(".demo-float .btn").text("设置BFC");
+      } else {
+        $(".demo-float .bfc").css("overflow", "auto");
+        $(".demo-float .btn").text("取消BFC");
+      }
+      isFloatBfc = !isFloatBfc;
+    });
+    $(".demo-margin .btn").click(function () {
+      if (isMarginBfc) {
+        $(".demo-margin .bfc").css("overflow", "visible");
+        $(".demo-margin .btn").text("设置BFC");
+        $(".demo-margin .bfc p").text(
+          "普通p标签（发生margin合并，最终渲染为1rem)"
+        );
+      } else {
+        $(".demo-margin .bfc").css("overflow", "auto");
+        $(".demo-margin .btn").text("取消BFC");
+        $(".demo-margin .bfc p").text(
+          "父级触发BFC p标签（不发生margin合并，最终渲染为2rem)"
+        );
+      }
+      isMarginBfc = !isMarginBfc;
+    });
+    $(".demo-containing .btn").click(function () {
+      if (isContainingBfc) {
+        $(".demo-containing .bfc").css("overflow", "visible");
+        $(".demo-containing .btn").text("设置BFC");
+      } else {
+        $(".demo-containing .bfc").css("overflow", "auto");
+        $(".demo-containing .btn").text("取消BFC");
+      }
+      isContainingBfc = !isContainingBfc;
+    });
+  });
+</script>
+
+</html>

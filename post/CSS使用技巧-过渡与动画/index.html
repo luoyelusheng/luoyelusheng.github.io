@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-过渡与动画 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-过渡与动画 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-过渡与动画" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-过渡与动画/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-过渡与动画.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-过渡与动画
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-18，8 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<p>CSS过渡动画是CSS3的一大新亮点，这种本该由CSS实现的效果过去一直是使用脚本来实现，多多少少会影响性能，现在我们拥有了强大的CSS过渡动画功能后，将会有一个崭新的世界。</p>
+<h5 id="前置知识">前置知识</h5>
+<p><a href="http://www.w3school.com.cn/cssref/index.asp#animation">CSS动画</a><br>
+<a href="http://www.w3school.com.cn/cssref/index.asp#transition">CSS过渡</a><br>
+<a href="http://www.w3school.com.cn/cssref/index.asp#transform">CSS转换</a></p>
+<h5 id="1缓动效果">1.缓动效果</h5>
+<p>现在我们实现一个自由落体的运动效果，我们的CSS样式可能这样写，核心代码：</p>
+<pre><code class="language-css">@keyframes bounce {
+    60%, 80%, to {
+        transform: translateY(350px);
+        animation-timing-function: ease-in;
+    }
+    70% {
+        transform: translateY(250px)
+    }
+    90% {
+        transform: translateY(300px)
+    }
+}
+.ball{
+    animation: bounce 3s ease-out;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634463862045.gif" alt="" loading="lazy"><br>
+这里传递了<code>transition-timing-function</code>的值，他有6个值，前五个值分别对应以下：<br>
+<img src="https://luoyelusheng.com/post-images/1634463874651.png" alt="" loading="lazy"><br>
+最后一个值是一个<code>cubic-bezier(x1,y1,x2,y2)</code>函数，可以定义自己想要的值,<code>(x1,y1)</code>表示第一个控制点的坐标，即上图中左下角的那个坐标，<code>（x2,y2）</code>表示第二个控制点的坐标，即上图中右上角的那个坐标，<code>cubic-bezier</code>函数简单来说就是控制在一段时间内动画执行的进度函数，类似于下面这个二位坐标系：<br>
+<img src="https://luoyelusheng.com/post-images/1634463883193.png" alt="" loading="lazy"><br>
+x轴坐标代表时间，取值范围是[0,1]，因为我们不可能超越时间，y轴坐标表示执行进度，我们可以通过编辑这个曲线，从而创造出符合我们预期的效果，这里有个在线的工具可以生成这个函数图像，链接如下：<br>
+<a href="http://cubic-bezier.com">cubic-bezier</a></p>
+<p>现在我们想要实现这种效果，请问改如何实现：<br>
+<img src="https://luoyelusheng.com/post-images/1634463893570.gif" alt="" loading="lazy"></p>
+<p>css核心代码：</p>
+<pre><code class="language-css">input:not(:focus) + .callout:not(:hover) {
+    transform: scale(0);
+    transition: .25s transform;
+}
+
+.callout {
+    transition: .5s cubic-bezier(.25,.1,.3,1.5) transform;
+    transform-origin: 1.4em -.4em;
+}
+</code></pre>
+<p>这里关键的是<code>cubic-bezier</code>函数，它在执行的过程中会将目标对象放大到自身的<code>1.1</code>倍之后，再返回到原始大小，它的函数图大概这样：<br>
+<img src="https://luoyelusheng.com/post-images/1634463905514.png" alt="" loading="lazy"><br>
+在这里我们并没有运用动画，而只是利用过度加一点小技巧就实现了平滑的放大-&gt;原始大小-&gt;隐藏的过渡效果。</p>
+<h5 id="2逐帧动画">2.逐帧动画</h5>
+<p>假如我们想要实现加载的等待动画效果，不使用gif实现，那怎么实现：<br>
+<img src="https://luoyelusheng.com/post-images/1634463917980.gif" alt="" loading="lazy"></p>
+<p>在网上有一种解决方案，就是使用背景来解决，通过脚本控制背景显示位置，从而达到一帧一帧加载图片，但是这都需要脚本，我们能不能通过CSS来实现这种效果呢，尝试的代码如下：</p>
+<p>背景放置了每个不同阶段的静态帧：<br>
+<img src="https://luoyelusheng.com/post-images/1634463926688.png" alt="" loading="lazy"></p>
+<pre><code class="language-css">@keyframes loader {
+    to { background-position: -800px 0; }
+}
+
+.loader {
+    width: 100px; height: 100px;
+    background: url(http://dabblet.com/img/loader.png) 0 0;
+    animation: loader 1s infinite linear;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634463934163.gif" alt="" loading="lazy"><br>
+怎么在连续动，这什么鬼，原来是动画会有一个过度效果，所以会连续动，而我们的目的只是想逐帧的变换，那有没有什么办法，好在CSS中有一个<code>steps</code>属性，专门用来显示逐帧变换的，简单来说他会将一个动画分割成n个步骤，每隔一段时间执行下一个步骤，中间没有过度行为，这正好满足我们的要求，代码如下：</p>
+<pre><code class="language-css">@keyframes loader {
+    to { background-position: -800px 0; }
+}
+
+.loader {
+    width: 100px; height: 100px;
+    background: url(http://dabblet.com/img/loader.png) 0 0;
+    animation: loader 1s infinite linear steps(8);
+}
+</code></pre>
+<h5 id="3闪烁效果">3.闪烁效果</h5>
+<p>有时候我们想要实现文字闪烁效果以提醒用户有新消息又或者提醒用户某些重要的东西，那我们怎么去实现，可能我们可以通过<code>opacity</code>属性实现透明闪烁效果，又或者通过文字颜色透明提醒，我们的代码可能是这样的：</p>
+<pre><code class="language-css">@keyframes blink{ to { color: transparent } }
+.blink{
+    animation: 1s blink 3;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634463943149.gif" alt="" loading="lazy"><br>
+乍看感觉很突兀，显示的时候一下子就显示出来了，我们能不能让它有个平缓的过程，于是我们将循环过程的切换放在中间，也就是在50%的时候就让它切换回来，代码如下：</p>
+<pre><code class="language-css">@keyframes blink{ 50% { color: transparent } }
+.blink{
+    animation: 1s blink 3;
+}
+</code></pre>
+<p>我们知道这个动画一致都处于加速过程中，为了让它更加随机化，我们增加<code>animation-direction</code>属性，让其更加随机化一点：</p>
+<pre><code class="language-css">@keyframes blink{ 50% { color: transparent } }
+.blink{
+    animation: 1s blink 3;
+    animation-direction: alternate;
+}
+</code></pre>
+<h5 id="4打字动画">4.打字动画</h5>
+<p>加入我们要实现下面这种结果，这在web模拟终端经常会实现的效果之一：<br>
+<img src="https://luoyelusheng.com/post-images/1634463960352.gif" alt="" loading="lazy"><br>
+首先我们想到当然是下面这行代码：</p>
+<pre><code class="language-css">@keyframes typing {
+    from {width: 0}
+}
+.typing{
+    width: 14ch;
+    animation: typing  8s steps(14),caret 1s steps(1) infinite;
+    font-family: monospace;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634463983476.png" alt="" loading="lazy"><br>
+一看结果，发现没有设置不换行样式以及溢出隐藏的样式，这里使用的是前面提到的步进函数，因为我们不需要过渡，这里还用到了一个<code>ch</code>单位，这个是css3中新单位，代表<code>0</code>字符的宽度，不常用，但在等宽字体中好使，我们还要加上右边框，所以最后修改代码之后：</p>
+<pre><code class="language-css">@keyframes typing {
+    from {width: 0}
+}
+@keyframes caret {
+    50% {border-color:currentColor}
+}
+.dot{
+    width: 14ch;
+    animation: typing  8s steps(14),caret 1s steps(1) infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    border-right: .05em solid transparent;
+}
+</code></pre>
+<h5 id="5状态平滑的动画">5.状态平滑的动画</h5>
+<p>如果我们的动画一开始是默认执行的，而是用户有交互的时候采取执行，比如<code>hover</code>事件，但是当用户移除的时候，那么此时的动画将会如何运行呢，是继续执行一个周期，还是停留在原地呢，都不是而是迅速的返回到起始状态，给人的感觉就好像是出<code>bug</code>的感觉:<br>
+<img src="https://luoyelusheng.com/post-images/1634463991263.gif" alt="" loading="lazy"></p>
+<p>那有没有什么办法让其有一个过渡状态呢，好在css中有一个<code>animation-play-state</code>属性，它可以控制动画执行与暂停，于是我们有以下代码：</p>
+<pre><code class="language-css">@keyframes panoramic {
+    to { background-position: 100% 0; }
+}
+
+    .panoramic {
+    width: 150px; height: 150px;
+    background: url('1.jpg');
+    background-size: auto 100%;
+    animation: panoramic 10s linear infinite alternate;
+    animation-play-state: paused;
+}
+
+.panoramic:hover, .panoramic:focus {
+    animation-play-state: running;
+}
+</code></pre>
+<p>在这段代码中我使用<code>background-position</code>水平方向的过渡从而实现图片缓慢从左到右运动，在默认情况下是暂停动画，当鼠标移上去的时候才开始执行动画，就解决了前面的问题。</p>
+<h5 id="6沿环形运动的动画">6.沿环形运动的动画</h5>
+<p>如果我们想要使用CSS实现一个动画随着指定的环形路线而运动那该怎么样，可能代码如下：</p>
+<pre><code class="language-htlm">&lt;div class=&quot;path&quot;&gt;
+    &lt;div class=&quot;av&quot;&gt;&lt;img src=&quot;http://lea.verou.me/book/adamcatlace.jpg&quot; alt=&quot;&quot; &gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.path{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: orange;
+    margin: 0 auto;
+    padding: 10px;
+}
+.path img{
+    width: inherit;
+}
+.av{
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+@keyframes spin {
+    to {transform: rotate(1turn)}
+}
+.av{
+    animation: spin 3s infinite linear;
+    transform-origin: center 150px;
+}
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634464007342.gif" alt="" loading="lazy"></figure>
+<p>但是这个头像在向下运动的时候却是头朝下的，我们能不能让其朝上显示呢，头像之所以会向下是因为自身在旋转，如果我们再次让其自身逆向旋转，那不就可以抵消掉旋转，就好像没有旋转一样，从而保持图片始终朝上，具体看代码：</p>
+<pre><code class="language-css">...
+@keyframes spin {
+    to { transform: rotate(1turn); }
+}
+
+.avatar {
+    animation: spin 3s infinite linear;
+    transform-origin: 50% 150px;
+}
+
+.avatar &gt; img {
+    animation: inherit;
+    animation-direction: reverse;
+}
+
+</code></pre>
+<p>我们通过对图片应用动画，使其继承父级的旋转动画，通过<code>animation-direction</code>属性反转角度，从而达到我们想要的效果。</p>
+<p>最后我们不借助父元素旋转，而使用自身旋转能否解决这个问题，关键就是<code>transform-origin</code>完全可以使用<code>translate</code>来模拟实现，前者不过是后者的语法糖而已，于是我们有以下代码：</p>
+<pre><code class="language-css">@keyframes spin {
+	from {
+		transform: rotate(0turn)
+		           translateY(-150px) translateY(50%)
+		           rotate(1turn)
+	}
+	to {
+		transform: rotate(1turn)
+		           translateY(-150px) translateY(50%)
+		           rotate(0turn);
+	}
+}
+
+
+.av {
+	animation: spin 3s infinite linear;
+}
+</code></pre>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-过渡与动画
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-结构与布局/">
+                      <span class="post-title">
+                        CSS使用技巧-结构与布局&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

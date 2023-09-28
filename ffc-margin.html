@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FFC中margin不会发生合并，</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      .flex {
+        display: flex;
+        border: 1px solid red;
+        flex-direction: column;
+        color: #fff;
+      }
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+        margin: 10px;
+      }
+      .item:last-child {
+        background-color: #ff9800;
+      }
+      .child {
+        margin: 10px;
+      }
+      .operating {
+        text-align: center;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div class="item">
+        伸缩项目item
+        <div class="child">普通child</div>
+        <div class="child right">普通child</div>
+      </div>
+      <div class="item right">伸缩项目item</div>
+    </div>
+    <div class="operating">
+      <button class="btn btn-primary">取消设置display:flex</button>
+      <button class="btn btn-info">点击设置float:right</button>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(function () {
+      let isFloat = true;
+      $(".btn-info").click(function () {
+        if (isFloat) {
+          $(".right").css("float", "right");
+          $(".btn-info").text("点击取消浮动");
+        } else {
+          $(".right").css("float", "none");
+          $(".btn-info").text("点击设置float:right");
+        }
+        isFloat = !isFloat;
+      });
+      let isFlex = true;
+      $(".btn-primary").click(function () {
+        if (isFlex) {
+          $(".flex").css("display", "block");
+          $(".btn-primary").text("点击设置display:flex");
+        } else {
+          $(".flex").css("display", "flex");
+          $(".btn-primary").text("取消设置display:flex");
+        }
+        isFlex = !isFlex;
+      });
+    });
+  </script>
+</html>

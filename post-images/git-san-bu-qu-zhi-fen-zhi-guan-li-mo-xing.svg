@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-307 64 1398 786" width="1398" height="786">
+  <defs>
+    <font-face font-family="PingFang SC" font-size="20" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#b1001c">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="black">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="20" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#b1001c">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2021-12-30 15:28:54 +0000</metadata>
+  <g id="Canvas_1" stroke-dasharray="none" fill-opacity="1" stroke="none" stroke-opacity="1" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="-307" y="64" width="1398" height="786"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Graphic_103">
+        <path d="M 393.07107 71.07107 L 478.92893 156.92893 C 482.8342 160.83418 482.8342 167.16582 478.92893 171.07107 L 393.07107 256.92893 C 389.16582 260.83418 382.83418 260.83418 378.92893 256.92893 L 293.07107 171.07107 C 289.16582 167.16582 289.16582 160.83418 293.07107 156.92893 L 378.92893 71.07107 C 382.83418 67.165825 389.16582 67.165825 393.07107 71.07107 Z" fill="#ff8080"/>
+        <text transform="translate(318 134)" fill="white">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="21">是否存在多版本</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="30" y="49">并行开发</tspan>
+        </text>
+      </g>
+      <g id="Line_101">
+        <path d="M 188 334.1 L 188 164 L 290.14214 164" marker-start="url(#FilledArrow_Marker)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_200">
+        <text transform="translate(196 231)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">否</tspan>
+        </text>
+      </g>
+      <g id="Graphic_202">
+        <path d="M 194.07107 291.07107 L 279.92893 376.92893 C 283.83418 380.83418 283.83418 387.16582 279.92893 391.07107 L 194.07107 476.92893 C 190.16582 480.8342 183.83418 480.8342 179.92893 476.92893 L 94.07107 391.07107 C 90.16582 387.16582 90.16582 380.83418 94.07107 376.92893 L 179.92893 291.07107 C 183.83418 287.16582 190.16582 287.16582 194.07107 291.07107 Z" fill="#ff8080"/>
+        <text transform="translate(119 354)" fill="white">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="21">是否需要持续发</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="60" y="49">布</tspan>
+        </text>
+      </g>
+      <g id="Line_203">
+        <path d="M 758 331.1 L 758 164 L 481.85786 164" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_204">
+        <path d="M 755.0711 297.07107 L 840.9289 382.92893 C 844.8342 386.83418 844.8342 393.16582 840.9289 397.07107 L 755.0711 482.92893 C 751.1658 486.8342 744.8342 486.8342 740.9289 482.92893 L 655.0711 397.07107 C 651.1658 393.16582 651.1658 386.83418 655.0711 382.92893 L 740.9289 297.07107 C 744.8342 293.16582 751.1658 293.16582 755.0711 297.07107 C 755.0711 297.07107 755.0711 297.07107 755.0711 297.07107 Z" fill="#ff8080"/>
+        <text transform="translate(680 374)" fill="white">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="10" y="21">分支管理严格</tspan>
+        </text>
+      </g>
+      <g id="Graphic_205">
+        <rect x="179" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="179" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(184 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="30.77" y="19">GitHub Flow</tspan>
+        </text>
+      </g>
+      <g id="Line_206">
+        <path d="M -75 504.1 L -75 384 L 91.14214 384" marker-start="url(#FilledArrow_Marker_3)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_207">
+        <text transform="translate(-65 446)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">否</tspan>
+        </text>
+      </g>
+      <g id="Line_208">
+        <path d="M 387 509.1 L 387 384 L 282.85786 384" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_209">
+        <path d="M 393.07107 527.07107 L 478.92893 612.9289 C 482.8342 616.8342 482.8342 623.1658 478.92893 627.0711 L 393.07107 712.9289 C 389.16582 716.8342 382.83418 716.8342 378.92893 712.9289 L 293.07107 627.0711 C 289.16582 623.1658 289.16582 616.8342 293.07107 612.9289 L 378.92893 527.07107 C 382.83418 523.1658 389.16582 523.1658 393.07107 527.07107 C 393.07107 527.07107 393.07107 527.07107 393.07107 527.07107 Z" fill="#ff8080"/>
+        <text transform="translate(318 590)" fill="white">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="21">是否需要版本发</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="60" y="49">布</tspan>
+        </text>
+      </g>
+      <g id="Graphic_210">
+        <text transform="translate(509 171)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">是</tspan>
+        </text>
+      </g>
+      <g id="Graphic_211">
+        <text transform="translate(357 395)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">是</tspan>
+        </text>
+      </g>
+      <g id="Line_212">
+        <path d="M 272 755.1 L 272 620 L 290.14214 620" marker-start="url(#FilledArrow_Marker_3)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_213">
+        <text transform="translate(282 712)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">否</tspan>
+        </text>
+      </g>
+      <g id="Graphic_214">
+        <rect x="422" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="422" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(427 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="35.4" y="19">GitLabFlow</tspan>
+        </text>
+      </g>
+      <g id="Line_215">
+        <path d="M 511 761.1 L 511 621 L 510 621 L 510 620 L 481.85786 620" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_216">
+        <text transform="translate(483 636)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">是</tspan>
+        </text>
+      </g>
+      <g id="Graphic_217">
+        <path d="M -67.92893 523.07107 L 17.928932 608.9289 C 21.834175 612.8342 21.834175 619.1658 17.928932 623.0711 L -67.92893 708.9289 C -71.834175 712.8342 -78.165825 712.8342 -82.07107 708.9289 L -167.92893 623.0711 C -171.83418 619.1658 -171.83418 612.8342 -167.92893 608.9289 L -82.07107 523.07107 C -78.165825 519.1658 -71.834175 519.1658 -67.92893 523.07107 C -67.92893 523.07107 -67.92893 523.07107 -67.92893 523.07107 Z" fill="#ff8080"/>
+        <text transform="translate(-143 586)" fill="white">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="21">是否已进入后期</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="30" y="49">维护阶段</tspan>
+        </text>
+      </g>
+      <g id="Line_219">
+        <path d="M -214 761.1 L -214 616 L -170.85786 616" marker-start="url(#FilledArrow_Marker_3)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_220">
+        <rect x="-307" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="-307" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(-302 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="46.69" y="19">OneFlow</tspan>
+        </text>
+      </g>
+      <g id="Line_221">
+        <path d="M 31 763.1 L 31 616 L 20.857864 616" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_222">
+        <rect x="-64" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="-64" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(-59 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="33.52" y="19">TrunkBased</tspan>
+        </text>
+      </g>
+      <g id="Graphic_223">
+        <text transform="translate(-204 700)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">否</tspan>
+        </text>
+      </g>
+      <g id="Graphic_224">
+        <text transform="translate(0 644)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">是</tspan>
+        </text>
+      </g>
+      <g id="Line_225">
+        <path d="M 995 760.1 L 995 620 L 994 620 L 994 390 L 843.8579 390" marker-start="url(#FilledArrow_Marker_2)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_226">
+        <rect x="665" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="665" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(670 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="42.07" y="19">AoneFlow</tspan>
+        </text>
+      </g>
+      <g id="Graphic_227">
+        <rect x="908" y="781" width="183" height="69" fill="#c0c0ff"/>
+        <rect x="908" y="781" width="183" height="69" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"/>
+        <text transform="translate(913 803.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="49.48" y="19">Git Flow</tspan>
+        </text>
+      </g>
+      <g id="Line_229">
+        <line x1="750.878" y1="765.1005" x2="748.7353" y2="485.83096" marker-start="url(#FilledArrow_Marker_3)" stroke="#b1001c" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_230">
+        <text transform="translate(960 403)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">是</tspan>
+        </text>
+      </g>
+      <g id="Graphic_231">
+        <text transform="translate(758 712)" fill="black">
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" x="0" y="21">否</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

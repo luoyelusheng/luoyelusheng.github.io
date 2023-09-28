@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  块格式化上下文（Block Formatting Context，BFC） 前世今生 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="块格式化上下文（Block Formatting Context，BFC） 前世今生 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="块格式化上下文（Block Formatting Context，BFC） 前世今生" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/块格式化上下文（Block Formatting Context，BFC） 前世今生/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/块格式化上下文（Block Formatting Context，BFC） 前世今生.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+            </span>
+            <h1>
+              块格式化上下文（Block Formatting Context，BFC） 前世今生
+            </h1>
+            <span class="meta">
+              Posted on
+              2019-08-20，10 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <blockquote>
+<p>在看了网上类似于BFC的技术博客后，也是看了好几篇再加上看了官方文档后，才大概对BFC这个面试经常问的东西有了一点理解，所以就抱着尽量通俗易懂的方式给后面需要了解BFC特性同学讲解，尽量让你只需看这一篇就能有个大概的理解，这也是本次写这篇的文章的初衷。</p>
+</blockquote>
+<h2 id="前世">前世</h2>
+<p>BFC是什么？为什么有这个东西？它有什么作用？为了回答这些问题，我们先来想一想这么一个场景：盘古开天地之际，一个页面上面只有几个<code>div</code>,<code>span</code>元素，这个时候没有块级元素和行内级元素的概念，更没有边框边距的概念，那请问这几个元素该怎么排列表现呢？</p>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634477137810.jpg" alt="" loading="lazy"></figure>
+<p>为了解决这个问题,女娲（w3c），先教给这几个元素一些生存的本领吧，不然饿死了咋办，于是它们学会了穿衣服（<code>padding</code>），防护罩（<code>margin</code>）等，这也就是盒模型的由来，当然，盒模型不是本次的重点，我们只需要知道盘古开天辟地之际<code>div</code>,<code>span</code>等元素都学会了盒模型这一本领。</p>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634477155324.png" alt="" loading="lazy"></figure>
+<p>本领都学会了，那不得派它们出去帮女娲（w3c）干活，但是大家学的本领都一样，而且每个地方的环境都是千差万变的，这可不行，于是女娲（w3c）便开始对不同类型的元素传授不同技能，时间久了，女娲（w3c）觉得这样子太耗精力，便成立了一个部门（视觉格式化模型），专门将这些学会本领的元素二次培训成更高级的元素，简称盒子，而它们唯一的身份区别就是<code>display</code>属性，这些盒子在不同的地方任职（指盒子的布局），其权力（盒子的布局因素）受限于四大因素影响：</p>
+<ul>
+<li>盒子尺寸和类型</li>
+<li>定位方案(普通流定位、浮动定位或绝对定位)</li>
+<li>文档树中元素之间的关系</li>
+<li>外部因素（例如，视口大小，图像的固有尺寸等）</li>
+</ul>
+<p>随着历史发展，这些盒子通过自身的修炼已经发展成不同的类型了，也衍生出了很多新的概念，具体如下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概念</td>
+<td>描述</td>
+</tr>
+<tr>
+<td><strong>块</strong></td>
+<td>文档流中的独立的区域，相互之间在垂直方向上按照顺序依次堆叠</td>
+</tr>
+<tr>
+<td><strong>包含块</strong></td>
+<td>包含其他盒子的块称为包含块</td>
+</tr>
+<tr>
+<td><strong>盒子</strong></td>
+<td>CSS引擎根据文档中的内容所创建，主要用于文档元素的定位、布局和格式化等（多个元素可以合并成一个盒子，一个元素也可生成多个盒子，如匿名盒子）</td>
+</tr>
+<tr>
+<td><strong>块级元素</strong></td>
+<td><code>display</code>为<code>block</code>、<code>list-item</code>、<code>table</code>时，该元素将成为块级元素（元素是否是块级元素仅是元素本身的属性，并不直接用于格式化上下文的创建或布局）</td>
+</tr>
+<tr>
+<td><strong>块级盒子</strong></td>
+<td>由块级元素生成（一个块级元素至少会生成一个块级盒子，但也有可能生成多个，例如列表项元素）</td>
+</tr>
+<tr>
+<td><strong>块容器盒子</strong></td>
+<td>块容器盒子侧重于当前盒子作为“容器”的这一角色，它不参与当前块的布局和定位，它所描述的仅仅是当前盒子与其后代之间的关系。换句话说，块容器盒子主要用于确定其子元素的定位、布局等</td>
+</tr>
+<tr>
+<td><strong>块盒子</strong></td>
+<td>块级盒子+块容器盒子简称块盒子（还可以分为匿名块盒子）</td>
+</tr>
+<tr>
+<td><strong>行内级元素</strong></td>
+<td><code>display</code> 为 <code>inline</code>、<code>inline-block</code>、<code>inline-table</code> 的元素称为行内级元素（同块级元素类似，行内级元素仅是元素本身的属性，不直接用于格式化上下文的创建或布局）</td>
+</tr>
+<tr>
+<td><strong>行内级盒子</strong></td>
+<td>由行内级元素生成</td>
+</tr>
+<tr>
+<td><strong>行内盒子</strong></td>
+<td>参与行内格式化上下文创建的行内级盒子称为行内盒子（也分匿名行内盒子）</td>
+</tr>
+<tr>
+<td><strong>原子行内级盒子</strong></td>
+<td>不参与行内格式化上下文创建的行内级盒子称为原子行内级盒子</td>
+</tr>
+</tbody>
+</table>
+<p>最后整理了一个导航图，方便大家快速记忆：</p>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1634477647423.png" alt="" loading="lazy"></figure>
+<p>篇幅有限，如果想具体的了解这些盒子的介绍以及说明，请点击<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model">这里</a>。</p>
+<h2 id="今生">今生</h2>
+<h3 id="what">what</h3>
+<p>通过上面的故事回忆并结合，我们再来讲讲块格式化上下文（Block Formatting Context，BFC），大体我们可以认为BFC是Web页面的可视化CSS渲染的一部分内容，如果再具体一点就是：</p>
+<ul>
+<li>块盒子的布局过程发生的区域</li>
+<li>浮动元素与其他元素交互的区域</li>
+</ul>
+<p>块盒子在上面我们已经讲了，就是块级盒子+块容器盒子简称块盒子;而浮动元素这里主要指元素的 <code>float</code> 不是 <code>none</code>的元素。</p>
+<h3 id="why">why</h3>
+<p>通过前世我们可以大致发现BFC主要是因为前端发展越来越快，页面布局日益复杂，为了应对这些需求从而应运而生，并且其拥有一些特殊的特性，我们从而可以利用这些特性去解决某一类问题，如清除浮动，防止margin重叠等问题。</p>
+<h3 id="how">how</h3>
+<p>在我们谈BFC有什么作用之前，我们得知道怎么触发BFC机制，这是先决条件，通过查阅文档并整理了表格如下：</p>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1634477721266.png" alt="" loading="lazy"></figure>
+<p>条件太多，可能一时半会儿也记不住，可以添加为书签方便日后查找，现在我们来探讨一下<code>BFC</code>都有哪些特性，通过查阅<a href="https://www.w3.org/TR/CSS22/visuren.html#block-formatting">规范</a>文档可以总结如下：</p>
+<ul>
+<li>块级盒从一个包含块的顶部开始一个接一个地垂直排列</li>
+<li>两个兄弟块级盒之间的垂直距离由<code>margin</code>属性决定,并且在同一个<code>BFC</code>中的元素发生<code>margin collapse</code></li>
+<li>每个块级盒的左外边缘相邻包含块的左边缘（同理从左往右格式化，则与包含块的右边缘相邻）</li>
+<li>BFC具有‘密室’特性，密室里面的元素不会影响到密室外面的元素，反之亦然</li>
+<li>计算BFC的大小时，考虑所有所包含的元素，包括浮动元素</li>
+</ul>
+<p>文字总是给人苍白无力的感觉，还是让我们看看demo是怎么一一解释以上特性的。</p>
+<h4 id="示例一">示例一</h4>
+<iframe style="width:100%" src="/bfc-contain.html" height="200" frameborder="0"></iframe>
+<p>根元素（这里指HTML）默认会创建一个BFC，我们可以看到块级盒是从上到下垂直排列，也就是我们的<strong>特性一（块级盒从一个包含块的顶部开始一个接一个地垂直排列）</strong>，块级盒就是这里的<code>h1</code>,<code>p</code>和<code>div</code>标签所渲染的盒子，而包含块就是我们这里的<code>HTML</code>标签默认创建的BFC区域，最终的渲染结果就是从包含块的顶部一个接着一个的垂直排列，从而很好的解释了BFC得特性一。</p>
+<h4 id="示例二">示例二</h4>
+<iframe style="width:100%" src="/margin-collapse.html" height="200" frameborder="0"></iframe>
+<p>由示例二我们可以看出，在同一个BFC中，块级盒垂直方向的距离由上下 <code>margin</code> 属性决定，并且会发生<code>margin callapse</code>，其规则可以简记<code>同大异和</code>。翻译过来就是如果两个元素<code>margin</code>都为正值，则取两者之中较大的那一个为，如果两个元素<code>margin</code>都为负值，则取两者之中绝对值较大的那一个，这就是相同符号的取较大的那一个，简记<code>同大</code>；如果两个元素<code>margin</code>为一正一负，则取两个<code>margin</code>相加之和为最终的值，简记<code>异和</code>，具体效果我们可以查看示例三。</p>
+<h4 id="示例三">示例三</h4>
+<iframe style="width:100%" src="/margin-collapse-1.html" height="200" frameborder="0"></iframe>
+<p>通过示例三，我们也了解了<code>margin collapse</code>规则，这也验证了BFC的<strong>特性二（两个兄弟块级盒之间的垂直距离由</strong><code>margin</code><strong>属性决定,并且在同一个</strong><code>BFC</code><strong>中的元素发生</strong><code>margin collapse</code><strong>），下面我们来看看BFC的</strong>特性三**的例子。</p>
+<h4 id="示例四">示例四</h4>
+<iframe style="width:100%" src="/containing-box.html" height="200" frameborder="0"></iframe>
+<p>通过打开浏览器的审查工具，将鼠标移到<code>h1</code>标签的<code>margin</code>属性上面，即可看到<code>margin</code>属性所渲染的区域：</p>
+<figure data-type="image" tabindex="5"><img src="https://luoyelusheng.com/post-images/1634477741667.png" alt="" loading="lazy"></figure>
+<p>同理我们将鼠标移到div标签的padding属性上面，即可看到padding所渲染的区域：</p>
+<figure data-type="image" tabindex="6"><img src="https://luoyelusheng.com/post-images/1634477750881.png" alt="" loading="lazy"></figure>
+<p>通过结合两张图我们可以清晰看到每个块级盒的左外边缘（margin）相邻包含块的左边缘（padding），从而验证了BFC的<strong>特性三（每个块级盒的左外边缘相邻包含块的左边缘）</strong>。</p>
+<h4 id="示例五">示例五</h4>
+<iframe style="width:100%" src="/isolation-bfc.html" height="200" frameborder="0"></iframe>
+<p>默认情况下我们可以看到<code>区域一</code>直接跑到了<code>左浮动区域</code>底部，如果点击设置<code>BFC</code>按钮，我们可以看到<code>区域一</code>跑到了右上角，因为<code>BFC</code>具有<code>密室</code>特性，在<code>密室</code>内的元素都不会跑到<code>密室</code>外面从而造成溢出，但是只要我们点击取消<code>BFC</code>，我们可以马上看到区域一一下就溢出了，这也很好的解释了BFC得<strong>特性四（BFC具有‘密室’特性，密室里面的元素不会影响到密室外面的元素）</strong>。</p>
+<h4 id="示例六">示例六</h4>
+<iframe style="width:100%" src="/float-bfc.html" height="200" frameborder="0"></iframe>
+<p>默认情况下父级标签触发了<code>BFC</code>，<code>左浮动区域</code>设置了<code>float:left</code>，似乎一切都符合我们的认知预期，但是当我们点击<code>取消BFC</code>按钮时，却发现<code>左浮动区域</code>的背景色没了，打开审查工具查看发现父级元素好像真的并没有包裹<code>左浮动区域</code>，<code>左浮动区域</code>似乎‘溢出’了父级标签的容器，我们都知道浮动元素特性就是该元素从网页的正常流动(文档流)中移除，尽管仍然保持了部分的流动性，原来取消掉<code>BFC</code>才是我们常见的情景，也就是浮动元素会造成<code>高度坍塌</code>，解决这种问题常用解决方案有很多，比如利用伪元素清除浮动，在这里我们利用<code>BFC</code>的<strong>特性5（计算BFC的大小时，考虑所有所包含的元素，包括浮动元素）</strong>，我们只需要让父级元素触发<code>BFC</code>即可，这里我们使用<code>overflow</code>进行触发，具体效果我们可以点击<code>设置BFC</code>按钮进行预览。</p>
+<h3 id="作用">作用</h3>
+<p>在前面我们讲述了BFC得前世今生，对BFC的触发条件、特性都进行了一一介绍，BFC我们似乎是懂了不少，但是BFC具体有哪些实际作用我们还是需要学习的，正所谓学以致用，下面我们看看有哪些：</p>
+<h4 id="示例七">示例七</h4>
+<iframe style="width:100%" src="/bfc-effect-1.html" height="200" frameborder="0"></iframe>
+<h2 id="结尾">结尾</h2>
+<p>BFC的概念这里也是结合笔者自身理解以及查阅了一些文档总结而成，如文中有论述错误的地方，还望批评指正。</p>
+<p>参考<br>
+[1]<a href="https://www.sitepoint.com/understanding-block-formatting-contexts-in-css/">Understanding Block Formatting Contexts in CSS</a><br>
+[2]<a href="https://www.w3.org/TR/CSS22/visuren.html#block-formatting">block-formatting</a><br>
+[3]<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context">格式化上下文</a><br>
+[4]<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Visual_formatting_model">视觉格式化模型</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/块格式化上下文（Block Formatting Context，BFC） 前世今生
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)/">
+                      <span class="post-title">
+                        深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  CSS使用技巧-形状 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="CSS使用技巧-形状 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="CSS使用技巧-形状" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/CSS使用技巧-形状/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/CSS使用技巧-形状.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+                <a href="https://luoyelusheng.com/tag/RSWO14_XV/" class="tag">
+                  CSS使用技巧
+                </a>
+                
+            </span>
+            <h1>
+              CSS使用技巧-形状
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-04-11，10 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1 id="前言">前言</h1>
+<h5 id="1自适应的椭圆">1.自适应的椭圆</h5>
+<p>如果我们想要实现一个圆形效果或者椭圆效果，我们都知道使用<code>border-radius</code>可以解决，比如：</p>
+<pre><code class="language-css">div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: red;
+}
+</code></pre>
+<p>当然，这段代码不够DRY，因为当款宽高改变的时候，我们又要去改变<code>border-radius</code>，所以我们自然而然想到使用百分比来解决这个问题：</p>
+<pre><code class="language-css">div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: red;
+}
+
+现在我们能否实现一个半圆效果呢？代码如下：
+
+div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50% / 100% 100% 0 0;
+    background: red;
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465794208.png" alt="" loading="lazy"><br>
+怎么实现的？首先<code>border-radius</code>支持水平方向以及垂直方向的圆半径的赋值，具体是用<code>/</code>分割，前面的则可以是四个值，代表水平方向的圆半径，方便是四个角的位置，与<code>border-width</code>的解析原理，后面也是类似代表四个角方位的垂直方向的半径。在这里，我们设置水平方向的值为<code>50%</code>，其实只需要设置左上右上的即可，但这里设置了四个角，主要是因为另外的两个角不会影响我们实现的目的，在垂直方向，我们设置左上右上<code>100%</code>，因为我们看图可以推断在垂直方向我们顶部的两个圆角占据了整个元素的高度，而底部完全没有任何圆角，所以我们在垂直方向的合理值应该是<code>100% 100% 0 0</code>，下面我们来回答为何底部的水平方向圆角不影响我们的实现，因为我们的底部的垂直方向的圆角半径为<code>0</code>，你试着能找到一个垂直半径为0，而水平方向半径不为<code>0</code>的几何图形吗？</p>
+<p>如果我们想实现一个<code>1/4</code>的圆呢，代码如下：</p>
+<pre><code class="language-css">div{
+    width: 100px;
+    height: 100px;
+    border-radius: 100% 0 0 0;
+    background: red;
+}
+</code></pre>
+<p>原理也很简单，我们只需要设置其中第一角的半径值都是<code>100%</code>即可，其他设置为<code>0</code>。</p>
+<h5 id="2平行四边形">2.平行四边形</h5>
+<p>假如我们需要实现下面这种效果图：<br>
+<img src="https://luoyelusheng.com/post-images/1634465806151.png" alt="" loading="lazy"><br>
+可能我们的代码是这样的：</p>
+<pre><code class="language-css">div{
+    transform: rotate(7deg)
+}
+div p{
+    transform: rotate(-7deg)
+}
+</code></pre>
+<p>我们对容器进行了旋转，却发现字体也跟着旋转，于是我们不得不把字体再旋转回来，那么我们有没有简单方法，当然有了，这里使用的则是伪元素方案：</p>
+<pre><code class="language-css">.button{
+    position: relative;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom:0; left: 0;
+    z-index: -1;
+    transform: rotate(7deg)
+}
+</code></pre>
+<p>这段代码使用绝对定位元素上下左右值为<code>0</code>时候，在水平和垂直方向具有拉伸性的特点作为内容区域，这样不管内容多少，始终会覆盖在内容区域之上，但是我们需要让它在在内容区域之下显示，所以我们设置<code>z-index: -1</code>使其被推到宿主元素之下，这样对伪元素的进行旋转并会不影响宿主元素，可谓不可多得的技巧。</p>
+<h5 id="3菱形图片">3.菱形图片</h5>
+<p>倘若设计师给你这么一个头像的设计稿：<br>
+<img src="https://luoyelusheng.com/post-images/1634465816457.png" alt="" loading="lazy"><br>
+你会怎么实现，当然了，你肯定不能让美工帮你把图片给你调整成菱形，<s>不然会被打死</s>,常规想法我们可能是这样的：</p>
+<pre><code class="language-css">.picture{
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+.picture img{
+    transform: rotate(45deg);
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465824808.png" alt="" loading="lazy"><br>
+结果却是一个六边形，然而我们要的并不是六边形，原理很简单，因容器太大，图片太小，导致剪切的时候只剪切了图片区域，所以我们要增加图片大小，增加图片宽度之后，效果是这样：<br>
+<img src="https://luoyelusheng.com/post-images/1634465876006.png" alt="" loading="lazy"><br>
+纳尼？似乎不是我们想要的效果，CSS3中有一个放大功能，为何不用它来试一试，下面是代码：</p>
+<pre><code class="language-css">.picture{
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+.picture img{
+    transform: rotate(45deg) scale(1.42);
+}
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465889455.png" alt="" loading="lazy"><br>
+效果还不错。但是这个方法需要一层额外的父级标签，而且如果我们遇到是一张非正方形的图片那这个就基本没戏了。那有没有更好的方法，当然有。</p>
+<p>使用<code>clip-path</code>属性，他可以将我们想要的元素裁剪成指定的形状，这种PS软件的裁剪效果是一样的，代码是这样的：</p>
+<pre><code class="language-css">clip-path: polygon(505 0， 100% 50%， 50% 100% ， 0 50%)；
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465897584.png" alt="" loading="lazy"><br>
+就是这么简单，而且效果还很好，唯一的不足就是兼容性不怎么好。</p>
+<h5 id="4切角效果">4.切角效果</h5>
+<p>切角效果现在很多地方都在运用，比如下面这种缺角效果，如果让你实现，你会怎么实现它？<br>
+<img src="https://luoyelusheng.com/post-images/1634465905106.png" alt="" loading="lazy"><br>
+可能你会想到使用背景图片来实现，又或者通过绝对定位等方法实现，但是都不怎么友好，这里建议的第一种解决方案则是使用无所不能的CSS渐变，<strong>CSS渐变可以接受一个角度值作为方向</strong>，具体看代码：</p>
+<pre><code class="language-css">background: #ad141400;
+background: linear-gradient(-45deg, #ad141400 15px,#FF9800 0);
+</code></pre>
+<p>效果和原图效果一模一样，第一行声明只是作为回退机制处理。<br>
+如果试试两个角，那怎么处理，我想你已经想到了，就是运用两次渐变：</p>
+<pre><code class="language-css">background: linear-gradient(-45deg, #ad141400 15px,#ff9800 0) right,linear-gradient(45deg, #ffffff 15px,#ff9800 0) left;
+background-size: 50% 100%;/*防止渐变重复渲染，使其各渲染一半*/
+background-repeat: no-repeat;/*防止渐变重复渲染，覆盖斜角*/
+</code></pre>
+<p>如果四个角，那就再运用两次渐变，原理相同：</p>
+<pre><code class="language-css">background: linear-gradient(135deg, #ad141400 15px,#ff9800 0) top left,
+linear-gradient(-135deg, #ffffff 15px,#ff9800 0) top right,
+linear-gradient(-45deg, #ad141400 15px,#ff9800 0) bottom right,
+linear-gradient(45deg, #ffffff 15px,#ff9800 0) bottom left;
+background-size: 50% 50%;/*防止渐变重复渲染，使其各渲染一半*/
+background-repeat: no-repeat;/*防止渐变重复渲染，覆盖斜角*/
+</code></pre>
+<p><img src="https://luoyelusheng.com/post-images/1634465913941.png" alt="" loading="lazy"><br>
+凹向四级边角，经常使用径向渐变来实现：</p>
+<pre><code class="language-css">background: radial-gradient(circle at top left, #ad141400 15px,#ff9800 0) top left,
+radial-gradient(circle at top right, #ffffff 15px,#ff9800 0) top right,
+radial-gradient(circle at bottom left, #ad141400 15px,#ff9800 0) bottom left,
+radial-gradient(circle at bottom right, #ffffff 15px,#ff9800 0) bottom right;
+background-size: 50% 51%;/*防止渐变重复渲染，使其各渲染一半*/
+background-repeat: no-repeat;/*防止渐变重复渲染，覆盖斜角*/
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://luoyelusheng.com/post-images/1634465922186.png" alt="" loading="lazy"></figure>
+<p>这里垂直<code>background-size</code>需要增加一像素，因为在谷歌下面有一像素的白线在中间。</p>
+<p>当然上述方案似乎他麻烦了，我们还可以借助SVG实现这一效果：</p>
+<pre><code class="language-css">border: 21px solid transparent;
+border-image: 1 url('data:image/svg+xml,\ &lt;svg xmlns=&quot;http://www.w3.org/…oints=&quot;0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2&quot; /&gt;\ &lt;/svg&gt;');
+background: #58a;
+background-clip: padding-box;
+padding: .2em .3em;
+max-width: 12em;
+color: white;
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://luoyelusheng.com/post-images/1634465929915.png" alt="" loading="lazy"></figure>
+<p>在这里我们只需要修改边框即可。</p>
+<h6 id="5梯形标签页">5.梯形标签页</h6>
+<p>tab标签切换的时候，则需要我们实现一种梯形效果，比如：</p>
+<figure data-type="image" tabindex="3"><img src="https://luoyelusheng.com/post-images/1634465936982.png" alt="" loading="lazy"></figure>
+<p>我们可以通过伪元素实现：</p>
+<pre><code class="language-css">content: '';
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: -1;
+border-bottom: none;
+border-radius: .5em .5em 0 0;
+background: #ccc linear-gradient(hsla(0,0%,100%,.6), hsla(0,0%,100%,0));
+box-shadow: 0 0.15em white inset;
+transform: scale(1.1, 1.3) perspective(.5em) rotateX(5deg);
+transform-origin: bottom;
+</code></pre>
+<p>关键的原理是利用3d旋转矩形，由于透视关系，我们看到的二维图形往往是一个梯形，核心代码：</p>
+<pre><code class="language-CSS">transform: scale(1.1, 1.3) perspective(.5em) rotateX(5deg);
+</code></pre>
+<p>其中<code>perspective</code>代表透视距离，默认为<code>0</code>，我们还可设置<code>transform-origin</code>的值为<code>bottom left</code>或者<code>bottom right</code>就可以左侧倾斜或者右侧倾斜。当然有一个缺点就是<strong>斜边的角度依赖与元素的宽度</strong>，不过确实是很好用的一种实践。</p>
+<h5 id="6饼图">6.饼图</h5>
+<p>倘若我们想要实现下面这种效果：</p>
+<style>
+.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+    color: #655;
+}
+.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: spin 3s linear infinite, bg 6s step-end infinite;
+}
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+    50% { background: currentColor; }
+}
+</style>
+<div class="pie"></div>
+<p>可能我们会去借助图形库来解决，但如果我们自己实现，那怎么实现，我们现在看一段代码：</p>
+<pre><code class="language-css">.pie {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+    color: #655;
+}
+</code></pre>
+<p>这段代码定义了一个圆形，然后又定义了线性渐变，效果如下：<br>
+<img src="https://luoyelusheng.com/post-images/1634465946692.png" alt="" loading="lazy"><br>
+下面我们通过伪元素并结合<code>rotate</code>来实现百分比，代码如下：</p>
+<pre><code class="language-css">.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+}
+</code></pre>
+<p>并结合动画实现最终的效果：</p>
+<pre><code class="language-css">.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: spin 3s linear infinite, bg 6s step-end infinite;
+}
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+    50% { background: currentColor; }
+}
+</code></pre>
+<p>但其实我们经常用的饼图效果代码结构是这样的：</p>
+<pre><code class="language-html">&lt;div class=&quot;pie&quot;&gt;80%&lt;/div&gt;
+</code></pre>
+<p>代码实现：</p>
+<pre><code class="language-css">.pie {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    background: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+    color: #655;
+    animation-delay: -20s;
+}
+
+.pie::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    border-radius: 0 100% 100% 0 / 50%;
+    background-color: inherit;
+    transform-origin: left;
+    animation: spin 50s linear infinite, bg 100s step-end infinite;
+    animation-play-state: paused;
+    animation-delay: inherit;
+}
+
+@keyframes spin {
+    to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+    50% { background: currentColor; }
+}
+</code></pre>
+<pre><code class="language-js">var doc = document.querySelector('.pie');
+var text = parseInt(doc.innerText);
+doc.style.animationDelay = '-' + text + 's';
+</code></pre>
+<figure data-type="image" tabindex="4"><img src="https://luoyelusheng.com/post-images/1634465956497.png" alt="" loading="lazy"></figure>
+<p>另外一种是svg实现方案，具体可看这个例子：<a href="http://dabblet.com/gist/4696e4c6700fe9f346d8">demo</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/CSS使用技巧-形状
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/CSS使用技巧-字体排印/">
+                      <span class="post-title">
+                        CSS使用技巧-字体排印&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

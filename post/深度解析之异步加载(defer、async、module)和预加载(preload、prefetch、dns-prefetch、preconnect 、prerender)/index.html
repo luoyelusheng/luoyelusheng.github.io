@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender) | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender) | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender).jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/L6Qw12Pao/" class="tag">
+                  CSS
+                </a>
+                
+            </span>
+            <h1>
+              深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)
+            </h1>
+            <span class="meta">
+              Posted on
+              2019-05-02，14 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <blockquote>
+<p>废话：异步加载和预加载一直都是前端优化必备技能之一，今天我们就来深度解析一下常用的几个关键点。</p>
+</blockquote>
+<h2 id="异步加载">异步加载</h2>
+<p>废话不多说，任何长篇大论的教程都抵不过一张清晰明了的高清大图来得好：</p>
+<figure data-type="image" tabindex="1"><img src="http://upload-images.jianshu.io/upload_images/3828575-e6b0ece566e78abe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>从这张图里面，我们看到了什么，大概总结为以下四点：</p>
+<ul>
+<li>默认情况HTML解析，然后加载JS，此时HTML解析中断，然后执行JS，最后JS执行完成恢复HTML解析。</li>
+<li>defer情况下HTML和JS并驾齐驱，最后才执行JS</li>
+<li>async情况则HTML和JS并驾齐驱，JS的执行可能在HTML解析之前就已经完成了</li>
+<li>最后module情况和defer的情况类似，只不过会在提取的过程中加载多个JS文件罢了</li>
+</ul>
+<p>好了，区分的大概基本已经了解了，那怎么记住呢？默认的情况我们已经很熟了，就无需多记了。</p>
+<p>defer翻译过来是延缓的意思，也就是拖拖拉拉了，所以比较懒，也就是说什么都不想做，也就是哪怕你把饭端在我面前，我也懒得动嘴的那种，这么一想，我们不就记住了，哪怕你客户端把JS文件下载好了，我也懒得执行，最后实在是大家都干完事了，我才不情愿的去执行JS文件。</p>
+<p>async翻译过来就是异步的意思，异步异步，不就是一步一步嘛，什么都想一步到位，也就是说，只要下载完我就立马执行，至于其他的想都不想。</p>
+<p>module翻译过来就是模块的意思，es6用过的人基本都了解这个关键字，加载也和defer差不多，只不过可以加载多个JS文件而已。</p>
+<p>我们再来看看这几个加载的DOM事件时机：</p>
+<figure data-type="image" tabindex="2"><img src="http://upload-images.jianshu.io/upload_images/3828575-0541419207a2659b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>从这张图可以看出大概这几点：</p>
+<ul>
+<li>async 会在加载完JS后立即执行，最迟也会在load事件前执行完。</li>
+<li>defer会在HTML解析完成后执行，最迟也会在DOMContentLoaded事件前执行完。</li>
+</ul>
+<p>从上面我们可以看出，如果你的脚本依赖于DOM构建完成是否完成，则可以使用defer；如果无需DOM的构建，那就可以放心的使用async了。</p>
+<h3 id="defer">defer</h3>
+<p>defer属性仅适用于外部脚本，也就是仅当存在<strong>src属性</strong>时才会生效；如果一个script标签上面即存在defer属性，也存在async属性，那么浏览器会如何解析这种情况呢？我们通过一段代码验证结果,详情点击<a href="https://codesandbox.io/embed/rwvo0716po">这里</a>。</p>
+<p>也就是说defer的优先级没有async高，我们看一下规范是怎么处理这种情况的。</p>
+<blockquote>
+<p>The <a href="https://www.w3.org/TR/html5/semantics-scripting.html#element-attrdef-script-defer">defer</a> attribute may be specified even if the <a href="https://www.w3.org/TR/html5/semantics-scripting.html#element-attrdef-script-async">async</a> attribute is specified, to cause legacy Web browsers that only support <a href="https://www.w3.org/TR/html5/semantics-scripting.html#element-attrdef-script-defer">defer</a> (and not <a href="https://www.w3.org/TR/html5/semantics-scripting.html#element-attrdef-script-async">async</a>) to fall back to the <a href="https://www.w3.org/TR/html5/semantics-scripting.html#element-attrdef-script-defer">defer</a> behavior instead of the blocking behavior that is the default.</p>
+</blockquote>
+<p>规范只是说明了在不支持async的情况下浏览器将会回退支持defer，但并没有明确指明两种都支持的这种情况，也就是说这一种情况浏览器自行处理，经过测试，各个浏览器表现行为：</p>
+<ul>
+<li>Chrome浏览器表现为解析为async特性</li>
+<li>Safari浏览器表现为async特性</li>
+<li>Opera浏览器表现为async特性</li>
+<li>Firefox浏览器表现为async特性</li>
+</ul>
+<p>IE暂时没有安装，看来各大浏览器表现一致，总之async的优先级是最高的。</p>
+<h4 id="兼容性">兼容性</h4>
+<p>下面来看看defer的<a href="https://caniuse.com/#search=defer">兼容性</a>，移动端一片大绿，可以放心使用，IE10以上可以放心使用，IE6-9有一点小问题就是不会按照script标签的执行顺序进行执行，对于不依赖前后脚本库的可以不用担心，但是如果依赖库的就不行了，比如你的项目依赖jQuery，后面紧接着使用jQuery的方法可能就会出现问题。</p>
+<figure data-type="image" tabindex="3"><img src="http://upload-images.jianshu.io/upload_images/3828575-3b698358e6ac6264.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h3 id="async">async</h3>
+<p>和defer一样，也仅仅适用于外部脚本，也就是仅当存在<strong>src属性</strong>时才会生效。</p>
+<h4 id="兼容性-2">兼容性</h4>
+<p>async的<a href="https://caniuse.com/#search=async">兼容性</a>在移动端也是一片大绿，IE仅支持IE10+。</p>
+<figure data-type="image" tabindex="4"><img src="http://upload-images.jianshu.io/upload_images/3828575-325bd06732527ff7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h2 id="module">module</h2>
+<p>在现代浏览器中，我们可以声明acript标签type=’module’属性从而拥抱es6的模块导入导出语法，就像这样：</p>
+<pre><code>&lt;script type=&quot;module&quot;&gt;
+  import { Max } from &quot;./math.js&quot;;
+  console.log(Max(1, 2, 7, 2, 0)); //7
+&lt;/script&gt;
+</code></pre>
+<p>看起来是不是令人很激动，似乎对于开发者十分友好，但是这里也有几个与传统脚本不一样的地方：</p>
+<ul>
+<li>module默认使用了”use strict”模式，这也意味着不能使用诸如arguments.callee这一类的语法。</li>
+<li>模块只会加载一次，无论前后你写了多少次。</li>
+<li>不支持&lt;!–const a = 1–&gt;注释。</li>
+<li>module有自己的词法作用域，比如定义一个 var a = 1，并不会创建一个全局变量，因此你并不能通过window.a 访问到它的值。</li>
+</ul>
+<p>模块的导入方式目前仅支持以下几种模式：</p>
+<pre><code>支持
+import {math} from './math.mjs';
+import {math} from '../math.mjs';
+import {math} from '/modules/math.mjs';
+import {math} from 'https://simple.example/modules/math.mjs';
+//不支持
+import {math} from 'jquery';
+</code></pre>
+<p>当然，浏览器厂商也在考虑支持 import {math} from ‘jquery’ 这种格式，不过，还是需要一段很长的路要走。</p>
+<p>module的默认情况就是defer的，因此不必再module上面又添加一个defer熟悉，并且本身就不支持这种写法，但是支持async属性，其加载渲染方式和async差不多，这里不再赘述。</p>
+<h3 id="兼容性-3">兼容性</h3>
+<p>在移动端的<a href="https://caniuse.com/#search=module">兼容性</a>还算可以，但是IE貌似都败下阵来，只要edge16+以上还算支持，对于不支持module的浏览器可以使用nomodule属性作为版本回退的方案解决。</p>
+<figure data-type="image" tabindex="5"><img src="http://upload-images.jianshu.io/upload_images/3828575-01f07b335414232b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>最后来说一下module的使用建议，大型项目（100模块以上）不建议直接使用模块语法，应该使用打包工具诸如Webpack，Rollup,、或 Parcel，因为静态导入或导出语法是静态可分析的，通过捆绑工具可以去掉多余的模块，我们考虑下面这一种场景：</p>
+<pre><code>import { Modal } from './util.js';
+Modal({
+  title: 'hello'
+})
+</code></pre>
+<p>如果我们通过打包工具打包这一份代码，最终生成的JS文件将会只包含Modal这一个函数，倘若我们没有使用打包工具，浏览器将会下载整个util这一个JS文件，并通过进一步分析了解了使用了Modal这一个函数，这对于没有用到util里面的全部函数的方式，则是一种多余的带宽浪费。</p>
+<h2 id="预加载">预加载</h2>
+<p>在我们的浏览器加载资源的时候，对于每一个资源都有其自身的默认优先级，倘若我们能修改每一个资源的默认优先级，那我们几乎可以按照我们的预期加载想要加载的资源。</p>
+<p>以谷歌浏览器为例，我们打开控制台，并切换到Network选项，点击刷新页面，在网络下面的title一行点击鼠标右键，勾选Priority即可看到加载资源的优先级，我们可以看到样式的级别比脚本的优先级高，毕竟页面的一加载进来肯定是样式首先需要渲染的，不然整个页面便会四分五裂，用户体验不好。</p>
+<figure data-type="image" tabindex="6"><img src="http://upload-images.jianshu.io/upload_images/3828575-4d622f6d44a0994e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h3 id="preload">preload</h3>
+<p>preload翻译过来就是预加载，一旦启用后便会告知浏览器应该尽快的加载某个资源，如果提取的资源<strong>3s内</strong>未在当前使用，在谷歌开发工具将会触发警告消息</p>
+<figure data-type="image" tabindex="7"><img src="http://upload-images.jianshu.io/upload_images/3828575-75eb797a4fb122f6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>大概的语法如下：</p>
+<pre><code>&lt;link rel=&quot;preload&quot; as=&quot;script&quot; href=&quot;foo.js&quot;&gt;
+&lt;link rel=&quot;preload&quot; as=&quot;style&quot; href=&quot;bar.css&quot;&gt;
+</code></pre>
+<p>除了以上指定的资源外，还可以加载audio、font、video以及document等，详情<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Preloading_content">点击</a>这里了解。</p>
+<h4 id="跨域资源">跨域资源</h4>
+<p>如需加载跨域的资源列表，则需要正确设置CORS，接着便可以在<link>元素中设置好crossorigin属性即可：</p>
+<pre><code>&lt;link rel=&quot;preload&quot; as=&quot;font&quot; crossorigin=&quot;crossorigin&quot; type=&quot;font/woff2&quot; href=&quot;foo.woff2&quot;&gt;
+</code></pre>
+<p>这里有一个特例便是无论是否跨域，字体的获取都需要设置crossorigin属性，这是由于历史原因造成，有兴趣了解可移步<a href="https://drafts.csswg.org/css-fonts/#font-fetching-requirements">这里</a>了解，另外我们还可以使用media响应式的加载图片，比如：</p>
+<pre><code>&lt;link rel=&quot;preload&quot; href=&quot;bg@2x.png&quot; as=&quot;image&quot; media=&quot;(max-width: 325px)&quot;&gt;
+  &lt;link rel=&quot;preload&quot; href=&quot;bg@3x.png&quot; as=&quot;image&quot; media=&quot;(min-width: 400px)&quot;&gt;
+</code></pre>
+<p>另一个重要的地方便是如果预加载一个脚本，它并不是执行：</p>
+<pre><code>//只拉取下载不执行
+var preloadLink = document.createElement(&quot;link&quot;);
+preloadLink.href = &quot;foo.js&quot;;
+preloadLink.rel = &quot;preload&quot;;
+preloadLink.as = &quot;script&quot;;
+document.head.appendChild(preloadLink);
+
+//如果需要执行
+var preloadedScript = document.createElement(&quot;script&quot;);
+preloadedScript.src = &quot;foo.js&quot;;
+document.body.appendChild(preloadedScript);
+</code></pre>
+<h3 id="兼容性-4">兼容性</h3>
+<p><a href="https://caniuse.com/#search=preload">兼容</a>似乎IE全体阵亡，edge也得17+才能勉强支持，火狐需要手动启动支持，移动端支持程度还是挺好的。</p>
+<figure data-type="image" tabindex="8"><img src="http://upload-images.jianshu.io/upload_images/3828575-42ce44ea4dfa0376.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h2 id="prefetch">prefetch</h2>
+<p>简而言之预提取就是在我们页面加载完成后，在带宽可用的情况下，加载用户下一步期待的页面资源，比如企业认证，一般都是分好几个页面进行认证的，在用户从第一个页面进行认证的时候，在页面加载完成，用户正在填写表单数据之时，加载第二个页面的部分资源，从而使用户更快打开下一个页面，从而增加用户体验，示例：</p>
+<pre><code>&lt;link rel=&quot;prefetch&quot; href=&quot;demo.html&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;demo.css&quot;&gt;
+</code></pre>
+<p>当浏览器解析到link标签时，读取到rel的值为prefetch，便会将这一个资源添加的队列中，当浏览器空闲时便会预提取资源，但是在demo.html页面中只是加载HTML，不会加载demo页面里面的任何其他资源，除非你在demo页面也明确使用了预提取。</p>
+<h3 id="兼容性-5">兼容性</h3>
+<p>各大浏览器支持都还挺好，IE11+以上，但是Safari貌似到现在还没支持。</p>
+<figure data-type="image" tabindex="9"><img src="http://upload-images.jianshu.io/upload_images/3828575-b75b131cb335ded9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image" loading="lazy"></figure>
+<h2 id="dns-prefetch">dns-prefetch</h2>
+<p>我们都知道，当我们在浏览器的地址栏输入域名的时候，首先要进行的就是域名解析，因为我们需要加载域名对应的资源，这个过程很快，但是如果在移动端，那可是一个分秒必争的地方，当一个页面需要访问许多外部域名的资源的时候，如果我们能在用户浏览页面的时候，在浏览器空闲的时间，把可能需要访问的域名都提前做好了域名解析，那是不是大大增加了用户打开页面的响应时间，增加用户体验，为了解决这个问题，w3c便提出来一个标准，学名叫dns-prefetch。</p>
+<figure data-type="image" tabindex="10"><img src="http://upload-images.jianshu.io/upload_images/3828575-1927f73e1146b379.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="dns-prefetch在淘宝上的使用" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>使用方法上面中已经支持了，指定rel=”dns-prefetch”，在href中指定页面需要解析的域名即可，你可能已经注意到了上面的图中域名使用了双斜杠，这个双斜杠表示URL以主机名开头，和你使用完整URL（比如http://g.alicdn.com/）是等效的。在RFC1808中被指定。</p>
+<p>当然并不是所有的页面需要用到的外部域名都需要做这样的域名解析，浏览器默认会解析超链接属性的href里面的域名，并且你的网站域名还不能是HTTPS，如果是HTTPS，则需要设置请求头或加入一段强制开启域名解析的meta标签。</p>
+<pre><code>//HTTP
+&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//a.com&quot;&gt; //多余
+&lt;a href=&quot;http://a.com&quot;&gt;
+//HTTPS
+&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot;&gt;//强制开启
+&lt;a href=&quot;http://a.com&quot;&gt;
+</code></pre>
+<p>当然，并不建议对HTTPS网站开启强制解析的方式，因为这样会带来一些安全隐患，具体可参考<a href="https://blog.compass-security.com/2016/10/bypassing-content-security-policy-with-dns-prefetching/">这里</a>。</p>
+<h2 id="preconnect">preconnect</h2>
+<p>预连接，也就是启动早期连接（包括DNS查找，TCP握手和可选TLS协商），我们来看一个例子：</p>
+<pre><code>&lt;link href='https://fonts.demo.com' rel='preconnect' crossorigin&gt;
+&lt;link href='https://demo.com/css?family=黑体' rel='stylesheet'&gt;
+</code></pre>
+<p>一个网络字体正常加载一般都包括：</p>
+<ul>
+<li>页面加载样式，解析样式用到的网络字体</li>
+<li>网络字体开始下载，首先开始DNS的查找</li>
+<li>然后TCP握手</li>
+<li>如果是HTTPS，还有TLS协商，最后下载字体</li>
+</ul>
+<p>差不多一个字体的渲染要经过这么几个过程，但是如果字体的前期准备（DNS查找，TCP握手和可选TLS协商）和样式的加载是并行执行，是不是可以更快的渲染页面，preconnect就是为这个而生的，从而优化用户体验。</p>
+<p>当然如果是跨域资源，不要忘了加上crossorigin属性。</p>
+<h3 id="兼容性-6">兼容性</h3>
+<p>IE15+以上部分<a href="https://caniuse.com/#search=preconnect">兼容</a>，移动端兼容良好。</p>
+<figure data-type="image" tabindex="11"><img src="http://upload-images.jianshu.io/upload_images/3828575-e8c1e22617229d24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="https://luoyelusheng.cn/wp-content/uploads/2019/03/image-9-1024x322.png" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h2 id="prerender">prerender</h2>
+<p>预渲染，简单来说就是浏览器会下载指定链接的资源，并下载以及渲染它，就好比我们打开了一个新的Tab标签页，静默的在后台的下载执行，当然，浏览器也不一定会下载渲染它，这取决预很多情况，比如浏览器是否空闲以及操作系统是否会放弃下载过慢的资源文件。</p>
+<p>除非你真的能十分的肯定用户接下来一定会触发你所指定的资源地址，否则对于用户来说这是一种带宽的浪费，使用例子如下：</p>
+<pre><code>&lt;link rel=&quot;prerender&quot; href=&quot;https://www.apple.com/&quot;&gt;
+</code></pre>
+<h3 id="兼容性-7">兼容性</h3>
+<p>虽然是prerender是HTML5规范的一部分，但是似乎很多厂商都还没有实现，但是IE11竟然支持。</p>
+<figure data-type="image" tabindex="12"><img src="http://upload-images.jianshu.io/upload_images/3828575-0174a6cf899ca381.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<h2 id="结尾">结尾</h2>
+<p>讲了这么多，最后整理了一个表格，帮助大家快速查阅参考，每个浏览器的实施细节都有所区别，这里以Chrome浏览器表格为例：</p>
+<figure data-type="image" tabindex="13"><img src="http://upload-images.jianshu.io/upload_images/3828575-8fef60c270b372bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" title="深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)" loading="lazy"></figure>
+<p>参考：<br>
+[1] <a href="https://www.w3.org/TR/resource-hints/#prerender">https://www.w3.org/TR/resource-hints/#prerender</a><br>
+[2] <a href="https://dev.chromium.org/developers/design-documents/dns-prefetching">https://dev.chromium.org/developers/design-documents/dns-prefetching</a><br>
+[3] <a href="https://developers.google.com/web/fundamentals/performance/resource-prioritization">资源优先级 – 让浏览器助您一臂之力</a><br>
+[4] <a href="https://addyosmani.com/blog/script-priorities/">JavaScript Loading Priorities in Chrome</a><br>
+[5] <a href="https://docs.google.com/document/d/1bCDuq9H1ih9iNjgzyAL0gpwNFiEP4TZS-YLRp_RuMlc/edit#">Chrome Resource Priorities and Scheduling</a><br>
+[6] <a href="https://developers.google.com/web/fundamentals/primers/modules">Using JavaScript modules on the web</a><br>
+[7] <a href="https://www.w3.org/TR/html5/webappapis.html#module-script">https://www.w3.org/TR/html5/webappapis.html#module-script</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/深度解析之异步加载(defer、async、module)和预加载(preload、prefetch、dns-prefetch、preconnect 、prerender)
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/流的破坏与保护/">
+                      <span class="post-title">
+                        流的破坏与保护&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>

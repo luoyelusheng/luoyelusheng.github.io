@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="luoyelusheng,前端技术开发">
+<meta name="description" content="前端技术开发,React">
+<meta name="author" content="luoyelusheng">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:type" content="website">
+<meta property="og:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://luoyelusheng.com">
+<meta property="og:description" content="前端技术开发">
+<meta property="og:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="落叶卢生 - 前端技术开发落叶卢生 - 前端技术开发">
+<meta name="twitter:description" content="前端技术开发">
+<meta name="twitter:url" content="https://luoyelusheng.com">
+<meta name="twitter:image" content="https://luoyelusheng.com/media/images/home-bg.jpg">
+<title>
+  内联元素与流 | 落叶卢生
+</title>
+<link href="//cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- <link href="https://luoyelusheng.com/media/css/bootstrap.min.css" rel="stylesheet"> -->
+<!--  <link href="https://luoyelusheng.com/media/css/all.min.css" rel="stylesheet" type="text/css"> -->
+<link href="//cdn.staticfile.org/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="内联元素与流 | 落叶卢生 » Feed"
+  href="https://luoyelusheng.com/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://cdn.jsdelivr.net/gh/luoyelusheng/luoyelusheng.github.io//styles/main.css" rel="stylesheet">
+<style>
+  .post-friend {
+    margin: 0 100px;
+  }
+
+  .friend-box {
+    float: left;
+    width: calc(50% - 20px);
+    margin: 15px 10px;
+  }
+
+  img.friend-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important;
+    float: left;
+    margin: 0 15px 0 0 !important;
+  }
+
+  .flink-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    overflow: hidden;
+    line-height: 24px;
+  }
+</style>
+<script src="//cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/highlight.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/jquery.min.js"></script> -->
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <meta property="og:description" content="内联元素与流" />
+    <meta property="og:url" content="https://luoyelusheng.com/post/内联元素与流/" />
+    <meta property="og:locale" content="zh-CN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="落叶卢生" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://luoyelusheng.com">
+        落叶卢生
+      </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/">
+                    首页
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/archives">
+                    归档
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/tags">
+                    标签
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/friends">
+                    友链
+                  </a>
+                  
+            </li>
+            
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/post/about">
+                    关于
+                  </a>
+                  
+            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://luoyelusheng.com/post-images/内联元素与流.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <span class="tags">
+              
+                <a href="https://luoyelusheng.com/tag/k7RscZHCa/" class="tag">
+                  CSS世界
+                </a>
+                
+            </span>
+            <h1>
+              内联元素与流
+            </h1>
+            <span class="meta">
+              Posted on
+              2018-02-09，6 min read
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 id="字母xcss世界中隐匿的举足轻重的角色">字母x——css世界中隐匿的举足轻重的角色</h2>
+<p>我们这里的字母x就是我们平常所见的字母x，只不多由于它本身形态的特殊性，由此衍生出了许多的css概念。</p>
+<h3 id="x-height与ex">x-height与ex</h3>
+<p>css中有一个概念叫做x-height，顾名思义就是字母x的高度，术语就是基线（baseline）和等分线（mean line）（也俗称中线midline）之间的距离。</p>
+<p><a href="https://zh.wikipedia.org/wiki/X%E5%AD%97%E9%AB%98">维基百科</a>有一个示意图：<br>
+<img src="https://luoyelusheng.com/post-images/1634482463446.png" alt="" loading="lazy"></p>
+<p>字母x衍生出了x-height的概念，并在这个基础上有衍生出了ex单位，可能你还没听过，但是就连IE6都支持这个单位。那这个有什么用呢？要说运用在元素的尺寸控制上面，这个还不适合，因为ex受限于字体的影响，这就导致其不稳定性，这也是很多人没有听说它的原因，毕竟他没啥用，但是我们可以将其运用在副业上——不受字体和字号影响的内联元素的垂直居中对齐效果，关键代码：</p>
+<pre><code>HTML:
+&lt;p&gt;这是文字&lt;i class=&quot;icon-arrow&quot;&gt;&lt;/i&gt;&lt;/p&gt;
+CSS:
+.icon-arrow {
+    display: inline-block;
+    width: 20px;
+    height: 1ex;
+    background: url(/img/2018-2-10/arrow.png) no-repeat center;
+}
+</code></pre>
+<p>效果：</p>
+<p>这是文字<i style="display: inline-block;width: 20px;height: 1ex;background: url(/img/2018-2-10/arrow.png) no-repeat center;"></i></p>
+<p>原理很简单，我们都知道默认内联元素默认基线对齐，而基线就是x的底部，而1ex就是一个x的高度，如果设置图标高度就是1ex，同时背景图片居中，岂不是刚好文字和图片垂直居中。</p>
+<h3 id="内联元素的基石line-height">内联元素的基石line-height</h3>
+<p><em><strong> 对于非替换内联元素，内联元素的高度完全由line-height决定。</strong></em><br>
+估计不少人认为内联元素的高度都是由内容决定的，不然为何空的div中写上几个文字，div的高度立马就显现出来了，这里我们来看一个具体的例子：</p>
+<pre><code>HTML:
+&lt;div class=&quot;test1&quot;&gt;高度-1&lt;/div&gt;
+&lt;div class=&quot;test2&quot;&gt;高度-2&lt;/div&gt;
+CSS:
+.test1{
+    font-size:16px;
+    line-height:0;
+    border:1px solid #ccc;
+    background:#eee;
+}
+.test2{
+    font-size:0;
+    line-height:16px;
+    border:1px solid #ccc;
+    background:#eee;
+}
+
+</code></pre>
+<p>效果：</p>
+<div style="font-size:16px;line-height:0;border:1px solid #ccc;background:#eee;">高度-1</div>
+<p> </p>
+<div style="font-size:0;line-height:16px;border:1px solid #ccc;background:#eee;">高度-2</div>
+<p>由上可以看出，两个div的元素在于line-height行高是否为0与font-size是否为0，第一个由于行高为0，导致其高度几乎看不见，高度即为背景为灰色的部分，第二个虽然字体大小为0，但是其行高不为0，使其背景撑开16px的内部高度，足以证明非替换元素的元素的高度完全由行高决定，而不是我们平常所说的font-size决定。</p>
+<p>了解了这个原理后，我们就可实现一个基于多行文字的垂直居中效果。</p>
+<pre><code>HTML：
+&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;content&quot;&gt;基于行高实现的多行文字垂直居中效果，需要vertical-align属性帮助。&lt;/div&gt;
+&lt;/div&gt;
+CSS：
+.box {
+    width: 280px;
+    line-height: 120px;
+    background-color: #f0f3f9;
+    margin: auto;
+}
+.content {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0 20px;
+    text-align: left;
+    vertical-align: middle;
+}
+</code></pre>
+<p>效果：</p>
+<div style="width: 280px;line-height: 120px;background-color: #f0f3f9;margin: auto;">
+    <div style="display: inline-block;line-height: 20px;margin: 0 20px;text-align: left;vertical-align: middle;">基于行高实现的多行文字垂直居中效果，需要vertical-align属性帮助。</div>
+</div>
+<p>原理很简单，通过设置<code>.box</code>的行高120px，使其撑开为120px高度，注意这里的高度是作用于幽灵空白节点而言的，相当于在<code>.content</code>元素前面撑开了120px高度的内联元素。最后通过设置内联元素的<code>vertical-align:middle</code>来调整多行文本的垂直位置。当然，这里的垂直居中只是近似的垂直居中，因为我们都知道<code>vertical-align:middle</code>对齐位置是小写字母x的交叉点，并不是我们想象中的一个字母的中线位置。</p>
+<h3 id="深入line-height的各类属性值">深入<code>line-height</code>的各类属性值</h3>
+<p><code>line-height</code>的默认值是<code>normal</code>，还支持数值、百分比以及长度值。很多人可能对这默认值都假象为某一定值，大概也就1倍多一点的样子，但其实<code>normal</code>是一个变量，并且和<code>font-family</code>有着密切关联的变量值。考虑以下几段代码：</p>
+<pre><code>div{
+    line-height:normal;
+    font-family:'miscrosoft yahei';
+}
+div{
+    line-height:normal;
+    font-family:simsun;
+}
+</code></pre>
+<p>下表是在几个桌面浏览器上面的测试数据，其显示了normal的计算值的区别。</p>
+<table>
+    <thead>
+        <tr>
+            <th class="text-center">字体</th>
+            <th class="text-center">chrome</th>
+            <th class="text-center">Firefox</th>
+            <th class="text-center">IE</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>微软雅黑</td>
+            <td>1.32</td>
+            <td>1.321</td>
+            <td>1.32</td>
+        </tr>
+        <tr>
+            <td>宋体</td>
+            <td>1.141</td>
+            <td>1.142</td>
+            <td>1.141</td>
+        </tr>
+    </tbody>
+</table>
+<p>鉴于每个浏览器的表现不一，所以重置样式那肯定是必要的，但重置为多少又是一个问题，<code>lien-height</code>支持三种类型的数值，其中数值类型继承细节与其他两种有所区别，具体表现在：</p>
+<p>以数值作为<code>line-height</code>的属性值，其子元素继承的都是这个值;以百分比值和长度值作为<code>line-height</code>的属性值，其子元素继承的是最终的计算值。</p>
+<p>因此我们一般都可以这样设置值：</p>
+<pre><code>body{
+    line-height：1.5;
+}
+input,button{
+    line-height:inherit;
+}
+</code></pre>
+<p>如若我们要设置固定的<code>line-height</code>值<code>20px</code>，<code>font-size</code>的值为<code>14px</code>,那么行高则为20/14≈1.4285714,为兼容谷歌，向上取值，则最终设置的样式为：</p>
+<pre><code>body{
+    line-height:1.42858;
+    font-size:14px;
+}
+</code></pre>
+<h3 id="line-height和vertical-align">line-height和vertical-align</h3>
+<p>vertical-align的百分比值是相对于line-height的计算值计算的，这个可能许多人都不清楚，设置vertical-align起作用的先决条件只能应用于内联元素以及display值为table-cell的元素，并且浮动和绝对定位会让元素块状化，导致vertical-align依旧失效。</p>
+<p>最后展示一个基于vertical-align的水平居中弹框，具体可查看这个<a href="http://demo.cssworld.cn/5/3-10.php">demo</a>。</p>
+<p>参考自<a href="http://www.cssworld.cn/">《css世界》</a></p>
+
+            
+              <div style="margin:30px 0;">
+                <div>作者：落叶卢生
+                </div>
+                <div>链接：https://luoyelusheng.com/post/内联元素与流
+                </div>
+                <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+              </div>
+              
+                
+                  <p class="next-post">下一篇：
+                    <a href="https://luoyelusheng.com/post/基础知识与盒尺寸/">
+                      <span class="post-title">
+                        基础知识与盒尺寸&rarr;
+                      </span>
+                    </a>
+                  </p>
+                  
+                    <div class="comment">
+                      
+                        
+                              
+                                <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+<script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+<div id="disqus_thread"></div>
+<script>
+var options = {
+  shortname: 'luoyelusheng-cn',
+  apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+}
+if ('https://disqus.skk.moe/disqus/') {
+  options.api = 'https://disqus.skk.moe/disqus/'
+}
+var dsqjs = new DisqusJS(options)
+</script>
+
+                                  
+                                    
+                    </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+            
+              <li class="list-inline-item">
+                <a href="https://github.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+              <li class="list-inline-item">
+                <a href="https://twitter.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+            
+                
+            
+                
+            
+              <li class="list-inline-item">
+                <a href="https://www.instagram.com/luoyelusheng" target="_blank">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              
+                
+            
+                
+                  <li class="list-inline-item">
+                    <a href="https://luoyelusheng.com/atom.xml" target="_blank">
+                      <span class="fa-stack fa-lg">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+        </ul>
+        <p class="copyright text-muted">Copyright &copy;<span>
+            落叶卢生
+          </span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script src="//cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/bootstrap.bundle.min.js"></script> -->
+<!-- Bootstrap core JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+<!-- <script src="https://luoyelusheng.com/media/scripts/clean-blog.min.js"></script> -->
+<script src="//instant.page/3.0.0" type="module" defer
+  integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+<style type="text/css">
+  a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none
+  }
+
+  a.back_to_top span {
+    color: #888
+  }
+
+  a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf
+  }
+
+  a.back_to_top:hover span {
+    color: #555
+  }
+
+  @media print,
+  screen and(max-width:580px) {
+    .back_to_top {
+      display: none !important
+    }
+  }
+</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function (_this) {
+    return function () {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function () {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function () {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+            800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+</body>
+
+</html>
