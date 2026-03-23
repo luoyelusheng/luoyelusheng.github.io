@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      em {
+        border: 5px dotted red;
+        padding: 0 10px;
+      }
+      .operating {
+        text-align: center;
+      }
+      .container {
+        padding: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="container">几个测试的例子<em>几个测试的</em>例子几个测试的例子</p>
+    <div class="operating">
+      <button type="button" class="btn btn-info">触发换行</button>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $(function() {
+      let isBr = true;
+      $(".btn").click(function() {
+        if (isBr) {
+          $(".container").css("width", "100px");
+          $(".btn").text("取消换行");
+        } else {
+          $(".container").css("width", "300px");
+          $(".btn").text("触发换行");
+        }
+        isBr = !isBr;
+      });
+    });
+  </script>
+</html>
