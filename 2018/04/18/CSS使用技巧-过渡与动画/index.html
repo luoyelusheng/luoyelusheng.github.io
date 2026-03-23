@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="落叶卢生的个人博客"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="luoyelusheng"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CSS使用技巧-过渡与动画"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="落叶卢生的个人博客"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="落叶卢生"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://luoyelusheng.comimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://luoyelusheng.comimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>CSS使用技巧-过渡与动画 - 落叶卢生</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-PND3K2D1YN', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/avatar.png"/>
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">落叶卢生</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                首页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                标签
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/friends">
+                            
+                                友链
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/abouts">
+                            
+                                关于
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/luoyelusheng">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/post-images/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                        <span class="tags">
+                            
+                                <a href="/tags/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="tag">CSS使用技巧</a>
+                            
+                                <a href="/tags/CSS/" class="tag">CSS</a>
+                            
+                        </span>
+                    
+                    <h1>CSS使用技巧-过渡与动画</h1>
+                    
+                    <span class="meta">
+                        
+                            Posted on 2018-04-18
+                        
+                        <span> · </span>
+                        <span class="read-time">阅读约 19 分钟</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/CSS使用技巧/">#CSS使用技巧</a> <a href="/tags/CSS/">#CSS</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>CSS过渡动画是CSS3的一大新亮点，这种本该由CSS实现的效果过去一直是使用脚本来实现，多多少少会影响性能，现在我们拥有了强大的CSS过渡动画功能后，将会有一个崭新的世界。</p>
+<h5 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h5><p><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/index.asp#animation">CSS动画</a><br><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/index.asp#transition">CSS过渡</a><br><a target="_blank" rel="noopener" href="http://www.w3school.com.cn/cssref/index.asp#transform">CSS转换</a></p>
+<h5 id="1-缓动效果"><a href="#1-缓动效果" class="headerlink" title="1.缓动效果"></a>1.缓动效果</h5><p>现在我们实现一个自由落体的运动效果，我们的CSS样式可能这样写，核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> bounce &#123;</span><br><span class="line">    <span class="number">60%</span>, <span class="number">80%</span>, <span class="selector-tag">to</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">350px</span>);</span><br><span class="line">        <span class="attribute">animation-timing-function</span>: ease-in;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">70%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">250px</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">90%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">translateY</span>(<span class="number">300px</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.ball</span>&#123;</span><br><span class="line">    <span class="attribute">animation</span>: bounce <span class="number">3s</span> ease-out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634463862045.gif"><br>这里传递了<code>transition-timing-function</code>的值，他有6个值，前五个值分别对应以下：<br><img src="/post-images/1634463874651.png"><br>最后一个值是一个<code>cubic-bezier(x1,y1,x2,y2)</code>函数，可以定义自己想要的值,<code>(x1,y1)</code>表示第一个控制点的坐标，即上图中左下角的那个坐标，<code>（x2,y2）</code>表示第二个控制点的坐标，即上图中右上角的那个坐标，<code>cubic-bezier</code>函数简单来说就是控制在一段时间内动画执行的进度函数，类似于下面这个二位坐标系：<br><img src="/post-images/1634463883193.png"><br>x轴坐标代表时间，取值范围是[0,1]，因为我们不可能超越时间，y轴坐标表示执行进度，我们可以通过编辑这个曲线，从而创造出符合我们预期的效果，这里有个在线的工具可以生成这个函数图像，链接如下：<br><a target="_blank" rel="noopener" href="http://cubic-bezier.com/">cubic-bezier</a></p>
+<p>现在我们想要实现这种效果，请问改如何实现：<br><img src="/post-images/1634463893570.gif"></p>
+<p>css核心代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:not</span>(<span class="selector-pseudo">:focus</span>) + <span class="selector-class">.callout</span><span class="selector-pseudo">:not</span>(<span class="selector-pseudo">:hover</span>) &#123;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="attribute">transition</span>: .<span class="number">25s</span> transform;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.callout</span> &#123;</span><br><span class="line">    <span class="attribute">transition</span>: .<span class="number">5s</span> <span class="built_in">cubic-bezier</span>(.<span class="number">25</span>,.<span class="number">1</span>,.<span class="number">3</span>,<span class="number">1.5</span>) transform;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">1.4em</span> -.<span class="number">4em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里关键的是<code>cubic-bezier</code>函数，它在执行的过程中会将目标对象放大到自身的<code>1.1</code>倍之后，再返回到原始大小，它的函数图大概这样：<br><img src="/post-images/1634463905514.png"><br>在这里我们并没有运用动画，而只是利用过度加一点小技巧就实现了平滑的放大-&gt;原始大小-&gt;隐藏的过渡效果。</p>
+<h5 id="2-逐帧动画"><a href="#2-逐帧动画" class="headerlink" title="2.逐帧动画"></a>2.逐帧动画</h5><p>假如我们想要实现加载的等待动画效果，不使用gif实现，那怎么实现：<br><img src="/post-images/1634463917980.gif"></p>
+<p>在网上有一种解决方案，就是使用背景来解决，通过脚本控制背景显示位置，从而达到一帧一帧加载图片，但是这都需要脚本，我们能不能通过CSS来实现这种效果呢，尝试的代码如下：</p>
+<p>背景放置了每个不同阶段的静态帧：<br><img src="/post-images/1634463926688.png"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> loader &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123; <span class="attribute">background-position</span>: -<span class="number">800px</span> <span class="number">0</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loader</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">http://dabblet.com/img/loader.png</span>) <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">animation</span>: loader <span class="number">1s</span> infinite linear;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634463934163.gif"><br>怎么在连续动，这什么鬼，原来是动画会有一个过度效果，所以会连续动，而我们的目的只是想逐帧的变换，那有没有什么办法，好在CSS中有一个<code>steps</code>属性，专门用来显示逐帧变换的，简单来说他会将一个动画分割成n个步骤，每隔一段时间执行下一个步骤，中间没有过度行为，这正好满足我们的要求，代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> loader &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123; <span class="attribute">background-position</span>: -<span class="number">800px</span> <span class="number">0</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.loader</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">http://dabblet.com/img/loader.png</span>) <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">animation</span>: loader <span class="number">1s</span> infinite linear <span class="built_in">steps</span>(<span class="number">8</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-闪烁效果"><a href="#3-闪烁效果" class="headerlink" title="3.闪烁效果"></a>3.闪烁效果</h5><p>有时候我们想要实现文字闪烁效果以提醒用户有新消息又或者提醒用户某些重要的东西，那我们怎么去实现，可能我们可以通过<code>opacity</code>属性实现透明闪烁效果，又或者通过文字颜色透明提醒，我们的代码可能是这样的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> blink&#123; <span class="selector-tag">to</span> &#123; <span class="attribute">color</span>: transparent &#125; &#125;</span><br><span class="line"><span class="selector-class">.blink</span>&#123;</span><br><span class="line">    <span class="attribute">animation</span>: <span class="number">1s</span> blink <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634463943149.gif"><br>乍看感觉很突兀，显示的时候一下子就显示出来了，我们能不能让它有个平缓的过程，于是我们将循环过程的切换放在中间，也就是在50%的时候就让它切换回来，代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> blink&#123; <span class="number">50%</span> &#123; <span class="attribute">color</span>: transparent &#125; &#125;</span><br><span class="line"><span class="selector-class">.blink</span>&#123;</span><br><span class="line">    <span class="attribute">animation</span>: <span class="number">1s</span> blink <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们知道这个动画一致都处于加速过程中，为了让它更加随机化，我们增加<code>animation-direction</code>属性，让其更加随机化一点：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> blink&#123; <span class="number">50%</span> &#123; <span class="attribute">color</span>: transparent &#125; &#125;</span><br><span class="line"><span class="selector-class">.blink</span>&#123;</span><br><span class="line">    <span class="attribute">animation</span>: <span class="number">1s</span> blink <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">animation-direction</span>: alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-打字动画"><a href="#4-打字动画" class="headerlink" title="4.打字动画"></a>4.打字动画</h5><p>加入我们要实现下面这种结果，这在web模拟终端经常会实现的效果之一：<br><img src="/post-images/1634463960352.gif"><br>首先我们想到当然是下面这行代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> typing &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;<span class="attribute">width</span>: <span class="number">0</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.typing</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">14ch</span>;</span><br><span class="line">    <span class="attribute">animation</span>: typing  <span class="number">8s</span> <span class="built_in">steps</span>(<span class="number">14</span>),caret <span class="number">1s</span> <span class="built_in">steps</span>(<span class="number">1</span>) infinite;</span><br><span class="line">    <span class="attribute">font-family</span>: monospace;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634463983476.png"><br>一看结果，发现没有设置不换行样式以及溢出隐藏的样式，这里使用的是前面提到的步进函数，因为我们不需要过渡，这里还用到了一个<code>ch</code>单位，这个是css3中新单位，代表<code>0</code>字符的宽度，不常用，但在等宽字体中好使，我们还要加上右边框，所以最后修改代码之后：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> typing &#123;</span><br><span class="line">    <span class="selector-tag">from</span> &#123;<span class="attribute">width</span>: <span class="number">0</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@keyframes</span> caret &#123;</span><br><span class="line">    <span class="number">50%</span> &#123;<span class="attribute">border-color</span><span class="selector-pseudo">:current</span>Color&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.dot</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">14ch</span>;</span><br><span class="line">    <span class="attribute">animation</span>: typing  <span class="number">8s</span> <span class="built_in">steps</span>(<span class="number">14</span>),caret <span class="number">1s</span> <span class="built_in">steps</span>(<span class="number">1</span>) infinite;</span><br><span class="line">    <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">    <span class="attribute">font-family</span>: monospace;</span><br><span class="line">    <span class="attribute">border-right</span>: .<span class="number">05em</span> solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-状态平滑的动画"><a href="#5-状态平滑的动画" class="headerlink" title="5.状态平滑的动画"></a>5.状态平滑的动画</h5><p>如果我们的动画一开始是默认执行的，而是用户有交互的时候采取执行，比如<code>hover</code>事件，但是当用户移除的时候，那么此时的动画将会如何运行呢，是继续执行一个周期，还是停留在原地呢，都不是而是迅速的返回到起始状态，给人的感觉就好像是出<code>bug</code>的感觉:<br><img src="/post-images/1634463991263.gif"></p>
+<p>那有没有什么办法让其有一个过渡状态呢，好在css中有一个<code>animation-play-state</code>属性，它可以控制动画执行与暂停，于是我们有以下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> panoramic &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123; <span class="attribute">background-position</span>: <span class="number">100%</span> <span class="number">0</span>; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.panoramic</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>; <span class="attribute">height</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">&#x27;1.jpg&#x27;</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: auto <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">animation</span>: panoramic <span class="number">10s</span> linear infinite alternate;</span><br><span class="line">    <span class="attribute">animation-play-state</span>: paused;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.panoramic</span><span class="selector-pseudo">:hover</span>, <span class="selector-class">.panoramic</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">    <span class="attribute">animation-play-state</span>: running;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这段代码中我使用<code>background-position</code>水平方向的过渡从而实现图片缓慢从左到右运动，在默认情况下是暂停动画，当鼠标移上去的时候才开始执行动画，就解决了前面的问题。</p>
+<h5 id="6-沿环形运动的动画"><a href="#6-沿环形运动的动画" class="headerlink" title="6.沿环形运动的动画"></a>6.沿环形运动的动画</h5><p>如果我们想要使用CSS实现一个动画随着指定的环形路线而运动那该怎么样，可能代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;path&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;av&quot;&gt;&lt;img src=&quot;http://lea.verou.me/book/adamcatlace.jpg&quot; alt=&quot;&quot; &gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.path</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">background</span>: orange;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.path</span> <span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: inherit;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.av</span>&#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">overflow</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@keyframes</span> spin &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">1turn</span>)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.av</span>&#123;</span><br><span class="line">    <span class="attribute">animation</span>: spin <span class="number">3s</span> infinite linear;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634464007342.gif"></p>
+<p>但是这个头像在向下运动的时候却是头朝下的，我们能不能让其朝上显示呢，头像之所以会向下是因为自身在旋转，如果我们再次让其自身逆向旋转，那不就可以抵消掉旋转，就好像没有旋转一样，从而保持图片始终朝上，具体看代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">@keyframes</span> spin &#123;</span><br><span class="line">    <span class="selector-tag">to</span> &#123; <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">1turn</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.avatar</span> &#123;</span><br><span class="line">    <span class="attribute">animation</span>: spin <span class="number">3s</span> infinite linear;</span><br><span class="line">    <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">150px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.avatar</span> &gt; <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">animation</span>: inherit;</span><br><span class="line">    <span class="attribute">animation-direction</span>: reverse;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我们通过对图片应用动画，使其继承父级的旋转动画，通过<code>animation-direction</code>属性反转角度，从而达到我们想要的效果。</p>
+<p>最后我们不借助父元素旋转，而使用自身旋转能否解决这个问题，关键就是<code>transform-origin</code>完全可以使用<code>translate</code>来模拟实现，前者不过是后者的语法糖而已，于是我们有以下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> spin &#123;</span><br><span class="line">	<span class="selector-tag">from</span> &#123;</span><br><span class="line">		<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0turn</span>)</span><br><span class="line">		           <span class="built_in">translateY</span>(-<span class="number">150px</span>) <span class="built_in">translateY</span>(<span class="number">50%</span>)</span><br><span class="line">		           <span class="built_in">rotate</span>(<span class="number">1turn</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">to</span> &#123;</span><br><span class="line">		<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">1turn</span>)</span><br><span class="line">		           <span class="built_in">translateY</span>(-<span class="number">150px</span>) <span class="built_in">translateY</span>(<span class="number">50%</span>)</span><br><span class="line">		           <span class="built_in">rotate</span>(<span class="number">0turn</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.av</span> &#123;</span><br><span class="line">	<span class="attribute">animation</span>: spin <span class="number">3s</span> infinite linear;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                <!-- Copyright -->
+                <div class="post-copyright">
+                    <div>作者：luoyelusheng</div>
+                    <div>链接：https://luoyelusheng.com/2018/04/18/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB/</div>
+                    <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+                </div>
+
+                <!-- Next Post -->
+                
+                    <p class="next-post">下一篇：
+                        <a href="/2018/04/17/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E7%BB%93%E6%9E%84%E4%B8%8E%E5%B8%83%E5%B1%80/">
+                            <span class="post-title">CSS使用技巧-结构与布局 &rarr;</span>
+                        </a>
+                    </p>
+                
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <div class="comment">
+
+        <!-- DisqusJS -->
+        
+            <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+            <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+            <div id="disqus_thread"></div>
+            <script>
+                var options = {
+                    shortname: 'luoyelusheng',
+                    apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+                    
+                        api: 'https://disqus.skk.moe/disqus/'
+                    
+                }
+                var dsqjs = new DisqusJS(options)
+            </script>
+        
+
+        <!-- Gitalk -->
+        
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+            <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+            <div id="gitalk-container"></div>
+            <script>
+                var gitalk = new Gitalk({
+                    clientID: 'eb0733a6c6245795e290',
+                    clientSecret: '27c6de56696640dc87338767f9c8a2e6335fa671',
+                    repo: 'luoyelusheng.github.io',
+                    owner: 'luoyelusheng',
+                    admin: ['luoyelusheng'],
+                    id: (location.pathname).substring(0, 49),
+                    distractionFreeMode: false
+                })
+                gitalk.render('gitalk-container')
+            </script>
+        
+
+        <!-- Facebook Comments -->
+        
+
+    </div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/luoyelusheng" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:luoyelusheng@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    <!-- RSS -->
+                    <li>
+                        <a href="/atom.xml" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">&copy; 2026 luoyelusheng<br></p>
+                <p class="copyright text-muted">Powered by <a target="_blank" href="https://hexo.io/">Hexo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<a id="back_to_top" href="#" class="back_to_top">
+    <span>▲</span>
+</a>
+
+<style>
+a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none;
+    z-index: 999;
+}
+a.back_to_top span {
+    color: #888;
+}
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+a.back_to_top:hover span {
+    color: #555;
+}
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+</style>
+
+<script>
+(function() {
+    var bt = document.getElementById('back_to_top');
+    if (document.documentElement.clientWidth > 480) {
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > 300) {
+                bt.style.display = 'block';
+            } else {
+                bt.style.display = 'none';
+            }
+        });
+        bt.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+})();
+</script>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'luoyelusheng';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,334 @@
+article .container .row img {
+  max-width: 100% !important;
+  height: auto;
+  display: inline-block;
+}
+article .container .row .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+article .container .row .video-container iframe,
+article .container .row .video-container object,
+article .container .row .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+}
+article .container .row blockquote {
+  font-style: italic;
+  font-family: font-serif;
+  font-size: 1.2em;
+  padding: 0 30px 15px;
+  text-align: center;
+}
+article .container .row blockquote footer {
+  border-top: none;
+  font-size: 0.8em;
+  line-height: 1;
+  margin: 20px 0 0;
+  padding-top: 0;
+}
+article .container .row blockquote footer cite:before {
+  content: '—';
+  color: #ccc;
+  padding: 0 0.5em;
+}
+article .container .row .pullquote {
+  float: right;
+  border: none;
+  padding: 0;
+  margin: 1em 0 0.5em 1.5em;
+  text-align: left;
+  width: 45%;
+  font-size: 1.5em;
+}
+article .container .row .pullquote.left {
+  float: left;
+}
+figure.highlight {
+  background: #eee;
+  border: 1px solid color-border;
+  margin-top: 15px;
+  padding: 7px 15px;
+  border-radius: 2px;
+  text-shadow: 0 0 1px #fff;
+  line-height: 1.6;
+  overflow: auto;
+  position: relative;
+  font-size: 0.9em;
+}
+figure.highlight figcaption {
+  color: color-meta;
+  font-family: font-mono;
+  margin-bottom: 5px;
+  text-shadow: 0 0 1px #fff;
+}
+figure.highlight figcaption a {
+  position: absolute;
+  right: 15px;
+}
+figure.highlight pre {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+figure.highlight table {
+  margin-top: 0;
+  border-spacing: 0;
+}
+figure.highlight table .gutter {
+  color: color-meta;
+  padding-right: 15px;
+  border-right: 1px solid color-border;
+  text-align: right;
+}
+figure.highlight table .code {
+  padding-left: 15px;
+  border-left: 1px solid #fff;
+  color: #666;
+}
+figure.highlight table .line {
+  height: 20px;
+}
+figure.highlight table .line.marked {
+  background: #d6d6d6;
+}
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+  color: #93a1a1;
+  font-style: italic;
+}
+pre .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
+  color: #859900;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+  color: #2aa198;
+}
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .built_in,
+pre .identifier,
+pre .vhdl,
+pre .literal,
+pre .id {
+  color: #268bd2;
+}
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+  color: #b58900;
+}
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .symbol .string,
+pre .diff .change,
+pre .special,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata,
+pre .clojure .title {
+  color: #cb4b16;
+}
+pre .deletion {
+  color: #dc322f;
+}
+.post-archives {
+  margin-bottom: 40px;
+}
+.post-archives .year {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+.post-archives .post-preview {
+  padding: 15px 0;
+}
+.post-archives .post-preview a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-archives .post-preview .post-title.archive {
+  font-size: 16px;
+  margin: 0;
+}
+.post-archives .post-preview .post-meta.archive {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+  white-space: nowrap;
+}
+.friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+.friend-item {
+  display: flex;
+  align-items: center;
+  width: calc(50% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.friend-item:hover {
+  border-color: brand-primary;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+.friend-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.friend-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.friend-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+.friend-desc {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post-copyright {
+  margin: 30px 0;
+  padding: 15px;
+  background: #f8f8f8;
+  border-left: 4px solid color-link;
+  font-size: 0.9em;
+  color: #666;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.post-copyright div {
+  margin: 5px 0;
+}
+.next-post {
+  margin: 30px 0;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 5px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.next-post a {
+  color: color-link;
+  text-decoration: none;
+  font-weight: bold;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.next-post a:hover {
+  text-decoration: underline;
+}
+.post-heading .tags {
+  display: block;
+  margin-bottom: 10px;
+}
+.post-heading .tags .tag {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 3px;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.post-heading .tags .tag:hover {
+  background: rgba(255,255,255,0.3);
+}
+.tag-item {
+  display: inline-block;
+  margin: 8px;
+}
+.tag-item .tag-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+.tag-item .tag-link:hover {
+  background: brand-primary;
+  border-color: brand-primary;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.tag-item .tag-link:hover .tag-count {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+}
+.tag-item .tag-link .tag-name {
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.tag-item .tag-link .tag-count {
+  font-size: 13px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 10px;
+  transition: color 0.3s;
+}

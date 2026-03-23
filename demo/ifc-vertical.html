@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>IFC 内外边距以及边框对垂直方向上不构成影响</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+      em {
+        color: rgb(255, 0, 106);
+      }
+      .operating {
+        text-align: center;
+      }
+      em {
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      几个测试的例子几个测试的例子几个测试的例子几个测试的例子
+    </p>
+    <p>
+      几个测试的例子<em>我是em元素</em>例子几个测试的例子
+    </p>
+    <p>
+      几个测试的例子几个测试的例子几个测试的例子几个测试的例子
+    </p>
+
+    <div class="operating">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          onkeyup="handleInput()"
+          class="form-control"
+          value="10"
+        />
+        <div class="input-group-append">
+          <span class="input-group-text">输入em元素padding-top的值</span>
+        </div>
+      </div>
+      <button class="btn btn-info">点击设置em的背景</button>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function handleInput(val) {
+      $("em").css("padding-top", $("input").val() + "px");
+    }
+    $(function () {
+      let isBg = true;
+      $(".btn").click(function () {
+        if (isBg) {
+          $("em").css("background", "#000");
+          $(".btn").text("点击取消em的背景");
+        } else {
+          $("em").css("background", "#fff");
+          $(".btn").text("点击设置em的背景");
+        }
+        isBg = !isBg;
+      });
+    });
+  </script>
+</html>

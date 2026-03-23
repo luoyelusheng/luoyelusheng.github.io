@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .wrapper {
+        background: #519aba;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+      h2 {
+        background: #96c4e6;
+        padding: 10px 0;
+      }
+      h3 {
+        background: #96c4e6;
+        padding: 10px 0;
+      }
+      .positive h2 {
+        margin: 20px 0;
+      }
+      .positive h3 {
+        margin: 40px 0;
+      }
+      .negative h2 {
+        margin: -5px 0;
+      }
+      .negative h3 {
+        margin: -10px 0;
+      }
+      .diff h2 {
+        margin: -20px 0;
+      }
+      .diff h3 {
+        margin: 40px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper positive">
+      <h2>上下margin为20px</h2>
+      <h3>上下margin为40px，由‘同大’规则取最大的即margin为40px</h3>
+    </div>
+    <div class="wrapper negative">
+      <h2>上下margin为-5px</h2>
+      <h3>上下margin为-10px，由‘同大’规则取绝对值最大的即margin为-10px</h3>
+    </div>
+    <div class="wrapper diff">
+      <h2>上下margin为-20px</h2>
+      <h3>上下margin为40px，由‘异和’规则取相加后的值即margin为20px</h3>
+    </div>
+  </body>
+</html>

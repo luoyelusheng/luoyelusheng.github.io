@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="-140 87 1014 687" width="1014" height="687">
+  <defs>
+    <font-face font-family="PingFang SC" font-size="20" panose-1="2 11 4 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="58" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="400">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Regular"/>
+      </font-face-src>
+    </font-face>
+    <font-face font-family="Helvetica Neue" font-size="20" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#cb6193">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_2" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#7e83f7">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="Helvetica Neue" font-size="16" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_3" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-9 -4 10 8" markerWidth="10" markerHeight="8" color="black">
+      <g>
+        <path d="M -8 0 L 0 3 L 0 -3 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <font-face font-family="PingFang SC" font-size="15.6" panose-1="2 11 6 0 0 0 0 0 0 0" units-per-em="1000" underline-position="-150" underline-thickness="78" slope="0" x-height="600" cap-height="860" ascent="1060.0021" descent="-340.0007" font-weight="500">
+      <font-face-src>
+        <font-face-name name="PingFangSC-Medium"/>
+      </font-face-src>
+    </font-face>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_4" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#cb6193">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker_5" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-5 -3 6 6" markerWidth="6" markerHeight="6" color="#8e8e93">
+      <g>
+        <path d="M -3.7333333 0 L 0 1.4 L 0 -1.4 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.19.2\n2021-12-29 15:52:27 +0000</metadata>
+  <g id="Canvas_1" stroke="none" stroke-dasharray="none" fill-opacity="1" stroke-opacity="1" fill="none">
+    <title>Canvas 1</title>
+    <rect fill="white" x="-140" y="87" width="1014" height="687"/>
+    <g id="Canvas_1_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_64">
+        <g id="Graphic_4">
+          <path d="M -82.67535 87 L -115.32465 87 L -115.32465 684.8956 L -140 684.8956 L -99 720 L -58 684.8956 L -82.67535 684.8956 Z" fill="#67ac5c"/>
+        </g>
+        <g id="Graphic_20">
+          <text transform="translate(-109 334.8722)" fill="white">
+            <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="21">时</tspan>
+            <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="49">间</tspan>
+            <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" x="0" y="77">线</tspan>
+          </text>
+        </g>
+      </g>
+      <g id="Graphic_26">
+        <path d="M 444 106 L 544 106 C 549.52285 106 554 110.47715 554 116 L 554 163 C 554 168.52285 549.52285 173 544 173 L 444 173 C 438.47715 173 434 168.52285 434 163 L 434 116 C 434 110.47715 438.47715 106 444 106 Z" fill="#cb6193"/>
+        <text transform="translate(439 125.5)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="14.01" y="21">feature</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="white" y="21">/*</tspan>
+        </text>
+      </g>
+      <g id="Graphic_29">
+        <circle cx="494" cy="326" r="20.0000319580379" fill="#cb6193"/>
+      </g>
+      <g id="Graphic_36">
+        <circle cx="494" cy="416" r="20.0000319580379" fill="#cb6193"/>
+      </g>
+      <g id="Line_35">
+        <path d="M 763.3309 503.1205 C 742.3946 453.3693 707.2328 385.47823 659 346 C 599.9985 297.7077 541.226 308.12807 512.3692 318.0763" marker-start="url(#FilledArrow_Marker)" stroke="#cb6193" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_103">
+        <path d="M 191 101.5 L 291 101.5 C 296.52285 101.5 301 105.97715 301 111.5 L 301 158.5 C 301 164.02285 296.52285 168.5 291 168.5 L 191 168.5 C 185.47715 168.5 181 164.02285 181 158.5 L 181 111.5 C 181 105.97715 185.47715 101.5 191 101.5 Z" fill="#8080ff"/>
+        <text transform="translate(186 123.22)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="24.25" y="19">master</tspan>
+        </text>
+      </g>
+      <g id="Graphic_102">
+        <circle cx="241" cy="259" r="20.0000319580379" fill="#8080ff"/>
+      </g>
+      <g id="Line_101">
+        <line x1="241" y1="223.1" x2="241" y2="168.5" marker-start="url(#FilledArrow_Marker_2)" stroke="#7e83f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_100">
+        <circle cx="241" cy="709" r="20.0000319580379" fill="#8080ff"/>
+      </g>
+      <g id="Line_99">
+        <line x1="241" y1="673.1" x2="241" y2="279" marker-start="url(#FilledArrow_Marker_2)" stroke="#7e83f7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_110">
+        <path d="M 736 106 L 836 106 C 841.5228 106 846 110.47715 846 116 L 846 163 C 846 168.52285 841.5228 173 836 173 L 736 173 C 730.47715 173 726 168.52285 726 163 L 726 116 C 726 110.47715 730.47715 106 736 106 Z" fill="#8e8e93"/>
+        <text transform="translate(731 127.72)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="16.3" y="19">release/*</tspan>
+        </text>
+      </g>
+      <g id="Graphic_109">
+        <circle cx="786" cy="565" r="50.0000798950949" fill="#8e8e93"/>
+        <text transform="translate(751 541.44)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="3.15" y="19">release </tspan>
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="18.334" y="42.56">/</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="white" y="42.56">test</tspan>
+        </text>
+      </g>
+      <g id="Line_125">
+        <path d="M 707.4545 250.8332 C 662.5767 236.55093 611.6219 226.65337 589 245 C 544.23144 281.3078 631.4775 411.158 631.4775 411.158" marker-start="url(#FilledArrow_Marker_3)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_153">
+        <path d="M 468.73714 310.00547 C 440.1054 292.80603 391.3708 266.28002 345 254 C 304.03914 243.15266 275.92994 246.3361 259.36066 251.05646" marker-start="url(#FilledArrow_Marker_3)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Graphic_154">
+        <circle cx="494" cy="525" r="20.0000319580379" fill="#cb6193"/>
+      </g>
+      <g id="Graphic_164">
+        <path d="M 727.7718 289.33778 C 700.78125 283 711.5444 229.6463 754.6003 238.75 C 758.595 221.00398 808.66325 223.88436 808.3359 238.75 C 839.7303 219.73666 879.8503 257.64888 852.94 276.66222 C 885.2311 285.88038 852.5325 335.5466 826.03125 327.25 C 823.91035 341.0784 776.5341 345.9176 772.3758 327.25 C 745.5489 347.1861 689.6106 316.53324 727.7718 289.33778 Z" fill="white"/>
+        <path d="M 727.7718 289.33778 C 700.78125 283 711.5444 229.6463 754.6003 238.75 C 758.595 221.00398 808.66325 223.88436 808.3359 238.75 C 839.7303 219.73666 879.8503 257.64888 852.94 276.66222 C 885.2311 285.88038 852.5325 335.5466 826.03125 327.25 C 823.91035 341.0784 776.5341 345.9176 772.3758 327.25 C 745.5489 347.1861 689.6106 316.53324 727.7718 289.33778 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(736.05 250)" fill="black">
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x="3.6626008" y="17">多个feature分</tspan>
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x=".37880076" y="39">支组合成test分</tspan>
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x="45.65" y="61">支</tspan>
+        </text>
+      </g>
+      <g id="Graphic_170">
+        <path d="M 289.55848 576.0986 C 272.75 572.5 279.4528 542.20595 306.26608 547.375 C 308.75376 537.2989 339.934 538.93434 339.73016 547.375 C 359.2811 536.5793 384.2661 558.1057 367.5075 568.9014 C 387.61696 574.1355 367.25376 602.3358 350.75 597.625 C 349.4292 605.4767 319.92544 608.2244 317.33584 597.625 C 300.62928 608.94465 265.79344 591.54006 289.55848 576.0986 Z" fill="white"/>
+        <path d="M 289.55848 576.0986 C 272.75 572.5 279.4528 542.20595 306.26608 547.375 C 308.75376 537.2989 339.934 538.93434 339.73016 547.375 C 359.2811 536.5793 384.2661 558.1057 367.5075 568.9014 C 387.61696 574.1355 367.25376 602.3358 350.75 597.625 C 349.4292 605.4767 319.92544 608.2244 317.33584 597.625 C 300.62928 608.94465 265.79344 591.54006 289.55848 576.0986 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(296.6 561.5)" fill="black">
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x=".09859962" y="17">tag 1.0.0</tspan>
+        </text>
+      </g>
+      <g id="Graphic_174">
+        <path d="M 430.7718 735.5116 C 403.78125 731 414.5444 693.0194 457.60034 699.5 C 461.595 686.8672 511.66325 688.9177 511.3359 699.5 C 542.73026 685.9651 582.85034 712.9534 555.93996 726.4884 C 588.2311 733.0504 555.5325 768.406 529.03125 762.5 C 526.91035 772.344 479.5341 775.7888 475.3758 762.5 C 448.54894 776.6918 392.6106 754.8711 430.7718 735.5116 Z" fill="white"/>
+        <path d="M 430.7718 735.5116 C 403.78125 731 414.5444 693.0194 457.60034 699.5 C 461.595 686.8672 511.66325 688.9177 511.3359 699.5 C 542.73026 685.9651 582.85034 712.9534 555.93996 726.4884 C 588.2311 733.0504 555.5325 768.406 529.03125 762.5 C 526.91035 772.344 479.5341 775.7888 475.3758 762.5 C 448.54894 776.6918 392.6106 754.8711 430.7718 735.5116 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <text transform="translate(439.05 709)" fill="black">
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x="30.2372" y="17">merge </tspan>
+          <tspan font-family="PingFang SC" font-size="15.6" font-weight="500" fill="black" x="6.119601" y="39">release/prod</tspan>
+        </text>
+      </g>
+      <g id="Graphic_178">
+        <text transform="translate(360.6523 215.75438) rotate(28)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="black" x="5115908e-19" y="21">feature</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" y="21">/001</tspan>
+        </text>
+      </g>
+      <g id="Line_179">
+        <path d="M 745.3256 513.1548 C 713.9349 476.3959 668.19354 429.57136 622 406 C 567.61415 378.2483 529.4147 391.3083 509.62513 403.513" marker-start="url(#FilledArrow_Marker_4)" stroke="#cb6193" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_180">
+        <path d="M 735.3708 641.81814 C 702.2393 615.6054 657.2255 582.5372 614 559 C 565.7221 532.7117 532.9237 525.527 513.97995 524.10174" marker-start="url(#FilledArrow_Marker_4)" stroke="#cb6193" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_181">
+        <path d="M 473.8367 393.9262 C 451.49686 370.7332 412.5505 333.7665 367 305.5 C 321.4144 277.2117 282.84764 266.09708 260.81065 261.7537" marker-start="url(#FilledArrow_Marker_3)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_182">
+        <path d="M 476.30707 500.8957 C 451.6368 467.9121 404.35 406.8858 355 355 C 310.1194 307.8133 276.7471 282.08017 258.06756 269.43464" marker-start="url(#FilledArrow_Marker_3)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Graphic_183">
+        <text transform="translate(356.11407 257.17294) rotate(36)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="black" x="3.064999" y="21">feature</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" y="21">/002</tspan>
+        </text>
+      </g>
+      <g id="Graphic_184">
+        <text transform="translate(353.9891 305.6882) rotate(50)" fill="black">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="black" x="2842171e-19" y="21">feature</tspan>
+          <tspan font-family="PingFang SC" font-size="20" font-weight="400" fill="black" y="21">/003</tspan>
+        </text>
+      </g>
+      <g id="Graphic_186">
+        <circle cx="786" cy="684" r="50.0000798950949" fill="#8e8e93"/>
+        <text transform="translate(751 660.44)" fill="white">
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="3.15" y="19">release </tspan>
+          <tspan font-family="Helvetica Neue" font-size="20" font-weight="400" fill="white" x="15.07" y="42.56">/</tspan>
+          <tspan font-family="Helvetica Neue" font-size="16" font-weight="400" fill="white" y="42.56">prod</tspan>
+        </text>
+      </g>
+      <g id="Line_187">
+        <path d="M 750.4919 628.4749 C 716.3357 577.284 662.5703 502.41386 612 456 C 562.9718 411.0015 530.6105 405.291 512.3816 408.10503" marker-start="url(#FilledArrow_Marker_4)" stroke="#cb6193" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_188">
+        <path d="M 274.02824 694.92 C 316.50893 678.6851 397.2205 653.6176 500 648.903 C 597.3706 644.43644 685.6727 659.5614 737.6199 671.34414" marker-start="url(#FilledArrow_Marker_5)" stroke="#8e8e93" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Line_189">
+        <path d="M 703.5663 264.8869 C 697.04295 265.96046 691.0479 268.05155 686 271.5 C 653.6731 293.5841 675.39355 360.9516 675.39355 360.9516" marker-start="url(#FilledArrow_Marker_3)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_190">
+        <line x1="310.05584" y1="600.6538" x2="251.75178" y2="692.1308" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+      <g id="Line_191">
+        <line x1="554.76625" y1="648.3317" x2="517.90876" y2="697.2658" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="4.0,4.0" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

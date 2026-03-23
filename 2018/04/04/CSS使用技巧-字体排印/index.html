@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="落叶卢生的个人博客"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="luoyelusheng"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CSS使用技巧-字体排印"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="落叶卢生的个人博客"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="落叶卢生"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://luoyelusheng.comimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://luoyelusheng.comimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>CSS使用技巧-字体排印 - 落叶卢生</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'G-PND3K2D1YN', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="img/avatar.png"/>
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">落叶卢生</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                首页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                归档
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                标签
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/friends">
+                            
+                                友链
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/abouts">
+                            
+                                关于
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/luoyelusheng">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/post-images/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E5%AD%97%E4%BD%93%E6%8E%92%E5%8D%B0.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    
+                        <span class="tags">
+                            
+                                <a href="/tags/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" class="tag">CSS使用技巧</a>
+                            
+                                <a href="/tags/CSS/" class="tag">CSS</a>
+                            
+                        </span>
+                    
+                    <h1>CSS使用技巧-字体排印</h1>
+                    
+                    <span class="meta">
+                        
+                            Posted on 2018-04-04
+                        
+                        <span> · </span>
+                        <span class="read-time">阅读约 20 分钟</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/CSS使用技巧/">#CSS使用技巧</a> <a href="/tags/CSS/">#CSS</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h5 id="1-连字符断行"><a href="#1-连字符断行" class="headerlink" title="1.连字符断行"></a>1.连字符断行</h5><p>我们经常会想实现两端对齐的效果，但结局往往不如人意，比如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: justify;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465038623.png"><br>系统往往为了对齐两端，而在中间等分空间的时候留下许多空白，这在效果上面是不美观的，但好在CSS3中引入了一个新的属性<code>hyphens</code>,它接受三个值：<code>none</code>,<code>manual</code>以及<code>auto</code>，其中设置<code>auto</code>会自动设置连接符，具体效果如图：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">hyphens</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465049233.png"></p>
+<p>唯一的缺点就是兼容性还不够好。</p>
+<h6 id="2-插入换行"><a href="#2-插入换行" class="headerlink" title="2.插入换行"></a>2.插入换行</h6><p>假如有以下布局：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Name:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Tom<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Tim<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Age:<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span>10<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>我们往往为了规范会写这样的代码，保证结构的语义化和规范化，但是这里显示的效果确实差强人意：<br><img src="/post-images/1634465060070.png"><br>我们可能会通过调整css来让样式更加美观，但是这确实不好处理，因为我们要在每一个小的类别后面换行，达到这种效果：<br><img src="/post-images/1634465067678.png"><br>如果你打算手动输入换行符的话，那你可以跳过了。。。<br>我们这里采用的是伪元素来实现换行，具体代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">dd</span>+<span class="selector-tag">dt</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;\A&#x27;</span>;</span><br><span class="line">    <span class="attribute">white-space</span>: pre;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">dd</span>+<span class="selector-tag">dd</span><span class="selector-pseudo">::before</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;,&#x27;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们将每一个<code>dt</code>标签之前都加上换行符<code>\A</code>，Unicode字符的换行字符为<code>0x000A</code>，简写<code>\A</code>，因为浏览器会自动合并空白符，所以我们这里设置<code>pre</code>让其不要自动合并，保留空白符，最后在多个<code>dd</code>值的时候，在第二个的前面加上<code>,</code>，最终完美实现我们想要的效果。</p>
+<h5 id="3-文本行的斑马条纹"><a href="#3-文本行的斑马条纹" class="headerlink" title="3.文本行的斑马条纹"></a>3.文本行的斑马条纹</h5><p>假如实现下面这种条纹效果，那要怎么实现，可能你会使用脚本来控制了，但是这个毕竟不友好，那我们通过CSS怎么实现呢，其实我们可以通过线性渐变实现它。</p>
+<pre style="padding:.5em;line-height:1.5;background-image:linear-gradient(rgba(0,0,0,0.2) 50%, transparent 0);background-size:auto 3em;background-origin: content-box;">
+while (true) {
+    var d = new Date();
+    if (d.getDate() == 1 && d.getMonth() == 3) {
+        console.log('hellow');
+    }
+}
+</pre>
+<p>别忘了，我们的渐变可以实现许多条纹效果的，具体代码为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pre &#123; </span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">5em</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">hsl</span>(<span class="number">20</span>, <span class="number">50%</span>, <span class="number">95%</span>);</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(</span><br><span class="line">                        <span class="built_in">rgba</span>(<span class="number">120</span>,<span class="number">0</span>,<span class="number">0</span>,.<span class="number">1</span>) <span class="number">50%</span>, transparent <span class="number">0</span>);</span><br><span class="line">    <span class="attribute">background-size</span>: auto <span class="number">3em</span>;</span><br><span class="line">    <span class="attribute">background-origin</span>: content-box;</span><br><span class="line">    <span class="attribute">font-family</span>: Consolas, Monaco, monospace;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这里，我们设置一个条纹渐变，并且背景大小行高的两倍，应为我们要覆盖两行代码，最后通过<code>background-origin</code>调整解析<code>background-position</code>时以<code>content-box</code>为基准，就不会错位了。</p>
+<h5 id="4-调整tab的宽度"><a href="#4-调整tab的宽度" class="headerlink" title="4.调整tab的宽度"></a>4.调整tab的宽度</h5><p>css3新增了一个设置<code>tab</code>宽度的属性<code>tab-size</code>，可以用来指定缩进所需的字符。<br>默认样式：</p>
+<pre>
+<code>while (true) &#123;
+    var d = new Date();
+    if (d.getDate() == 1 && d.getMonth() == 3) &#123;
+    console.log('hellow');
+    &#125;
+&#125;</code>
+</pre>
+
+<p>添加样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pre&#123;</span><br><span class="line">    <span class="attribute">tab-size</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>应用样式后：</p>
+<pre style="tab-size: 2;">
+<code>while (true) &#123;
+  var d = new Date();
+  if (d.getDate() == 1 && d.getMonth() == 3) &#123;
+  console.log('hellow');
+  &#125;
+&#125;</code>
+</pre>
+
+<h5 id="5-连字"><a href="#5-连字" class="headerlink" title="5.连字"></a>5.连字</h5><p>用于将多个字符连接起来达到美观的作用，属性为<code>font-variant-ligatures</code>,具体可点击<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-ligatures">这里</a></p>
+<h5 id="6-华丽的-符号"><a href="#6-华丽的-符号" class="headerlink" title="6.华丽的 &amp; 符号"></a>6.华丽的 &amp; 符号</h5><p>如果我们想对<code>&amp;</code>符号设置单独的字体样式，你会怎么做通用做法是用一个<code>span</code>标签包裹住这个符号，然后对这个符号进行样式设置，但是这显然是不够DRY的，我们能否只指定一种字体只针对这个符号呢，幸运的是在CSS中确实有这个选项，具体代码为：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Ampersand;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">&#x27;Baskerville-Italic&#x27;</span>), <span class="built_in">local</span>(<span class="string">&#x27;GoudyOldStypapapa-Italic&#x27;</span>), <span class="built_in">local</span>(<span class="string">&#x27;Garamond-Italic&#x27;</span>), <span class="built_in">local</span>(<span class="string">&#x27;Palatino-Italic&#x27;</span>);</span><br><span class="line">  unicode-range: U+<span class="number">26</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: Ampersand, Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过<code>@font-face</code>引入规则，<code>src</code>指定路径，其中最关键的就是<code>unicode-range</code>属性，这个属性规定只针对<code>&amp;</code>设置样式，而且这个属性还支持通配符，这就意味着可以设置各种各样的指定符号应用字体的效果。</p>
+<h5 id="7-自定义下划线"><a href="#7-自定义下划线" class="headerlink" title="7.自定义下划线"></a>7.自定义下划线</h5><p>由于默认的下划线往往不能做到精准控制，所以往往我们都会使用边框来模拟下划线，但是往往下划线会阻止文字换行的行为：<br><img src="/post-images/1634465084143.png"><br>那有没有一种跟着文字走的最佳解决方案呢，当然有，这里核心是背景相关的知识，核心代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(gray, gray) no-repeat;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">1.02em</span>;</span><br><span class="line">  <span class="attribute">text-shadow</span>: .<span class="number">05em</span> <span class="number">0</span> white, -.<span class="number">05em</span> <span class="number">0</span> white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过背景大小生成<code>1px</code>的宽度，再通过定位控制位置，最后使用文阴影去除掉背景重叠在类似于<code>gy</code>这样的字母的下半部分。<br><img src="/post-images/1634465115221.png"></p>
+<p>还可以生成虚线效果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(gray, gray) no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465122531.png"></p>
+<p>波浪线：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(-<span class="number">45deg</span>, transparent <span class="number">40%</span>, red <span class="number">0</span>, red <span class="number">60%</span>, transparent <span class="number">0</span>) <span class="number">0</span> <span class="number">1em</span>,</span><br><span class="line">              <span class="built_in">linear-gradient</span>(<span class="number">45deg</span>, transparent <span class="number">40%</span>, red <span class="number">0</span>, red <span class="number">60%</span>, transparent <span class="number">0</span>) .<span class="number">1em</span> <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">background-repeat</span>: repeat-x;</span><br><span class="line">  <span class="attribute">background-size</span>: .<span class="number">2em</span> .<span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">text-shadow</span>: .<span class="number">05em</span> <span class="number">0</span> white, -.<span class="number">05em</span> <span class="number">0</span> white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465128976.png"></p>
+<h5 id="8-文字效果"><a href="#8-文字效果" class="headerlink" title="8.文字效果"></a>8.文字效果</h5><p>凸版印刷效果，代码如下:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: .<span class="number">8em</span> <span class="number">1em</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">hsl</span>(<span class="number">210</span>, <span class="number">13%</span>, <span class="number">60%</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">hsl</span>(<span class="number">210</span>, <span class="number">13%</span>, <span class="number">30%</span>);</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="number">1px</span> <span class="built_in">hsla</span>(<span class="number">0</span>,<span class="number">0%</span>,<span class="number">100%</span>,.<span class="number">8</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> + <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">hsl</span>(<span class="number">210</span>, <span class="number">13%</span>, <span class="number">30%</span>);</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">hsl</span>(<span class="number">210</span>, <span class="number">13%</span>, <span class="number">60%</span>);</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> -<span class="number">1px</span> <span class="number">1px</span> black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465137066.png"></p>
+<p>空心字效果，核心思想是使用<code>text-shadow</code>模拟四边的边框：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>&#123; <span class="attribute">text-shadow</span>: <span class="number">1px</span> <span class="number">1px</span> black, -<span class="number">1px</span> -<span class="number">1px</span> black, <span class="number">1px</span> -<span class="number">1px</span> black, -<span class="number">1px</span> <span class="number">1px</span> black; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>文字发光效果：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffc</span>;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">0</span> .<span class="number">1em</span>, <span class="number">0</span> <span class="number">0</span> .<span class="number">3em</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465145501.png"><br><img src="/post-images/1634465151230.png"></p>
+<p>文字凸起效果，原理还是<code>text-shadow</code>属性：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#58a</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="attribute">text-shadow</span>: <span class="number">0</span> <span class="number">1px</span> <span class="built_in">hsl</span>(<span class="number">0</span>,<span class="number">0%</span>,<span class="number">85%</span>),</span><br><span class="line">                    <span class="number">0</span> <span class="number">2px</span> <span class="built_in">hsl</span>(<span class="number">0</span>,<span class="number">100%</span>,<span class="number">80%</span>),</span><br><span class="line">                    <span class="number">0</span> <span class="number">3px</span> <span class="built_in">hsl</span>(<span class="number">0</span>,<span class="number">0%</span>,<span class="number">75%</span>),</span><br><span class="line">                    <span class="number">0</span> <span class="number">4px</span> <span class="built_in">hsl</span>(<span class="number">0</span>,<span class="number">0%</span>,<span class="number">70%</span>),</span><br><span class="line">                    <span class="number">0</span> <span class="number">5px</span> <span class="built_in">hsl</span>(<span class="number">0</span>,<span class="number">0%</span>,<span class="number">65%</span>),</span><br><span class="line">                    <span class="number">0</span> <span class="number">5px</span> <span class="number">10px</span> black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/post-images/1634465158252.png"><br><img src="/post-images/1634465164512.png"></p>
+<h5 id="9-环形文字"><a href="#9-环形文字" class="headerlink" title="9.环形文字"></a>9.环形文字</h5><p>如果实现下面这种效果，那怎么实现，CSS是几乎不可能的，所以我们只能借助于svg图像了：<br><img src="/post-images/1634465171413.png"></p>
+<p>代码如下:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;circular&quot;</span>&gt;</span></span><br><span class="line">    circular reasoning works because</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Text on a circle</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: bold <span class="number">120%</span> Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circular</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">20em</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20em</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">4em</span> auto <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circular</span> <span class="selector-tag">svg</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">overflow</span>: visible;</span><br><span class="line">    <span class="attribute">transition</span>: <span class="number">10s</span> linear transform;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circular</span> <span class="selector-tag">svg</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">2turn</span>); &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.circular</span> <span class="selector-tag">text</span> &#123; <span class="attribute">fill</span>: currentColor &#125;</span><br><span class="line"><span class="selector-class">.circular</span> <span class="selector-tag">path</span> &#123; <span class="attribute">fill</span>: none; &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">$$</span>(<span class="params">selector, context</span>) &#123;</span><br><span class="line">    context = context || <span class="variable language_">document</span>;</span><br><span class="line">    <span class="keyword">var</span> elements = context.<span class="title function_">querySelectorAll</span>(selector);</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(elements);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$$(<span class="string">&#x27;.circular&#x27;</span>).<span class="title function_">forEach</span>(<span class="keyword">function</span>(<span class="params">el</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="variable constant_">NS</span> = <span class="string">&quot;http://www.w3.org/2000/svg&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> svg = <span class="variable language_">document</span>.<span class="title function_">createElementNS</span>(<span class="variable constant_">NS</span>, <span class="string">&quot;svg&quot;</span>);</span><br><span class="line">    svg.<span class="title function_">setAttribute</span>(<span class="string">&quot;viewBox&quot;</span>, <span class="string">&quot;0 0 100 100&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> circle = <span class="variable language_">document</span>.<span class="title function_">createElementNS</span>(<span class="variable constant_">NS</span>, <span class="string">&quot;path&quot;</span>);</span><br><span class="line">    circle.<span class="title function_">setAttribute</span>(<span class="string">&quot;d&quot;</span>, <span class="string">&quot;M0,50 a50,50 0 1,1 0,1z&quot;</span>);</span><br><span class="line">    circle.<span class="title function_">setAttribute</span>(<span class="string">&quot;id&quot;</span>, <span class="string">&quot;circle&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> text = <span class="variable language_">document</span>.<span class="title function_">createElementNS</span>(<span class="variable constant_">NS</span>, <span class="string">&quot;text&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> textPath = <span class="variable language_">document</span>.<span class="title function_">createElementNS</span>(<span class="variable constant_">NS</span>, <span class="string">&quot;textPath&quot;</span>);</span><br><span class="line">    textPath.<span class="title function_">setAttributeNS</span>(<span class="string">&quot;http://www.w3.org/1999/xlink&quot;</span>, <span class="string">&#x27;xlink:href&#x27;</span>, <span class="string">&#x27;#circle&#x27;</span>);</span><br><span class="line">    textPath.<span class="property">textContent</span> = el.<span class="property">textContent</span>;</span><br><span class="line">    text.<span class="title function_">appendChild</span>(textPath);</span><br><span class="line"></span><br><span class="line">    svg.<span class="title function_">appendChild</span>(circle);</span><br><span class="line">    svg.<span class="title function_">appendChild</span>(text);</span><br><span class="line"></span><br><span class="line">    el.<span class="property">textContent</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    el.<span class="title function_">appendChild</span>(svg);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>详情私戳这个<a target="_blank" rel="noopener" href="http://dabblet.com/gist/bda1bf6b0c4adbcea63d">demo</a>。</p>
+
+
+                <!-- Copyright -->
+                <div class="post-copyright">
+                    <div>作者：luoyelusheng</div>
+                    <div>链接：https://luoyelusheng.com/2018/04/04/CSS%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7-%E5%AD%97%E4%BD%93%E6%8E%92%E5%8D%B0/</div>
+                    <div>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</div>
+                </div>
+
+                <!-- Next Post -->
+                
+                    <p class="next-post">下一篇：
+                        <a href="/2018/02/09/%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0%E4%B8%8E%E6%B5%81/">
+                            <span class="post-title">内联元素与流 &rarr;</span>
+                        </a>
+                    </p>
+                
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <div class="comment">
+
+        <!-- DisqusJS -->
+        
+            <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css">
+            <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+            <div id="disqus_thread"></div>
+            <script>
+                var options = {
+                    shortname: 'luoyelusheng',
+                    apikey: 'o2gOKxZFBHsfnsHjyfApqGKcxmCzh0AnIbWjenxajSj6gMmPVDRedqIyIudUn8xa',
+                    
+                        api: 'https://disqus.skk.moe/disqus/'
+                    
+                }
+                var dsqjs = new DisqusJS(options)
+            </script>
+        
+
+        <!-- Gitalk -->
+        
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+            <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+            <div id="gitalk-container"></div>
+            <script>
+                var gitalk = new Gitalk({
+                    clientID: 'eb0733a6c6245795e290',
+                    clientSecret: '27c6de56696640dc87338767f9c8a2e6335fa671',
+                    repo: 'luoyelusheng.github.io',
+                    owner: 'luoyelusheng',
+                    admin: ['luoyelusheng'],
+                    id: (location.pathname).substring(0, 49),
+                    distractionFreeMode: false
+                })
+                gitalk.render('gitalk-container')
+            </script>
+        
+
+        <!-- Facebook Comments -->
+        
+
+    </div>
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/luoyelusheng" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="mailto:luoyelusheng@gmail.com" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    <!-- RSS -->
+                    <li>
+                        <a href="/atom.xml" target="_blank">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">&copy; 2026 luoyelusheng<br></p>
+                <p class="copyright text-muted">Powered by <a target="_blank" href="https://hexo.io/">Hexo</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top -->
+<a id="back_to_top" href="#" class="back_to_top">
+    <span>▲</span>
+</a>
+
+<style>
+a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-property: background-color;
+    display: none;
+    z-index: 999;
+}
+a.back_to_top span {
+    color: #888;
+}
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+a.back_to_top:hover span {
+    color: #555;
+}
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+</style>
+
+<script>
+(function() {
+    var bt = document.getElementById('back_to_top');
+    if (document.documentElement.clientWidth > 480) {
+        window.addEventListener('scroll', function() {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > 300) {
+                bt.style.display = 'block';
+            } else {
+                bt.style.display = 'none';
+            }
+        });
+        bt.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+})();
+</script>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'luoyelusheng';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
